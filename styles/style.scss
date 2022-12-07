@@ -1,0 +1,17 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+$image-path: '../../img';
+$font-path: '../../fonts';
+
+@import '/node_modules/@mozilla-protocol/core/protocol/css/protocol.css';
+@import '/node_modules/@mozilla-protocol/core/protocol/css/includes/lib';
+@import '/node_modules/@mozilla-protocol/core/protocol/css/components/button';
+@import '/node_modules/@mozilla-protocol/core/protocol/css/components/newsletter-form';
+
+
+body {
+    background: $color-blue-05;
+    height: 100%;
+}

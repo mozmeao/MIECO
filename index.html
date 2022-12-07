@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>meico</title>
+    <link rel="stylesheet" href="./styles/style.scss">
+</head>
+<body>
+    <header class="mzp-l-content">header</header>
+    <main class="mzp-l-content">
+        <aside class="mzp-c-newsletter">
+            <div class="mzp-c-newsletter-image">
+                <img src="./img/newsletter-image.png" width="346" height="346" alt="">
+            </div>
+            <form id="newsletter-form" class="mzp-c-newsletter-form" name="newsletter-form" action="https://basket.mozilla.org/news/subscribe/" method="post">
+                <header class="mzp-c-newsletter-header">
+                    <h3 class="mzp-c-newsletter-title">Love the Web?</h3>
+                    <p class="mzp-c-newsletter-tagline">Get the Mozilla newsletter and help us keep it open and free.</p>
+                </header>
+
+                <fieldset class="mzp-c-newsletter-content">
+                    <div>
+                        <label for="email">Your email address</label>
+                        <input type="email" class="mzp-js-email-field" id="email" name="email" placeholder="yourname@example.com" required aria-required="true">
+                    </div>
+                    <div id="newsletter-details" class="mzp-c-newsletter-details">
+                        <div hidden="">
+                            <ul id="id_newsletters">
+                                <li><label for="id_newsletters_0"><input type="checkbox" name="newsletters" value="mozilla-and-you" id="id_newsletters_0" checked="">mozilla-and-you</label></li>
+                            </ul>
+                        </div>
+                        <label for="id_country">Country</label>
+                        <select name="country" id="id_country">
+                            <option value="DE">Germany</option>
+                            <option value="FR">France</option>
+                            <option value="IN">India</option>
+                            <option value="JP">Japan</option>
+                            <option value="ES">Spain</option>
+                            <option value="US">United States</option>
+                        </select>
+                        <label for="id_language">Language</label>
+                        <select name="language" id="id_language">
+                            <option value="de">Deutsch</option>
+                            <option value="en">English</option>
+                            <option value="es">Español</option>
+                            <option value="fr">Français</option>
+                        </select>
+                        <fieldset class="mzp-u-inline">
+                            <legend>Format</legend>
+                            <p>
+                                <label for="format-html" class="mzp-u-inline">
+                                    <input type="radio" id="format-html" name="fmt" value="H" checked> HTML
+                                </label>
+                                <label for="format-text" class="mzp-u-inline">
+                                    <input type="radio" id="format-text" name="fmt" value="T"> Text
+                                </label>
+                            </p>
+                        </fieldset>
+                        <p>
+                            <label for="privacy" class="mzp-u-inline">
+                                <input type="checkbox" id="privacy" name="privacy" required aria-required="true">
+                                I’m okay with Mozilla handling my info as explained in <a href="https://www.mozilla.org/privacy/websites/">this Privacy Notice</a>
+                            </label>
+                        </p>
+                    </div>
+                    <p class="mzp-c-form-submit">
+                        <button type="submit" class="mzp-c-button" id="newsletter-submit">Sign up now</button>
+                        <span class="mzp-c-fieldnote">We will only send you Mozilla-related information.</span>
+                    </p>
+                </fieldset>
+            </form>
+
+            <div id="newsletter-thanks" class="mzp-c-newsletter-thanks">
+                <h3>Thanks!</h3>
+                <p>If you haven’t previously confirmed a subscription to a Mozilla-related newsletter you may have to do so. Please check your inbox or your spam filter for an email from us.</p>
+            </div>
+
+        </aside>
+    </main>
+</body>
+<script src="/node_modules/@mozilla-protocol/core/protocol/js/protocol-newsletter.min.js"></script>
+</html>
