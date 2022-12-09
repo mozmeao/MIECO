@@ -8,10 +8,96 @@ $font-path: '../../fonts';
 @import '/node_modules/@mozilla-protocol/core/protocol/css/protocol.css';
 @import '/node_modules/@mozilla-protocol/core/protocol/css/includes/lib';
 @import '/node_modules/@mozilla-protocol/core/protocol/css/components/button';
+@import '/node_modules/@mozilla-protocol/core/protocol/css/components/picto';
 @import '/node_modules/@mozilla-protocol/core/protocol/css/components/newsletter-form';
 
+.mzp-c-navigation {
+    background-color: $color-black;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
 
-body {
-    background: $color-blue-05;
-    height: 100%;
+.hero-section {
+    background-image: url("/img/hero-bg.svg"), linear-gradient(90.29deg, rgba(0, 0, 0, 0.5) 72.2%, rgba(0, 0, 0, 0) 99.74%);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: $color-black;
+
+    .hero-text-wrapper {
+        max-width: 100%;
+
+        h1 {
+            @include font-size(42px);
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        h2 {
+            @include font-size(64px);
+        }
+    }
+
+    @media #{$mq-md} {
+        .hero-text-wrapper {
+            max-width: 55%;
+        }
+    }
+}
+
+.benefits-section {
+    display: grid;
+    grid-template-columns: [start] 1fr 1fr 1fr [end];
+    column-gap: 24px;
+    row-gap: 32px;
+
+    .benefits-text-wrapper {
+        grid-column: start / end;
+
+        * {
+            max-width: 45%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h2 {
+            text-align: center;
+        }
+    }
+
+    .mzp-t-picto-center {
+        grid-column: span 3;
+
+        .mzp-c-picto-heading {
+            @include font-size(24px);
+        }
+    }
+
+    @media #{$mq-md} {
+        .mzp-t-picto-center {
+            grid-column: span 1;
+        }
+    }
+}
+
+.question-section {
+    background: radial-gradient(#ffa436 0%, #FF298A 50%, #7542e4 100%);
+    position: relative;
+
+
+    .inset {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color:rgba(0, 0, 0, 0.8);
+        height: 100%;
+        width: 100%
+    }
+
+    h2, p {
+        z-index: 2;
+        position: relative;
+    }
+}
+// initial state for the form details to be hidden
+.mzp-c-newsletter-details {
+    display: none;
 }

@@ -1,3 +1,9 @@
+<!--
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,11 +14,86 @@
     <link rel="stylesheet" href="./styles/style.scss">
 </head>
 <body>
-    <header class="mzp-l-content">header</header>
-    <main class="mzp-l-content">
+    <!-- Navigation -->
+    <nav class="mzp-c-navigation mzp-t-dark">
+        <div class="mzp-c-navigation-l-content">
+            <div class="mzp-c-navigation-container">
+                <button class="mzp-c-navigation-menu-button" type="button" aria-controls="navigation-demo">
+                    Menu
+                </button>
+                <div class="mzp-c-navigation-logo">
+                    <a href="https://www.mozilla.com">Mozilla</a>
+                </div>
+                <div class="mzp-c-navigation-download" id="navigation-demo">
+                       <div class="mzp-c-button-download-container">
+                        <a href="#newsletter-form" class="mzp-c-button mzp-t-dark mzp-t-md">
+                            Collaborate with us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <!-- Hero section -->
+        <section class="mzp-l-content mzp-t-dark hero-section">
+        <div class="hero-text-wrapper">
+            <h1>mieco</h1>
+            <h2>Advancing the future of the internet</h2>
+            <p>The Mozilla Internet Ecosystem (MIECO) Program funds innovators building a healthier internet experience. We are creating a community of mission-driven individuals advancing projects that not only unlock a fairer value exchange between creators, platforms, and people, but also drive long-term value and economic growth for the wider internet ecosystem.</p>
+        </div>
+        </section>
+        <!-- Benefits section -->
+        <section class="mzp-l-content benefits-section">
+            <div class="benefits-text-wrapper">
+                <h2>Benefits & Perks</h2>
+                <p>The Mozilla Internet Ecosystem (MIECO) Program funds innovators building a healthier internet experience. We are creating a community of mission-driven individuals advancing projects that not only unlock a fairer value exchange between creators, platforms, and people, but also drive long-term value and economic growth for the wider internet ecosystem.</p>
+            </div>
+            <div class="mzp-t-picto-center">
+                <section class="mzp-c-picto">
+                    <div class="mzp-c-picto-image">
+                        <img src="./img/gift.svg" width="64" alt="">
+                    </div>
+                    <h3 class="mzp-c-picto-heading">No-strings attached grant – we don’t take equity!</h3>
+                </section>
+            </div>
+            <div class="mzp-t-picto-center">
+                <section class="mzp-c-picto">
+                    <div class="mzp-c-picto-image">
+                        <img src="./img/data.svg" width="64" alt="">
+                    </div>
+                    <h3 class="mzp-c-picto-heading">Stipends for learning and networking (e.g. conferences)</h3>
+                </section>
+            </div>
+            <div class="mzp-t-picto-center">
+                <section class="mzp-c-picto">
+                    <div class="mzp-c-picto-image">
+                        <img src="./img/rocket.svg" width="64" alt="">
+                    </div>
+                    <h3 class="mzp-c-picto-heading">Access to Mozilla’s ecosystem of people, partners, and organizations</h3>
+                </section>
+            </div>
+        </section>
+        <!-- Question section -->
+        <section class="question-section">
+            <div class="inset"></div>
+            <div>
+                <h2>Why are we doing this?</h2>
+                <p>The internet has the potential to uplift society — it can promote democracy, open markets, and free expression. But it can also promote polarization, mass surveillance, and misinformation.</p>
+                <p>More than ever, we need a movement to ensure the internet remains a force for good. That’s where you come in. The MIECO Program fuels this movement by supporting people like you who are looking to advance a more human-centered internet. We take care of the hard stuff – providing funding, mentorship, and amplification – so you can focus all-in on building the future we all envision.</p>
+                <h2>What does the program entail?</h2>
+                <p>The grant program is a 12-month* experience where you will propose, design, and drive a new product or domain in a small cohort of like-minded builders.</p>
+                <h2>Who should apply?</h2>
+                <p>If you have a passion to create a healthier and more accessible internet, then you! You will need to identify a specific challenge that you want to explore and show a body of work or consistent activity over 12-24 months to demonstrate a passion for the topic. It’s alright if your project already exists.</p>
+                <h2>How do I apply?</h2>
+                <p>We will be opening up the application window for our 2nd cohort in 2023. Please fill out the form below to be informed when this is live!</p>
+
+            </div>
+        </section>
+        <!-- Newsletter form -->
         <aside class="mzp-c-newsletter">
             <div class="mzp-c-newsletter-image">
-                <img src="./img/newsletter-image.png" width="346" height="346" alt="">
+                <img src="./img/sign-up-high-res.png" width="465" height="412" alt="">
             </div>
             <form id="newsletter-form" class="mzp-c-newsletter-form" name="newsletter-form" action="https://basket.mozilla.org/news/subscribe/" method="post">
                 <header class="mzp-c-newsletter-header">
@@ -21,6 +102,15 @@
                 </header>
 
                 <fieldset class="mzp-c-newsletter-content">
+                    <div class="mzp-c-form-errors hidden" id="newsletter-errors">
+                        <ul class="mzp-u-list-styled">
+                            <li class="error-email-invalid hidden">Please enter a valid email address</li>
+                            <li class="error-select-country hidden">Please select a country or region</li>
+                            <li class="error-select-language hidden">Please select a language</li>
+                            <li class="error-privacy-policy hidden">You must agree to the privacy notice</li>
+                            <li class="error-try-again-later hidden">We are sorry, but there was a problem with our system. Please try again later!</li>
+                        </ul>
+                    </div>
                     <div>
                         <label for="email">Your email address</label>
                         <input type="email" class="mzp-js-email-field" id="email" name="email" placeholder="yourname@example.com" required aria-required="true">
@@ -40,8 +130,8 @@
                             <option value="ES">Spain</option>
                             <option value="US">United States</option>
                         </select>
-                        <label for="id_language">Language</label>
-                        <select name="language" id="id_language">
+                        <label for="id_lang">Language</label>
+                        <select name="lang" id="id_lang">
                             <option value="de">Deutsch</option>
                             <option value="en">English</option>
                             <option value="es">Español</option>
@@ -51,10 +141,10 @@
                             <legend>Format</legend>
                             <p>
                                 <label for="format-html" class="mzp-u-inline">
-                                    <input type="radio" id="format-html" name="fmt" value="H" checked> HTML
+                                    <input type="radio" id="format-html" name="format" value="H" checked> HTML
                                 </label>
                                 <label for="format-text" class="mzp-u-inline">
-                                    <input type="radio" id="format-text" name="fmt" value="T"> Text
+                                    <input type="radio" id="format-text" name="format" value="T"> Text
                                 </label>
                             </p>
                         </fieldset>
@@ -79,6 +169,25 @@
 
         </aside>
     </main>
+    <footer class="mzp-c-footer">
+        <div class="mzp-l-content">
+            <nav class="mzp-c-footer-secondary">
+                <div class="mzp-c-footer-legal">
+                    <p class="mzp-c-footer-license">
+                        Portions of this content are ©1998–2022 by individual mozilla.org contributors.
+                        Content available under a <a rel="license" href="https://www.mozilla.org/foundation/licensing/website-content/">Creative Commons license</a>.
+                    </p>
+                    <ul class="mzp-c-footer-terms">
+                        <li><a href="https://www.mozilla.org/privacy/websites/">Website Privacy Notice</a></li>
+                        <li><a href="https://www.mozilla.org/privacy/websites/#cookies">Cookies</a></li>
+                        <li><a href="https://www.mozilla.org/about/legal/">Legal</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+        </div>
+    </footer>
 </body>
 <script src="/node_modules/@mozilla-protocol/core/protocol/js/protocol-newsletter.min.js"></script>
+<script type="module" src="./scripts/newsletter-init.js"></script>
 </html>
