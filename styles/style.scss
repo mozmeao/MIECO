@@ -26,9 +26,19 @@ $font-path: '../../fonts';
 }
 
 
+
 .mzp-c-navigation {
     background-color: $color-black;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.mzp-c-navigation-download {
+    text-align: right;
+
+    @media #{$mq-md} {
+        text-align: center;
+    }
+
 }
 
 .hero-section {
@@ -42,7 +52,6 @@ $font-path: '../../fonts';
 
         h1 {
             @include font-size(42px);
-            text-transform: uppercase;
             font-weight: 500;
         }
 
@@ -66,12 +75,9 @@ $font-path: '../../fonts';
 
     .benefits-text-wrapper {
         grid-column: start / end;
+        max-width: $content-md;
+        margin: 0 auto;
 
-        * {
-            max-width: $content-md;
-            margin-left: auto;
-            margin-right: auto;
-        }
 
         h2 {
             text-align: center;
@@ -96,6 +102,10 @@ $font-path: '../../fonts';
 
 .question-section .mzp-l-content {
     background: none;
+
+    h2 {
+        margin-bottom: $spacing-lg;
+    }
 }
 
 .teams-text-wrapper {
@@ -112,6 +122,15 @@ $font-path: '../../fonts';
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: $spacing-lg;
+
+    .mzp-c-card {
+        grid-column: span 3;
+        justify-self: center;
+
+        @media #{$mq-lg} {
+            grid-column: span 1;
+        }
+    }
 }
 
 .collaborate-title {
@@ -119,8 +138,6 @@ $font-path: '../../fonts';
 }
 
 .faq-section {
-    max-width: 566px;
-
    h2 {
         @include font-size(40px);
         margin-left: auto;
@@ -131,13 +148,12 @@ $font-path: '../../fonts';
 
     h3 {
         @include font-size(24px);
+        margin-bottom: $spacing-lg;
     }
 }
 
 .newsletter-title {
-    margin-left: auto;
-    margin-right: auto;
-    width: fit-content
+    text-align: center;
 }
 
 .mzp-c-newsletter {

@@ -57,9 +57,9 @@ const NewsletterForm = {
         const newsletters = Array.from(
             document.querySelectorAll("input[name='newsletters']:checked")
         ).map((newsletter) => newsletter.value);
-
         form.classList.add('hidden');
-        document.getElementById('newsletter-thanks').classList.remove('hidden');
+        const thanks = document.getElementById('newsletter-thanks');
+        thanks.style.display = "block"
 
         if (window.dataLayer) {
             window.dataLayer.push({
@@ -95,12 +95,8 @@ const NewsletterForm = {
             .join(',');
         newsletters = encodeURIComponent(newsletters);
 
-        // Source URL (hidden field)
-        const sourceUrl = encodeURIComponent(
-            form.querySelector('input[name="source_url"]').value
-        );
 
-        return `email=${email}&format=${format}${country}&lang=${lang}&source_url=${sourceUrl}&newsletters=${newsletters}`;
+        return `email=${email}&format=${format}${country}&lang=${lang}&newsletters=${newsletters}`;
     },
 
     validateFields: () => {
@@ -193,5 +189,7 @@ const NewsletterForm = {
         form.addEventListener('submit', NewsletterForm.subscribe, false);
     }
 };
+
+NewsletterForm.init();
 
 export default NewsletterForm;
