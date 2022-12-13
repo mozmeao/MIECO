@@ -191,5 +191,3 @@ const NewsletterForm = {
 };
 
 NewsletterForm.init();
-
-export default NewsletterForm;
