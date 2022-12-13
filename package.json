@@ -2,9 +2,9 @@
   "name": "meico",
   "version": "1.0.0",
   "description": "Static webpage for the Mozilla Internet Ecosystem (MIECO)",
-  "main": "index.js",
   "scripts": {
-    "start": "npx parcel index.html"
+    "start": "npx parcel index.html",
+    "build": "npx parcel build index.html"
   },
   "repository": {
     "type": "git",
