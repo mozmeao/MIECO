@@ -1,0 +1,26 @@
+{
+  "name": "meico",
+  "version": "1.0.0",
+  "description": "Static webpage for the Mozilla Internet Ecosystem (MIECO)",
+  "scripts": {
+    "start": "npx parcel index.html",
+    "build": "npx parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mozmeao/MEICO.git"
+  },
+  "author": "mozmeao",
+  "license": "MPL",
+  "bugs": {
+    "url": "https://github.com/mozmeao/MEICO/issues"
+  },
+  "homepage": "https://github.com/mozmeao/MEICO#readme",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.0",
+    "parcel": "^2.8.0"
+  },
+  "dependencies": {
+    "@mozilla-protocol/core": "^16.0.1"
+  }
+}

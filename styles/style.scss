@@ -1,0 +1,167 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+$image-path: '../../img';
+$font-path: '../../fonts';
+
+@import '/node_modules/@mozilla-protocol/core/protocol/css/protocol.css';
+@import '/node_modules/@mozilla-protocol/core/protocol/css/includes/lib';
+@import '/node_modules/@mozilla-protocol/core/protocol/css/components/button';
+@import '/node_modules/@mozilla-protocol/core/protocol/css/components/picto';
+@import '/node_modules/@mozilla-protocol/core/protocol/css/components/newsletter-form';
+@import '/node_modules/@mozilla-protocol/core/protocol/css/templates/multi-column';
+
+// Helper classes
+.gradient-bg {
+    background: linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)), radial-gradient(#ffa436 0%, #FF298A 50%, #7542e4 100%) right center no-repeat;
+}
+
+.dark-highlight {
+    background-color: $color-black;
+    color: $color-white;
+    padding: 0 $spacing-sm;
+    box-decoration-break: clone;
+    line-height: 1.3;
+}
+
+
+
+.mzp-c-navigation {
+    background-color: $color-black;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.mzp-c-navigation-download {
+    text-align: right;
+
+    @media #{$mq-md} {
+        text-align: center;
+    }
+
+}
+
+.hero-section {
+    background-image: url("/img/hero-bg.svg"), linear-gradient(90.29deg, rgba(0, 0, 0, 0.5) 72.2%, rgba(0, 0, 0, 0) 99.74%);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: $color-black;
+
+    .hero-text-wrapper {
+        max-width: 100%;
+
+        h1 {
+            @include font-size(42px);
+            font-weight: 500;
+        }
+
+        h2 {
+            @include font-size(64px);
+        }
+    }
+
+    @media #{$mq-md} {
+        .hero-text-wrapper {
+            max-width: 55%;
+        }
+    }
+}
+
+.benefits-section {
+    display: grid;
+    grid-template-columns: [start] 1fr 1fr 1fr [end];
+    column-gap: 24px;
+    row-gap: 32px;
+
+    .benefits-text-wrapper {
+        grid-column: start / end;
+        max-width: $content-md;
+        margin: 0 auto;
+
+
+        h2 {
+            text-align: center;
+        }
+    }
+
+    .mzp-t-picto-center {
+        grid-column: span 3;
+
+        .mzp-c-picto-heading {
+            @include font-size(24px);
+        }
+    }
+
+    @media #{$mq-md} {
+        .mzp-t-picto-center {
+            grid-column: span 1;
+        }
+    }
+}
+
+
+.question-section .mzp-l-content {
+    background: none;
+
+    h2 {
+        margin-bottom: $spacing-lg;
+    }
+}
+
+.teams-text-wrapper {
+    max-width: $content-md;
+    margin: 0 auto $layout-lg;
+
+
+    h2 {
+        text-align: center;
+    }
+}
+
+.teams-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: $spacing-lg;
+
+    .mzp-c-card {
+        grid-column: span 3;
+        justify-self: center;
+
+        @media #{$mq-lg} {
+            grid-column: span 1;
+        }
+    }
+}
+
+.collaborate-title {
+    align-self: center;
+}
+
+.faq-section {
+   h2 {
+        @include font-size(40px);
+        text-align: center;
+    }
+
+    h3 {
+        @include font-size(24px);
+        margin-bottom: $spacing-lg;
+    }
+}
+
+.newsletter-title {
+    text-align: center;
+}
+
+.mzp-c-newsletter {
+    column-gap: $spacing-2xl;
+
+    .mzp-c-newsletter-form {
+        padding-top: 0;
+
+        // initial state for the form details to be hidden
+        .mzp-c-newsletter-details {
+            display: none;
+        }
+    }
+}
