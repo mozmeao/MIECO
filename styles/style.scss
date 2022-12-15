@@ -49,6 +49,7 @@ $font-path: '../../fonts';
 
     .hero-text-wrapper {
         max-width: 100%;
+        background: linear-gradient(90deg, rgba(0,0,0,0.5014174117370784) 0%, rgba(0,0,0,0.5014174117370784) 80%, rgba(0,0,0,0) 100%);
 
         h1 {
             @include font-size(42px);
