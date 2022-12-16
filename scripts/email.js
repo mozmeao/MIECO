@@ -15,7 +15,7 @@ import {
 
 let form;
 
-const NewsletterForm = {
+const EmailForm = {
     handleFormError: (msg) => {
         let error;
 
@@ -113,80 +113,79 @@ const NewsletterForm = {
 
         // Really basic client side email validity check.
         if (!checkEmailValidity(email)) {
-            NewsletterForm.handleFormError('Invalid email address');
+            EmailForm.handleFormError('Invalid email address');
             return false;
         }
 
         // Check for country selection value.
         if (countrySelect && !countrySelect.value) {
-            NewsletterForm.handleFormError('Country not selected');
-            return false;
-        }
-
-        // Check for language selection value.
-        if (!lang) {
-            NewsletterForm.handleFormError('Language not selected');
+            EmailForm.handleFormError('Country not selected');
             return false;
         }
 
         // Confirm at least one newsletter is checked
         if (newsletters.length === 0) {
-            NewsletterForm.handleFormError('Newsletter not selected');
+            EmailForm.handleFormError('Newsletter not selected');
             return false;
         }
 
         // Confirm privacy policy is checked
         if (!privacy) {
-            NewsletterForm.handleFormError('Privacy policy not checked');
-            return false;
-        }
-
-        // Terms checkbox only appears on /firefox/ios/testflight/ page.
-        if (terms && !terms.checked) {
-            NewsletterForm.handleFormError('Terms not checked');
+        EmailForm.handleFormError('Privacy policy not checked');
             return false;
         }
 
         return true;
     },
 
-    subscribe: (e) => {
-        const url = form.getAttribute('action');
+    sumbit: (e) => {
+        const url = '';
+        const name = form.querySelector('input[id=name]')
         const email = form.querySelector('input[type="email"]').value;
+        const interests = Array.from(form.querySelectorAll('input[name=interests]:checked'))
+            .map(interests => `${interests.value}`).join(",");
+        const description = form.querySelector('')
+
+        const params =  {
+            email,
+            name,
+            description,
+            interests
+        }
+
+        console.log(params)
 
         e.preventDefault();
         e.stopPropagation();
 
-        // Disable form fields until POST has completed.
-        disableFormFields(form);
+        // // Disable form fields until POST has completed.
+        // disableFormFields(form);
 
-        // Clear any prior messages that might have been displayed.
-        clearFormErrors(form);
+        // // Clear any prior messages that might have been displayed.
+        // clearFormErrors(form);
 
-        // Perform client side form field validation.
-        if (!NewsletterForm.validateFields()) {
-            return;
-        }
+        // // Perform client side form field validation.
+        // if (!EmailForm.validateFields()) {
+        //     return;
+        // }
 
-        const params = NewsletterForm.serialize();
-
-        postToBasket(
-            email,
-            params,
-            url,
-            NewsletterForm.handleFormSuccess,
-            NewsletterForm.handleFormError
-        );
+        // postToBasket(
+        //     email,
+        //     params,
+        //     url,
+        //     NewsletterForm.handleFormSuccess,
+        //     NewsletterForm.handleFormError
+        // );
     },
 
     init: () => {
-        form = document.getElementById('newsletter-form');
+        form = document.getElementById('email-form');
 
         if (!form) {
             return;
         }
 
-        form.addEventListener('submit', NewsletterForm.subscribe, false);
+        form.addEventListener('submit', EmailForm.sumbit, false);
     }
 };
 
