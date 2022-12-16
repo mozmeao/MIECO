@@ -110,6 +110,10 @@ $font-path: '../../fonts';
     h2 {
         margin-bottom: $spacing-lg;
     }
+
+    small + h2, p + h2 {
+        margin-top: $spacing-2xl;
+    }
 }
 
 .teams-text-wrapper {
@@ -185,11 +189,12 @@ $font-path: '../../fonts';
    h2 {
         @include font-size(40px);
         text-align: center;
+        margin-top: $spacing-xl;
     }
 
     h3 {
         @include font-size(24px);
-        margin-bottom: $spacing-lg;
+        margin: $spacing-xl 0 $spacing-lg;
     }
 }
 
