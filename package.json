@@ -4,8 +4,8 @@
   "description": "Static webpage for the Mozilla Internet Ecosystem (MIECO)",
   "scripts": {
     "clean": "rimraf dist",
-    "start": "npx parcel index.html",
-    "build": "parcel build index.html --no-source-maps --public-url ./"
+    "start": "npm run clean && npx parcel index.html",
+    "build": "npm run clean && parcel build index.html --no-source-maps --public-url ../"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,8 @@
     "parcel-namer-rewrite": "^2.0.0-rc.3"
   },
   "dependencies": {
-    "@mozilla-protocol/core": "^16.0.1"
+    "@mozilla-protocol/core": "^16.0.1",
+    "rimraf": "^3.0.2"
   },
   "parcel-namer-rewrite": {
     "hashing": "always",
@@ -31,7 +32,13 @@
       "(.*)\\.(css)": "css/$1.{hash}.css",
       "(.*)\\.(js)": "js/$1.{hash}.js",
       "(.*)\\.(woff2?)": "fonts/$1.{hash}.$2",
-      "(.*)\\.(svg|png|gif|jpg)": "img/$1.{hash}.$2"
+      "(.*)\\.(svg|png|gif|jpg)": "img/$1.{hash}.$2",
+      "index.html": "mieco/index.html"
+    },
+    "profiles": {
+      "development": {
+        "disable": true
+      }
     }
   }
 }
