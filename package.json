@@ -18,9 +18,19 @@
   "homepage": "https://github.com/mozmeao/MEICO#readme",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.8.0",
-    "parcel": "^2.8.0"
+    "parcel": "^2.8.0",
+    "parcel-namer-rewrite": "^2.0.0-rc.3"
   },
   "dependencies": {
     "@mozilla-protocol/core": "^16.0.1"
+  },
+  "parcel-namer-rewrite": {
+    "hashing": "always",
+    "rules": {
+      "(.*)\\.(css)": "css/$1.{hash}.css",
+      "(.*)\\.(js)": "js/$1.{hash}.js",
+      "(.*)\\.(woff2?)": "fonts/$1.{hash}.$2",
+      "(.*)\\.(svg|png|gif|jpg)": "img/$1.{hash}.$2"
+    }
   }
 }
