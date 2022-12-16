@@ -143,6 +143,7 @@ $font-path: '../../fonts';
         .c-card-title {
             @include font-mozilla;
             @include font-size(32px);
+            display: block;
         }
 
         .c-card-cta, .c-card-title {
