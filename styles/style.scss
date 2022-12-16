@@ -25,8 +25,6 @@ $font-path: '../../fonts';
     line-height: 1.3;
 }
 
-
-
 .mzp-c-navigation {
     background-color: $color-black;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -49,6 +47,7 @@ $font-path: '../../fonts';
 
     .hero-text-wrapper {
         max-width: 100%;
+        background: linear-gradient(90deg, rgba(0,0,0,0.5014174117370784) 0%, rgba(0,0,0,0.5014174117370784) 80%, rgba(0,0,0,0) 100%);
 
         h1 {
             @include font-size(42px);
@@ -103,8 +102,17 @@ $font-path: '../../fonts';
 .question-section .mzp-l-content {
     background: none;
 
+    small {
+        display: block;
+        margin-bottom: $spacing-md;
+    }
+
     h2 {
         margin-bottom: $spacing-lg;
+    }
+
+    small + h2, p + h2 {
+        margin-top: $spacing-2xl;
     }
 }
 
@@ -120,16 +128,56 @@ $font-path: '../../fonts';
 
 .teams-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: $spacing-lg;
+    grid-template-columns: 1fr;
+    column-gap: $spacing-2xl;
+    row-gap: $spacing-lg;
 
-    .mzp-c-card {
-        grid-column: span 3;
+    .c-card {
+        grid-column: span 1;
         justify-self: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
-        @media #{$mq-lg} {
-            grid-column: span 1;
+        .c-card-company {
+            @include font-size(14px);
+            margin-bottom: 0;
         }
+
+        .c-card-title {
+            @include font-mozilla;
+            @include font-size(32px);
+            display: block;
+        }
+
+        .c-card-cta, .c-card-title {
+            color: $color-white;
+
+            &:hover {
+                color: $color-white;
+            }
+        }
+
+        .c-card-desc, .c-card-mission, .c-card-cta {
+            @include font-size(14px);
+        }
+
+        .c-card-cta {
+            position: relative;
+
+            &:before {
+                content: "\002b  ";
+            }
+        }
+
+    }
+
+    @media #{$mq-md} {
+       grid-template-columns: 1fr 1fr;
+    }
+
+    @media #{$mq-lg} {
+       grid-template-columns: 1fr 1fr 1fr;
     }
 }
 
@@ -141,11 +189,12 @@ $font-path: '../../fonts';
    h2 {
         @include font-size(40px);
         text-align: center;
+        margin-top: $spacing-xl;
     }
 
     h3 {
         @include font-size(24px);
-        margin-bottom: $spacing-lg;
+        margin: $spacing-xl 0 $spacing-lg;
     }
 }
 
@@ -162,6 +211,14 @@ $font-path: '../../fonts';
         // initial state for the form details to be hidden
         .mzp-c-newsletter-details {
             display: none;
+
+            input[type="text"], textarea {
+                width: 100%;
+            }
+
+            .interests {
+                margin-bottom: $spacing-md;
+            }
         }
     }
 }
