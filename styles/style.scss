@@ -131,6 +131,9 @@ $font-path: '../../fonts';
     .c-card {
         grid-column: span 1;
         justify-self: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
         .c-card-company {
             @include font-size(14px);
