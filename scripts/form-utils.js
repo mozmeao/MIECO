@@ -43,7 +43,7 @@ function clearFormErrors(form) {
  * @param {HTMLFormElement} form
  */
 function disableFormFields(form) {
-    const formFields = form.querySelectorAll('input, button, select');
+    const formFields = form.querySelectorAll('input, button, select, textarea');
 
     for (let i = 0; i < formFields.length; i++) {
         formFields[i].disabled = true;
@@ -55,15 +55,17 @@ function disableFormFields(form) {
  * @param {HTMLFormElement} form
  */
 function enableFormFields(form) {
-    const formFields = form.querySelectorAll('input, button, select');
+    const formFields = form.querySelectorAll('input, button, select, textarea');
 
     for (let i = 0; i < formFields.length; i++) {
         formFields[i].disabled = false;
     }
 }
 
-function postToBasket(email, params, url, successCallback, errorCallback) {
+function postToEmailServer(params, successCallback, errorCallback) {
     const xhr = new XMLHttpRequest();
+    const url = "https://www-demo2.allizom.org/email-meico/";
+    const { email } = params;
 
     // Emails used in automation for page-level integration tests
     // should avoid hitting basket directly.
@@ -101,29 +103,15 @@ function postToBasket(email, params, url, successCallback, errorCallback) {
 
     xhr.onerror = errorCallback;
     xhr.open('POST', url, true);
-    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.setRequestHeader('Content-type', 'application/json');
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    xhr.setRequestHeader("Access-Control-Allow-Headers", "*");
     xhr.timeout = 5000;
     xhr.ontimeout = errorCallback;
     xhr.responseType = 'json';
-    xhr.send(params);
+    xhr.send(JSON.stringify(params));
 }
 
-/**
- * Helper function to serialize form data for XHR request.
- * @param {HTMLElement} form
- * @returns {String} query string
- */
-function serialize(form) {
-    const q = [];
-    for (let i = 0; i < form.elements.length; i++) {
-        const elem = form.elements[i];
-        if (elem.name) {
-            q.push(elem.name + '=' + encodeURIComponent(elem.value));
-        }
-    }
-    return q.join('&');
-}
 
 export {
     checkEmailValidity,
@@ -131,6 +119,5 @@ export {
     errorList,
     disableFormFields,
     enableFormFields,
-    postToBasket,
-    serialize
+    postToEmailServer,
 };
