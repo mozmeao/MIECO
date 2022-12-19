@@ -64,7 +64,7 @@ function enableFormFields(form) {
 
 function postToEmailServer(params, successCallback, errorCallback) {
     const xhr = new XMLHttpRequest();
-    const url = "https://www-demo2.allizom.org/email-meico/";
+    const url = "https://www-demo2.allizom.org/en-US/email-meico/";
     const { email } = params;
 
     // Emails used in automation for page-level integration tests
@@ -105,7 +105,6 @@ function postToEmailServer(params, successCallback, errorCallback) {
     xhr.open('POST', url, true);
     xhr.setRequestHeader('Content-type', 'application/json');
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-    xhr.setRequestHeader("Access-Control-Allow-Headers", "*");
     xhr.timeout = 5000;
     xhr.ontimeout = errorCallback;
     xhr.responseType = 'json';
