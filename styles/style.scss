@@ -86,6 +86,12 @@ $font-path: '../../fonts';
     .mzp-t-picto-center {
         grid-column: span 3;
 
+        .mzp-c-picto {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            height: 100%;
+        }
+
         .mzp-c-picto-heading {
             @include font-size(24px);
         }
