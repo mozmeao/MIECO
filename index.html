@@ -255,7 +255,7 @@
                     <fieldset class="mzp-c-newsletter-content">
                         <div class="mzp-c-form-errors hidden" id="newsletter-errors">
                             <ul class="mzp-u-list-styled">
-                                <li class="error-email-invalid hidden">Please enter a valid email address</li>
+                                <li class="error-email-invalid hidden">Please enter a valid email address with less than 120 characters</li>
                                 <li class="error-privacy-policy hidden">You must agree to the privacy notice</li>
                                 <li class="error-try-again-later hidden">We are sorry, but there was a problem with our system. Please try again later!</li>
                             </ul>
@@ -283,7 +283,7 @@
                              </fieldset>
                             <div class="mzp-c-field">
                                 <label for="description">Description</label>
-                                <textarea placeholder="What would you like to have us contact you about?" rows="5" cols="38" name="description" id="description"></textarea>
+                                <textarea placeholder="What would you like to have us contact you about?" rows="5" cols="38" name="description" id="description" maxlength="750"></textarea>
                             </div>
                             <p>
                                 <label for="privacy" class="mzp-u-inline">

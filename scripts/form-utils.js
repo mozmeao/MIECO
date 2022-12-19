@@ -21,7 +21,7 @@ const errorList = {
  * @returns {Boolean}
  */
 function checkEmailValidity(email) {
-    return /\S+@\S+/.test(email);
+    return /\S+@\S+/.test(email) && email.length <= 120;
 }
 
 /**

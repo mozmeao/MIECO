@@ -27,11 +27,6 @@ const EmailForm = {
             case errorList.EMAIL_INVALID_ERROR:
                 error = form.querySelector('.error-email-invalid');
                 break;
-            case errorList.INTERESTS_ERROR:
-                form.querySelector(
-                    '.error-newsletter-checkbox'
-                ).classList.remove('hidden');
-                break;
             case errorList.PRIVACY_POLICY_ERROR:
                 error = form.querySelector('.error-privacy-policy');
                 break;
@@ -53,17 +48,10 @@ const EmailForm = {
     validateFields: () => {
         const email = form.querySelector('input[type="email"]').value;
         const privacy = !!form.querySelector('input[name="privacy"]:checked');
-        const interests = form.querySelectorAll('input[name="interests"]:checked');
 
         // Really basic client side email validity check.
         if (!checkEmailValidity(email)) {
             EmailForm.handleFormError('Invalid email address');
-            return false;
-        }
-
-        // Confirm at least one newsletter is checked
-        if (interests.length === 0) {
-            EmailForm.handleFormError('Newsletter not selected');
             return false;
         }
 
@@ -77,11 +65,10 @@ const EmailForm = {
     },
 
     sumbit: (e) => {
-        const url = '';
         const name = form.querySelector('input[id=name]').value;
         const email = form.querySelector('input[type="email"]').value;
         const interests = Array.from(form.querySelectorAll('input[name=interests]:checked'))
-            .map(interests => `${interests.value}`).join(",");
+            .map(interests => `${interests.value}`).join(",") || ["other"]
         const description = form.querySelector('textarea').value;
 
         const params =  {
