@@ -8,8 +8,7 @@
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
-    # enable this for prod
-    # Cache-Control = "public, max-age=3600"
+    Cache-Control = "public,max-age=3600"
     Content-Security-Policy = '''
     style-src 'self' 'unsafe-inline';
     default-src 'self' www.google-analytics.com;
@@ -19,10 +18,25 @@
     script-src 'self' 'unsafe-inline' 'unsafe-eval' s.ytimg.com www.youtube.com www.google-analytics.com;
     '''
 
-# [[headers]]
-#   for = "/fonts/*"
-#   [headers.values]
-#     Cache-Control = "max-age=31536000, public"
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "max-age=31536000,public,immutable"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "max-age=31536000,public,immutable"
+
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "max-age=31536000,public,immutable"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "max-age=31536000,public,immutable"
 
 [[redirects]]
   from = "/"
