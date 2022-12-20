@@ -68,7 +68,7 @@ const EmailForm = {
         const name = form.querySelector('input[id=name]').value;
         const email = form.querySelector('input[type="email"]').value;
         const interests = Array.from(form.querySelectorAll('input[name=interests]:checked'))
-            .map(interests => `${interests.value}`).join(",") || ["other"]
+            .map(interests => `${interests.value}`).join(",") || "other"
         const description = form.querySelector('textarea').value;
 
         const params =  {
