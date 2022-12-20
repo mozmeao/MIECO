@@ -64,7 +64,7 @@ function enableFormFields(form) {
 
 function postToEmailServer(params, successCallback, errorCallback) {
     const xhr = new XMLHttpRequest();
-    const url = "https://www.mozilla.org/en-US/email-meico/";
+    const url = "https://mozilla.org/en-US/email-meico/";
     const { email } = params;
 
     // Emails used in automation for page-level integration tests
