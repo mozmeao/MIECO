@@ -226,6 +226,10 @@ $font-path: '../../fonts';
         .mzp-c-newsletter-details {
             display: none;
 
+            label.mzp-u-inline {
+                display: inline-block;
+            }
+
             input[type="text"], textarea {
                 width: 100%;
             }
