@@ -64,7 +64,7 @@ const EmailForm = {
         return true;
     },
 
-    sumbit: (e) => {
+    submit: (e) => {
         const name = form.querySelector('input[id=name]').value;
         const email = form.querySelector('input[type="email"]').value;
         const interests = Array.from(form.querySelectorAll('input[name=interests]:checked'))
@@ -106,7 +106,7 @@ const EmailForm = {
             return;
         }
 
-        form.addEventListener('submit', EmailForm.sumbit, false);
+        form.addEventListener('submit', EmailForm.submit, false);
     }
 };
 
