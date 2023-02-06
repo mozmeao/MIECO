@@ -8,10 +8,12 @@ $font-path: '../../fonts';
 @import '/node_modules/@mozilla-protocol/core/protocol/css/protocol.css';
 @import '/node_modules/@mozilla-protocol/core/protocol/css/includes/lib';
 @import '/node_modules/@mozilla-protocol/core/protocol/css/components/button';
+@import '/node_modules/@mozilla-protocol/core/protocol/css/components/breadcrumb';
 @import '/node_modules/@mozilla-protocol/core/protocol/css/components/picto';
 @import '/node_modules/@mozilla-protocol/core/protocol/css/components/newsletter-form';
 @import '/node_modules/@mozilla-protocol/core/protocol/css/templates/multi-column';
 
+@import 'cohort';
 
 // Helper classes
 .gradient-bg {
