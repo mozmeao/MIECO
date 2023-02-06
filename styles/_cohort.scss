@@ -14,9 +14,13 @@
 
 .project-info {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr;
     column-gap: $spacing-md;
     margin-bottom: $spacing-lg;
+
+    @media #{$mq-md} {
+        grid-template-columns: 1fr 2fr;
+    }
 }
 
 .mzp-t-content-md h2 {
@@ -44,8 +48,8 @@
 
 .theses-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: $spacing-md;
+    grid-template-columns: 1fr;
+
 
     .thesis {
         display: flex;
@@ -54,11 +58,20 @@
         flex-direction: column;
         border: 1px solid #ccc;
         padding:  $spacing-2xl 0;
+        margin-bottom: $spacing-lg;
 
         figcaption {
             text-align: center;
             margin-bottom: $spacing-md;
         }
+    }
 
+    @media #{$mq-md} {
+        grid-template-columns: 1fr 1fr;
+        column-gap: $spacing-md;
+
+        thesis {
+            margin-bottom: 0;
+        }
     }
 }
