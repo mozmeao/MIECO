@@ -12,6 +12,7 @@ $font-path: '../../fonts';
 @import '/node_modules/@mozilla-protocol/core/protocol/css/components/newsletter-form';
 @import '/node_modules/@mozilla-protocol/core/protocol/css/templates/multi-column';
 
+
 // Helper classes
 .gradient-bg {
     background: linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)), radial-gradient(#ffa436 0%, #FF298A 50%, #7542e4 100%) right center no-repeat;
@@ -83,35 +84,41 @@ $font-path: '../../fonts';
         }
     }
 
-    .mzp-t-picto-center {
+    .why-join-container {
         grid-column: span 3;
+        border: 1px solid #CCCCCC;
 
-        .mzp-c-picto {
-            display: grid;
-            grid-template-rows: 1fr 1fr;
-            height: 100%;
-
-            .mzp-c-picto-image {
-                margin-bottom: 0;
-                align-self: center;
-                img {
-                    display: block;
-                }
-            }
-
-            .mzp-c-picto-heading {
-                @include font-size(24px);
-            }
+        .why-join-subheader {
+            @include font-mozilla;
+            @include font-size(32px);
+            padding: $spacing-md 0;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
         }
-    }
 
-    @media #{$mq-md} {
-        .mzp-t-picto-center {
+        @media #{$mq-md} {
             grid-column: span 1;
         }
     }
-}
 
+
+    .mzp-c-picto {
+        padding: 0 15px;
+
+        .mzp-c-picto-image {
+            margin-bottom: 0;
+
+            img {
+                height: 75px;
+            }
+        }
+
+        .mzp-c-picto-heading {
+            @include font-base;
+            @include font-size(18px);
+        }
+    }
+}
 
 .question-section .mzp-l-content {
     background: none;
