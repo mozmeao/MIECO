@@ -5,16 +5,17 @@ from pathlib import Path
 from jinja2 import Environment, FileSystemLoader
 
 
-env = Environment(loader=FileSystemLoader(["pages", "templates"]), autoescape=True)
+env = Environment(loader=FileSystemLoader(
+    ["pages", "templates"]), autoescape=True)
 PAGES_PATH = Path("pages")
-OUTPUT_PATH = Path("dist")
+OUTPUT_PATH = Path("html_output")
 
 
 def get_output_path(page_path):
     out_path = page_path
     if page_path.name != "index.html":
         out_path = Path(f"{page_path.stem}/index.html")
-    
+
     return OUTPUT_PATH.joinpath(out_path)
 
 
@@ -29,7 +30,7 @@ def get_page_url(page_path):
 
     return f"/{page_path.stem}/"
 
-    
+
 def render_page(page_path):
     """Renders a page template and writes it to an output file"""
     page = env.get_template(str(page_path))
