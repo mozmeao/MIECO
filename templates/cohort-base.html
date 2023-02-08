@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <nav aria-label="breadcrumb" class="mzp-c-breadcrumb">
+        <ol class="mzp-c-breadcrumb-list">
+            <li class="mzp-c-breadcrumb-item">
+                <a href="../index.html">About MIECO</a>
+            </li>
+            <li aria-current="page" class="mzp-c-breadcrumb-item">
+                {% block member_name %}{% endblock %}
+            </li>
+        </ol>
+    </nav> <!-- end breadcrumb -->
+    <section class="mzp-l-content mzp-t-content-md">
+        <h2><span class="dark-highlight">Projects</span></h2>
+        <h3>{%block  project_name %}Project Name{% endblock %}</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fringilla vestibulum semper. Suspendisse potenti.
+            Suspendisse lacinia mollis semper. Pellentesque eget nisl efficitur, pellentesque enim non, fringilla diam. Duis
+            sit
+            amet posuere tellus, eget posuere massa. Nam vel rutrum neque. Aliquam posuere eros eu condimentum facilisis.
+            Vestibulum
+            sit amet elementum metus. Proin quis ornare urna, nec interdum neque. Curabitur in dolor nec sapien gravida
+            aliquet.
+            Curabitur eu convallis erat. Aliquam dictum tellus sed mollis scelerisque. Suspendisse id lacus quis mauris
+            rhoncus
+            semper.</p>
+        <div class="project-info">
+            <img src="/img/placeholder.png">
+            <div>
+                <h4>Subtitle</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fringilla vestibulum semper. Suspendisse
+                    potenti.
+                    Suspendisse lacinia mollis semper. Pellentesque eget nisl efficitur, pellentesque enim non, fringilla
+                    diam. Duis sit
+                    amet posuere tellus, eget posuere massa. Nam vel rutrum neque. Aliquam posuere eros eu condimentum
+                    facilisis. Vestibulum
+                    sit amet elementum metus.</p>
+            </div>
+        </div>
+        <div class="project-info">
+            <img src="/img/placeholder.png">
+            <div>
+                <h4>Collaborators</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fringilla vestibulum semper. Suspendisse
+                    potenti.
+                    Suspendisse lacinia mollis semper. Pellentesque eget nisl efficitur, pellentesque enim non, fringilla
+                    diam. Duis sit
+                    amet posuere tellus, eget posuere massa. Nam vel rutrum neque. Aliquam posuere eros eu condimentum
+                    facilisis. Vestibulum
+                    sit amet elementum metus.</p>
+            </div>
+        </div>
+    </section> <!-- end main container -->
+    <section class="mzp-l-content mzp-t-content-md cohort-about">
+        <h2><span class="dark-highlight">About</span></h2>
+        <div class="project-info">
+            <img src="/img/profiles/francisco_tolmasky-200.jpg" width="400" height="400"
+                srcset="/img/profiles/francisco_tolmasky-400.jpg 2x" alt="">
+            <div>
+                <p class="project-company">Beyond oEmbed</p>
+                <h4>Francisco Tolmasky</h4>
+                <p>Francisco was a member of the original iPhone team at Apple, working on Mobile Safari. He later founded
+                    280 North where
+                    he worked on the Cappuccino web framework, which was later acquired by Motorola. He is currently working
+                    on RunKit, a
+                    revolutionary new way to interact with code.</p>
+                <p class="c-card-mission"><strong>Mission: </strong>Define a standardized method for discovering and
+                    integrating 3rd
+                    party services into web pages in a secure, performant, and easy-to-use way.</p>
+            </div>
+        </div> <!-- end project info -->
+        <h3>Accomplishments</h3>
+        <ul>
+            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a tortor dolor. Sed semper faucibus augue,
+                fermentum maximus nisl porta ac.</li>
+            <li>Morbi ultrices augue eget turpis molestie lobortis. Cras eleifend augue odio, at facilisis turpis dignissim
+                non. Donec rutrum pretium ante, convallis tincidunt elit malesuada in.</li>
+            <li>Duis scelerisque quam eu felis luctus facilisis.</li>
+            <li>Duis auctor, nisl a viverra maximus, dolor justo dictum tellus, vel cursus mauris lectus vitae mi.
+                Pellentesque purus erat, tempus at nibh non, pharetra rutrum nisl. Nulla feugiat elit felis, nec vulputate
+                velit laoreet nec.</li>
+        </ul>
+
+        <h3>Interests</h3>
+        <ul>
+            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a tortor dolor. Sed semper faucibus augue,
+                fermentum maximus nisl porta ac.</li>
+            <li>Morbi ultrices augue eget turpis molestie lobortis. Cras eleifend augue odio, at facilisis turpis dignissim
+                non.
+                Donec rutrum pretium ante, convallis tincidunt elit malesuada in.</li>
+            <li>Duis scelerisque quam eu felis luctus facilisis.</li>
+            <li>Duis auctor, nisl a viverra maximus, dolor justo dictum tellus, vel cursus mauris lectus vitae mi.
+                Pellentesque
+                purus erat, tempus at nibh non, pharetra rutrum nisl. Nulla feugiat elit felis, nec vulputate velit laoreet
+                nec.
+            </li>
+        </ul>
+
+        <h3>Theses</h3>
+        <div class="theses-container">
+            <div class="thesis">
+                <figure>
+                    <img src="/img/theses.svg">
+                    <figcaption>Name of Thesis</figcaption>
+                </figure>
+                <a href="#" class="mzp-c-button">Download Theses</a>
+            </div>
+            <div class="thesis">
+                <figure>
+                    <img src="/img/theses.svg">
+                    <figcaption>Name of Thesis</figcaption>
+                </figure>
+                <a href="#" class="mzp-c-button">Download Theses</a>
+            </div>
+        </div>
+    </section>
+    <section class="mzp-t-dark gradient-bg">
+        <div class="mzp-l-content mzp-l-columns mzp-t-columns-two">
+            <h2 class="collaborate-title">Want to collaborate with us?</h2>
+            <div>
+                <p>We are constantly looking for new ways to collaborate with individuals and organizations who share our
+                    passion for building a healthier internet. Whether you want to be a guest speaker to our cohorts, a
+                    potential partner who can provide additional resources, or someone that just wants to support the MIECO
+                    program in some shape or form, we’re all ears!</p>
+                <a href="../index.html#newsletter-section" class="mzp-c-button mzp-t-dark">Contact us</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}
