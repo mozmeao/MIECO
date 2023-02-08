@@ -44,10 +44,7 @@ def render_pages():
     """Renders all templates in the pages directory"""
     print("Writing files:")
     for page_path in PAGES_PATH.rglob("*.html"):
-        page_str = str(page_path)
-        matches = ["/templates", "/partials"]
-        if not any(x in page_str for x in matches):
-            render_page(page_path.relative_to(PAGES_PATH))
+        render_page(page_path.relative_to(PAGES_PATH))
 
 
 def clean_output_path():

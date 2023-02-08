@@ -7,7 +7,7 @@
     "start": "npx concurrently \"npm:watch:jinja\" \"npm:watch:parcel\"",
     "build:jinja": "python build.py",
     "build": "npm run clean && npm run build:jinja && parcel build html_output/index.html --no-source-maps --public-url ../",
-    "watch:jinja": "npx watch 'npm run build:jinja' pages/",
+    "watch:jinja": "npx watch 'npm run build:jinja' pages/  templates/",
     "watch:parcel": "npm run clean && npx parcel html_output/index.html --port 8000"
   },
   "repository": {
