@@ -6,9 +6,9 @@
     "clean": "rimraf dist",
     "start": "npx concurrently \"npm:watch:jinja\" \"npm:watch:parcel\"",
     "build:jinja": "python build.py",
-    "build": "npm run clean && npm run build:jinja && parcel build html_output/index.html --no-source-maps --public-url ../",
+    "build": "npm run clean && npm run build:jinja && parcel build html_output/mieco/index.html --no-source-maps --public-url ../",
     "watch:jinja": "npx watch 'npm run build:jinja' pages/  templates/",
-    "watch:parcel": "npm run clean && npx parcel html_output/index.html --port 8000"
+    "watch:parcel": "npm run clean && npx parcel html_output/mieco/index.html --port 8000"
   },
   "repository": {
     "type": "git",
@@ -39,11 +39,6 @@
       "(.*)\\.(woff2?)": "fonts/$1.{hash}.$2",
       "(.*)\\.(svg|png|gif|jpg)": "img/$1.{hash}.$2",
       "index.html": "mieco/index.html"
-    },
-    "profiles": {
-      "development": {
-        "disable": true
-      }
     }
   }
 }
