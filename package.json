@@ -6,7 +6,7 @@
     "clean": "rimraf dist",
     "start": "npx concurrently \"npm:watch:jinja\" \"npm:watch:parcel\"",
     "build:jinja": "python build.py",
-    "build": "npm run clean && npm run build:jinja && parcel build html_output/mieco/index.html --no-source-maps --public-url ../",
+    "build": "npm run clean && npm run build:jinja && parcel build html_output/mieco/index.html --no-source-maps",
     "watch:jinja": "npx watch 'npm run build:jinja' pages/  templates/",
     "watch:parcel": "npx parcel html_output/mieco/index.html --port 8000"
   },
