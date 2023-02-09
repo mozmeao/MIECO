@@ -4,7 +4,7 @@
     <nav aria-label="breadcrumb" class="mzp-c-breadcrumb">
         <ol class="mzp-c-breadcrumb-list">
             <li class="mzp-c-breadcrumb-item">
-                <a href="../index.html">About MIECO</a>
+                <a href="/mieco">About MIECO</a>
             </li>
             <li aria-current="page" class="mzp-c-breadcrumb-item">
                 {% block member_name %}{% endblock %}
@@ -54,19 +54,12 @@
     <section class="mzp-l-content mzp-t-content-md cohort-about">
         <h2><span class="dark-highlight">About</span></h2>
         <div class="project-info">
-            <img src="/img/profiles/francisco_tolmasky-200.jpg" width="400" height="400"
-                srcset="/img/profiles/francisco_tolmasky-400.jpg 2x" alt="">
+            {% block member_photo %}<img src="/img/placeholder.png" width="400" height="400" srcset="{{ profile_photo_src_high_res }} 2x" alt="">{% endblock %}
             <div>
-                <p class="project-company">Beyond oEmbed</p>
-                <h4>Francisco Tolmasky</h4>
-                <p>Francisco was a member of the original iPhone team at Apple, working on Mobile Safari. He later founded
-                    280 North where
-                    he worked on the Cappuccino web framework, which was later acquired by Motorola. He is currently working
-                    on RunKit, a
-                    revolutionary new way to interact with code.</p>
-                <p class="c-card-mission"><strong>Mission: </strong>Define a standardized method for discovering and
-                    integrating 3rd
-                    party services into web pages in a secure, performant, and easy-to-use way.</p>
+                <p class="project-company">{% block member_company %}Company{% endblock %}</p>
+                <h4>{{ self.member_name() }}</h4>
+                <p>{% block member_bio %}{% endblock %}</p>
+                <p class="c-card-mission"><strong>Mission: </strong>{% block member_mission %}{% endblock %}</p>
             </div>
         </div> <!-- end project info -->
         <h3>Accomplishments</h3>
