@@ -15,7 +15,14 @@
     </nav> <!-- end breadcrumb -->
     <section class="mzp-l-content mzp-t-content-md">
         <h2><span class="dark-highlight">Project</span></h2>
-        {% block project_desc%}{% endblock %}
+        {% block project_desc%}
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fringilla vestibulum semper. Suspendisse potenti.
+            Suspendisse lacinia mollis semper. Pellentesque eget nisl efficitur, pellentesque enim non, fringilla diam. Duis sit
+            amet posuere tellus, eget posuere massa. Nam vel rutrum neque. Aliquam posuere eros eu condimentum facilisis. Vestibulum
+            sit amet elementum metus. Proin quis ornare urna, nec interdum neque. Curabitur in dolor nec sapien gravida aliquet.
+            Curabitur eu convallis erat. Aliquam dictum tellus sed mollis scelerisque. Suspendisse id lacus quis mauris rhoncus
+            semper.</p>
+        {% endblock %}
         {% if project_sub_text %}
         <div class="project-info">
             <img src="/img/placeholder.png">
@@ -29,7 +36,12 @@
             <img src="/img/placeholder.png">
             <div>
                 <h4>Collaborators</h4>
-                {% block collaborator_text %}{% endblock %}
+                {% block collaborator_text %}
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fringilla vestibulum semper. Suspendisse potenti.
+                    Suspendisse lacinia mollis semper. Pellentesque eget nisl efficitur, pellentesque enim non, fringilla diam. Duis sit
+                    amet posuere tellus, eget posuere massa. Nam vel rutrum neque. Aliquam posuere eros eu condimentum facilisis. Vestibulum
+                    sit amet elementum metus.</p>
+                {% endblock %}
             </div>
         </div>
     </section> <!-- end main container -->
@@ -42,7 +54,8 @@
                 <h4>{{ self.member_name() }}</h4>
                 <p>{% block member_bio %}Bio text{% endblock %}</p>
                 <p class="c-card-mission"><strong>Mission: </strong>{% block member_mission %}mission text{% endblock %}</p>
-                <p><strong>Interests: </strong>{% block interests %}{% endblock %}</p>
+                <p><strong>Interests: </strong>{% block interests %}Morbi ultrices augue eget turpis molestie lobortis. Cras eleifend augue odio, at facilisis turpis dignissim
+                non. Donec rutrum pretium ante, convallis tincidunt elit malesuada in.{% endblock %}</p>
             </div>
         </div> <!-- end project info -->
         <h3>Accomplishments</h3>
