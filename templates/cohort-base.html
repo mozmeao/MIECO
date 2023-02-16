@@ -24,25 +24,16 @@
             semper.</p>
         {% endblock %}
         {% if project_sub_text %}
-        <div class="project-info">
-            <img src="/img/placeholder.png">
-            <div>
-                <h4>{% block project_subtitle %}Subtitle{% endblock %}</h4>
-                {% block project_sub_text %}{% endblock %}
-            </div>
-        </div>
+            {% block project_sub_text %}{% endblock %}
         {% endif %}
-        <div class="project-info">
-            <img src="/img/placeholder.png">
-            <div>
-                <h4>Collaborators</h4>
-                {% block collaborator_text %}
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fringilla vestibulum semper. Suspendisse potenti.
-                    Suspendisse lacinia mollis semper. Pellentesque eget nisl efficitur, pellentesque enim non, fringilla diam. Duis sit
-                    amet posuere tellus, eget posuere massa. Nam vel rutrum neque. Aliquam posuere eros eu condimentum facilisis. Vestibulum
-                    sit amet elementum metus.</p>
-                {% endblock %}
-            </div>
+        <div>
+            <h4>Collaborators</h4>
+            {% block collaborator_text %}
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fringilla vestibulum semper. Suspendisse potenti.
+                Suspendisse lacinia mollis semper. Pellentesque eget nisl efficitur, pellentesque enim non, fringilla diam. Duis sit
+                amet posuere tellus, eget posuere massa. Nam vel rutrum neque. Aliquam posuere eros eu condimentum facilisis. Vestibulum
+                sit amet elementum metus.</p>
+            {% endblock %}
         </div>
     </section> <!-- end main container -->
     <section class="mzp-l-content mzp-t-content-md cohort-about">
