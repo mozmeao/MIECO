@@ -9,31 +9,19 @@
                 <a href="/mieco">About MIECO</a>
             </li>
             <li aria-current="page" class="mzp-c-breadcrumb-item">
-                {% block member_name %}Member Name{% endblock %}
+                {% block member_name %}{% endblock %}
             </li>
         </ol>
     </nav> <!-- end breadcrumb -->
     <section class="mzp-l-content mzp-t-content-md">
         <h2><span class="dark-highlight">Project</span></h2>
-        {% block project_desc%}
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fringilla vestibulum semper. Suspendisse potenti.
-            Suspendisse lacinia mollis semper. Pellentesque eget nisl efficitur, pellentesque enim non, fringilla diam. Duis sit
-            amet posuere tellus, eget posuere massa. Nam vel rutrum neque. Aliquam posuere eros eu condimentum facilisis. Vestibulum
-            sit amet elementum metus. Proin quis ornare urna, nec interdum neque. Curabitur in dolor nec sapien gravida aliquet.
-            Curabitur eu convallis erat. Aliquam dictum tellus sed mollis scelerisque. Suspendisse id lacus quis mauris rhoncus
-            semper.</p>
-        {% endblock %}
+        {% block project_desc%}{% endblock %}
         {% if project_sub_text %}
             {% block project_sub_text %}{% endblock %}
         {% endif %}
         <div>
             <h4>Collaborators</h4>
-            {% block collaborator_text %}
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fringilla vestibulum semper. Suspendisse potenti.
-                Suspendisse lacinia mollis semper. Pellentesque eget nisl efficitur, pellentesque enim non, fringilla diam. Duis sit
-                amet posuere tellus, eget posuere massa. Nam vel rutrum neque. Aliquam posuere eros eu condimentum facilisis. Vestibulum
-                sit amet elementum metus.</p>
-            {% endblock %}
+            {% block collaborator_text %}{% endblock %}
         </div>
     </section> <!-- end main container -->
     <section class="mzp-l-content mzp-t-content-md cohort-about">
@@ -41,29 +29,18 @@
         <div class="project-info">
             {% block member_photo %}<img src="/img/placeholder.png" width="400" height="400" srcset="{{ profile_photo_src_high_res }} 2x" alt="">{% endblock %}
             <div>
-                <p class="project-company">{% block member_company %}Company name{% endblock %}</p>
+                <p class="project-company">{% block member_company %}{% endblock %}</p>
                 <h4>{{ self.member_name() }}</h4>
-                <p>{% block member_bio %}Bio text{% endblock %}</p>
-                <p class="c-card-mission"><strong>Mission: </strong>{% block member_mission %}mission text{% endblock %}</p>
-                <p><strong>Interests: </strong>{% block interests %}Morbi ultrices augue eget turpis molestie lobortis. Cras eleifend augue odio, at facilisis turpis dignissim
-                non. Donec rutrum pretium ante, convallis tincidunt elit malesuada in.{% endblock %}</p>
+                <p>{% block member_bio %}{% endblock %}</p>
+                <p class="c-card-mission"><strong>Mission: </strong>{% block member_mission %}{% endblock %}</p>
+                <p><strong>Interests: </strong>{% block interests %}{% endblock %}</p>
             </div>
         </div> <!-- end project info -->
-        <h3>Accomplishments</h3>
+        <h4>Accomplishments</h4>
         {% block accomplishments %}
-            <ul>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a tortor dolor. Sed semper faucibus augue,
-                    fermentum maximus nisl porta ac.</li>
-                <li>Morbi ultrices augue eget turpis molestie lobortis. Cras eleifend augue odio, at facilisis turpis dignissim
-                    non. Donec rutrum pretium ante, convallis tincidunt elit malesuada in.</li>
-                <li>Duis scelerisque quam eu felis luctus facilisis.</li>
-                <li>Duis auctor, nisl a viverra maximus, dolor justo dictum tellus, vel cursus mauris lectus vitae mi.
-                    Pellentesque purus erat, tempus at nibh non, pharetra rutrum nisl. Nulla feugiat elit felis, nec vulputate
-                    velit laoreet nec.</li>
-            </ul>
         {% endblock %}
         {% if theses %}
-            <h3>Theses</h3>
+            <h4>Theses</h4>
             <div class="theses-container">
                 <div class="thesis">
                     <figure>
