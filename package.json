@@ -4,11 +4,12 @@
   "description": "Static webpage for the Mozilla Internet Ecosystem (MIECO)",
   "scripts": {
     "clean": "rimraf dist",
+    "prestart": "npm run build:jinja",
     "start": "npx concurrently \"npm:watch:jinja\" \"npm:watch:parcel\"",
     "build:jinja": "python build.py",
-    "build": "npm run clean && npm run build:jinja && parcel build html_output/mieco/index.html --no-source-maps --public-url ../",
+    "build": "npm run clean && npm run build:jinja && parcel build html_output/mieco/**/*.html --no-source-maps",
     "watch:jinja": "npx watch 'npm run build:jinja' pages/  templates/",
-    "watch:parcel": "npm run clean && npx parcel html_output/mieco/index.html --port 8000"
+    "watch:parcel": "npx parcel html_output/mieco/**/*.html --port 8000"
   },
   "repository": {
     "type": "git",
@@ -38,6 +39,7 @@
       "(.*)\\.(js)": "js/$1.{hash}.js",
       "(.*)\\.(woff2?)": "fonts/$1.{hash}.$2",
       "(.*)\\.(svg|png|gif|jpg)": "img/$1.{hash}.$2",
+      "(.*)\\/index.html": "mieco/$1/index.html",
       "index.html": "mieco/index.html"
     }
   }

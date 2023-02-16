@@ -1,0 +1,77 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+.mzp-c-breadcrumb {
+    max-width: $content-md;
+    margin: $spacing-md auto 0;
+    background-color:transparent;
+
+    .mzp-c-breadcrumb-list {
+        padding: 0;
+    }
+}
+
+.project-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: $spacing-md;
+    margin-bottom: $spacing-lg;
+
+    @media #{$mq-md} {
+        grid-template-columns: 1fr 2fr;
+    }
+}
+
+.mzp-t-content-md h2 {
+    @include font-size(40px);
+    text-align: center;
+}
+
+.cohort-about {
+    padding-top: 0;
+
+    .project-company {
+        @include font-size(14px);
+        margin-bottom: 0;
+    }
+
+    ul {
+        list-style-type: disc;
+        padding-left: $spacing-md;
+
+        li {
+            margin-bottom: $spacing-lg;
+        }
+    }
+}
+
+.theses-container {
+    display: grid;
+    grid-template-columns: 1fr;
+
+
+    .thesis {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border: 1px solid #ccc;
+        padding:  $spacing-2xl 0;
+        margin-bottom: $spacing-lg;
+
+        figcaption {
+            text-align: center;
+            margin-bottom: $spacing-md;
+        }
+    }
+
+    @media #{$mq-md} {
+        grid-template-columns: 1fr 1fr;
+        column-gap: $spacing-md;
+
+        thesis {
+            margin-bottom: 0;
+        }
+    }
+}
