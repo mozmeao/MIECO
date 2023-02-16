@@ -1,0 +1,73 @@
+{% extends "cohort-base.html" %}
+
+
+{% block member_photo %}<img src="/img/profiles/jeff_lindsay-200.jpg" width="400" height="400"
+    srcset="/img/profiles/jeff_lindsay-400.jpg 2x" alt="">{% endblock %}
+
+{% block member_name %}Jeff Lindsay{% endblock %}
+{% block member_company %}Tractor System{% endblock %}
+{% block member_bio %}Jeff is a rogue software engineer and veteran open source hacker. He is a
+founder of SuperHappyDevHouse and Hacker Dojo, and helped create Docker, Twilio, and TIGSource.
+He also pioneered webhooks and early ideas around serverless.{% endblock %}
+{% block member_mission %}Enable people to build and integrate arbitrary
+software systems from high leverage primitives through the "Photoshop of software."{% endblock %}
+
+{% block project_desc %}
+<p>I'm bootstrapping a malleable operating and development environment called Tractor Studio, intended to become a
+"Photoshop of software." Towards this goal, I'm working on several powerful software primitives that also incidentally build out Tractor Studio.
+I refer to these primitives collectively as the Tractor system. Currently released and open source are Apptron and Treehouse. Two projects that will be out soon are Manifold and
+Tractor Workbench.
+</p>
+<p>Apptron is a primitive for working with native desktop APIs and building cross platform webview apps, similar to
+Electron but much lighter and language agnostic. Apptron is an example of a high-leverage software primitive.</p>
+
+<p>Treehouse is a toolkit for building powerful information tools like Notion and Obsidian. As a toolkit, it comes with a
+fully usable "note-taking" frontend that you can extend or customize and then "bring your own backend". This project is
+intended to validate lightweight, generic frontends that should exist for common types of apps, and provide a framework
+for future generic frontends.</p>
+<p>The core primitive of Tractor is called Manifold, which is an embeddable runtime for assembling software from disparate
+components into a common data structure and API. This can be used directly by operators and developers, or be used with
+generic or specialized frontend interfaces for end-users.</p>
+<p>A prototype of Tractor Studio is being developed to be open sourced soon called Tractor Workbench, which is an extension
+to VS Code for working with Manifold. Workbench is intended to inform and bootstrap Tractor Studio, which itself is to
+be built through Manifold.</p>
+
+{% endblock %}
+{% block collaborator_text %}
+<p>I'm always looking for help and contributors to the active open source projects (Apptron, Treehouse) in any capacity
+(dev, docs, maintainers, marketing, etc), but I'd really like to find an open source hacker to help me start a new R&D
+project around universal API schemas. Not just web APIs, but libraries as well.</p>
+
+<p>I want to build an open repository and toolchain for building out and collectively maintaining schemas for any API.
+These schemas could be used for code generation, documentation, interactive consoles, but I'm interested in using them
+to data-drive any system with user facing external integrations or "connectors" found in many low-code/no-code
+offerings. This is to help reduce the code duplication across these products and projects, and make these kinds of
+integrations more accessible. It would also serve Tractor Studio.</p>
+
+<p>I've done lots of work with OpenAPI, I've used Electron's API schema to re-expose the API in other languages (early
+Apptron research), I've built out a toolchain (github.com/progrium/macschema) to parse Apple documentation to produce
+schemas used to generate Go bindings (github.com/progrium/macdriver), and a few other preliminary experiments in this
+direction.</p>
+
+<p>There is probably a startup in this alone, but being an open repository and having crowdsource-oriented tooling is a big
+part of the vision. Let's collaborate and see where it goes!
+</p>
+{% endblock %}
+{% block accomplishments %}
+<ul>
+    <li>In the 2000s I helped start legendary, influential hacker parties in Silicon Valley called SuperHappyDevHouse, and later
+    the hackerspace Hacker Dojo.</li>
+    <li>I coined and pioneered webhooks with an eye towards the no-code/low-code world it would enable.
+    </li>
+    <li>I consulted on the design and helped prototype Docker, then developed a number of tools in that ecosystem under the banner Glider Labs.
+    </li>
+    <li>In general, I've developed many open source tools and libraries, some pretty influential like Dokku, logspout, registrator, localtunnel, JWT, RelMeAuth, and RequestBin.
+    </li>
+    <li>I've worked and consulted on many different kinds of software projects with lots of organizations, including NASA Ames, Twilio, Netflix, Hashicorp, American Express, DigitalOcean, and Docker.
+    </li>
+</ul>
+{% endblock %}
+{% block interests %}Obviously tools for tool-makers, but ultimately tools to unlock creativity in all directions. I'm also into music (playing/writing/producing), films and filmmaking (yet to be explored), and indie game development (completed several small projects).
+
+I'm big into history as well, specifically of technology and computers (therefore retro computing), and have a semi-obsession with systems theory and systems thinking.
+{% endblock %}

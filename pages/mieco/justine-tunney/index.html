@@ -1,0 +1,66 @@
+{% extends "cohort-base.html" %}
+
+
+{% block member_photo %}<img src="/img/profiles/justine_tunney-200.jpg" width="400" height="400"
+    srcset="/img/profiles/justine_tunney-400.jpg 2x" alt="">{% endblock %}
+
+{% block member_name %}Justine Tunney{% endblock %}
+{% block member_company %}Actually Portable Executable{% endblock %}
+{% block member_bio %}Justine is an activist who started as a cyber security hacker and used that
+experience to improve the security of open source software. She is the creator of Redbean, an
+open source web server that allows you to build local web apps in a single zip executable.{% endblock %}
+{% block member_mission %}Extend the reach of universal binary files from
+x86 chips to work on ARM chips.{% endblock %}
+
+{% block project_desc %}
+<p>I designed the Actually Portable Executable format which makes it possible to build native local-first programs as a
+single file that’ll run on the six major desktop / server operating systems, in addition to booting from BIOS / EFI as
+its own operating system too. The APE format is used by the Redbean web server, and has been ported to several languages
+such as Python, Perl, and OCaml.</p>
+
+<p>Right now I’m focusing on helping these portable binaries reach a broader audience, that includes Apple M1, Raspberry
+Pi, Haiku, and other platforms, while staying true to the single file vision. I’m doing that by building an embeddable
+JITing virtual machine called Blinkenlights that’s as fast as Qemu while having a 10x smaller footprint. I’m patching
+kernels like Linux to have better native support for APE, and cross-compiling Cosmopolitan Libc to native ARM. Blink is
+also going to help bring APE binaries to the web, by compiling it to WASM. This will help us bring Linux software to the
+browser, with fast downloads since Blink doesn’t require that we emulate the Linux kernel too.</p>
+
+{% endblock %}
+{% block project_sub_text %}
+<p>I also work on build systems and sandboxing technologies. Making local binaries more portable and able to be shared
+    freely, is of little use, if others can’t run them safely and confidently. I’m solving that by porting OpenBSD
+    system calls to Linux, and incorporating them into both libraries and common tools like GNU Make.</p>
+{% endblock %}
+<!-- collaborator text should be a string that will be added to a <p> tag-->
+{% block collaborator_text %}
+<p>I’m excited to collaborate on any low-level bit fiddling project, particularly operating systems, system calls,
+emulators, libraries, and compilers.</p>
+
+<p>I’m especially interested in collaborating with anyone who has ideas that will help APE reach more operating systems and
+hardware architectures. For example, building a JITing virtual machine for ARM has been very rewarding, since it not
+only helps us better serve Apple users, but it opens the door to also supporting more freedom-focused underdog hardware
+like RISC-V and OpenPOWER.</p>
+{% endblock %}
+
+{% block accomplishments %}
+<ul>
+<li>My web server Redbean is the third most upvoted Show HN project in Hacker News history. The Register called it "a bunch
+of almost unbelievably clever tech tricks".
+</li>
+<li>While working at Google, I organized 50 of my peers to patch a critical Apache security vulnerability in 2,600 GitHub
+projects in only a few days. It was called Operation Rosehub and I later blogged about how any other developer is able
+to do the same.</li>
+<li>Twelve years ago I created a website (OccupyWallSt.org) and a Twitter handle (OccupyWallSt) which helped organize a
+worldwide protest against financial corruption, and later became the central voice of the movement.</li>
+</ul>
+{% endblock %}
+
+{% block interests %}
+Just like when I helped organize a community in Zuccotti Park where anyone could show up, camp without asking
+permission, and reinvent a better world to match their own visions, I also believe in helping software developers do the
+same. My projects like Actually Portable Executable overcome artificial restrictions that create toil for developers,
+and they empower open source devs to reach a broader audience.
+
+I believe in elevating the quality of software through
+world class engineering, and most importantly, making that accessible to every member of our society.
+{% endblock %}

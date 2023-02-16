@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block page_css %}<link rel="stylesheet" href="../../../css/style.scss">{% endblock %}
+
+{% block content %}
+    <nav aria-label="breadcrumb" class="mzp-c-breadcrumb">
+        <ol class="mzp-c-breadcrumb-list">
+            <li class="mzp-c-breadcrumb-item">
+                <a href="/mieco">About MIECO</a>
+            </li>
+            <li aria-current="page" class="mzp-c-breadcrumb-item">
+                {% block member_name %}{% endblock %}
+            </li>
+        </ol>
+    </nav> <!-- end breadcrumb -->
+    <section class="mzp-l-content mzp-t-content-md">
+        <h2><span class="dark-highlight">Project</span></h2>
+        {% block project_desc%}{% endblock %}
+        {% if project_sub_text %}
+            {% block project_sub_text %}{% endblock %}
+        {% endif %}
+        <div>
+            <h4>Collaborators</h4>
+            {% block collaborator_text %}{% endblock %}
+        </div>
+    </section> <!-- end main container -->
+    <section class="mzp-l-content mzp-t-content-md cohort-about">
+        <h2><span class="dark-highlight">About</span></h2>
+        <div class="project-info">
+            {% block member_photo %}<img src="/img/placeholder.png" width="400" height="400" srcset="{{ profile_photo_src_high_res }} 2x" alt="">{% endblock %}
+            <div>
+                <p class="project-company">{% block member_company %}{% endblock %}</p>
+                <h4>{{ self.member_name() }}</h4>
+                <p>{% block member_bio %}{% endblock %}</p>
+                <p class="c-card-mission"><strong>Mission: </strong>{% block member_mission %}{% endblock %}</p>
+                <p><strong>Interests: </strong>{% block interests %}{% endblock %}</p>
+            </div>
+        </div> <!-- end project info -->
+        <h4>Accomplishments</h4>
+        {% block accomplishments %}
+        {% endblock %}
+        {% if theses %}
+            <h4>Theses</h4>
+            <div class="theses-container">
+                <div class="thesis">
+                    <figure>
+                        <img src="/img/theses.svg">
+                        <figcaption>Name of Thesis</figcaption>
+                    </figure>
+                    <a href="#" class="mzp-c-button">Download Thesis</a>
+                </div>
+                <div class="thesis">
+                    <figure>
+                        <img src="/img/theses.svg">
+                        <figcaption>Name of Thesis</figcaption>
+                    </figure>
+                    <a href="#" class="mzp-c-button">Download Thesis</a>
+                </div>
+            </div>
+        {% endif %}
+    </section>
+    <section class="mzp-t-dark gradient-bg">
+        <div class="mzp-l-content mzp-l-columns mzp-t-columns-two">
+            <h2 class="collaborate-title">Want to collaborate with us?</h2>
+            <div>
+                <p>We are constantly looking for new ways to collaborate with individuals and organizations who share our
+                    passion for building a healthier internet. Whether you want to be a guest speaker to our cohorts, a
+                    potential partner who can provide additional resources, or someone that just wants to support the MIECO
+                    program in some shape or form, we’re all ears!</p>
+                <a href="../index.html#newsletter-section" class="mzp-c-button mzp-t-dark">Contact us</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}
