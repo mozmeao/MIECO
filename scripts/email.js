@@ -13,6 +13,8 @@ import {
     postToEmailServer
 } from './form-utils';
 
+import "/node_modules/@mozilla-protocol/core/protocol/js/protocol-newsletter.min.js";
+
 let form;
 
 const EmailForm = {

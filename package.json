@@ -5,11 +5,11 @@
   "scripts": {
     "clean": "rimraf dist",
     "prestart": "npm run build:jinja",
-    "start": "npx concurrently \"npm:watch:jinja\" \"npm:watch:parcel\"",
+    "start": "npx concurrently \"npm:watch:jinja\" \"npm:watch:webpack\"",
+    "build": "npm run build:jinja && webpack --mode=production",
     "build:jinja": "python build.py",
-    "build": "npm run clean && npm run build:jinja && parcel build html_output/mieco/**/*.html --no-source-maps",
     "watch:jinja": "npx watch 'npm run build:jinja' pages/  templates/",
-    "watch:parcel": "npx parcel html_output/mieco/**/*.html --port 8000"
+    "watch:webpack": "webpack serve --mode=development"
   },
   "repository": {
     "type": "git",
@@ -23,24 +23,22 @@
   "homepage": "https://github.com/mozmeao/MEICO#readme",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.8.0",
+    "babel-loader": "^9.1.2",
+    "clean-webpack-plugin": "^4.0.0",
     "concurrently": "^7.6.0",
-    "parcel": "^2.8.0",
-    "parcel-namer-rewrite": "^2.0.0-rc.3",
-    "watch": "^1.0.2"
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.7.3",
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.7.2",
+    "sass-loader": "^13.2.0",
+    "watch": "^1.0.2",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
     "@mozilla-protocol/core": "^16.0.1",
     "rimraf": "^3.0.2"
-  },
-  "parcel-namer-rewrite": {
-    "hashing": "always",
-    "rules": {
-      "(.*)\\.(css)": "css/$1.{hash}.css",
-      "(.*)\\.(js)": "js/$1.{hash}.js",
-      "(.*)\\.(woff2?)": "fonts/$1.{hash}.$2",
-      "(.*)\\.(svg|png|gif|jpg)": "img/$1.{hash}.$2",
-      "(.*)\\/index.html": "mieco/$1/index.html",
-      "index.html": "mieco/index.html"
-    }
   }
 }
