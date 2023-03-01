@@ -1,9 +1,9 @@
-# MEICO
+# MIECO
 Webpage for the Mozilla Innovations team at https://future.mozilla.org and the Mozilla Internet Ecosystem (MIECO).
 
 ## Getting Started
 
-This project is a Static webpage with HTML, CSS and JS. We use [ParcelJS](https://parceljs.org/) to bundle everything to the `dist/` folder. This project also uses [Jinja Templates](https://jinja.palletsprojects.com/en/3.1.x/) to enable the use of templating in this project. To convert Jinja templates to HTML, we use a Python script.
+This project is a Static webpage with HTML, CSS and JS. We use [Webpack](https://webpack.js.org/) to bundle everything to the `dist/` folder. This project also uses [Jinja Templates](https://jinja.palletsprojects.com/en/3.1.x/) to enable the use of templating in this project. To convert Jinja templates to HTML, we use a Python script.
 
 ## Installation
 These instruction assume you have Python, pip and NodeJS installed.
@@ -30,7 +30,7 @@ Once you install all of the dependencies you can run this command to view the si
 npm run start
 ```
 
-That will run both the Jinja build and the Parcel build. When a Jinja template is changed, it will rerun the `build.py` script.
+That will run both the Jinja build and the webpack dev server. When a Jinja template is changed, it will rerun the `build.py` script.
 
 ## Folder Hierarchy  
 
