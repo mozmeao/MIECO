@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Static webpage for the Mozilla Internet Ecosystem (MIECO)",
   "scripts": {
-    "clean": "rimraf dist",
     "prestart": "npm run build:jinja",
     "start": "npx concurrently \"npm:watch:jinja\" \"npm:watch:webpack\"",
     "build": "npm run build:jinja && webpack --mode=production",
@@ -38,7 +37,6 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
-    "@mozilla-protocol/core": "^16.0.1",
-    "rimraf": "^3.0.2"
+    "@mozilla-protocol/core": "^16.0.1"
   }
 }
