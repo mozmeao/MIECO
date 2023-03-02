@@ -1,31 +1,35 @@
 {% extends "base.html" %}
 
 {% set initiatives = [
-        { title: "Metaverse / XR", desc: "Hubs is our private, fully open-source virtual world platform that runs right in your browser.", link: "https://mozilla.org"},
-        { title: "Creation & user generated content", desc: "Exploring the future of content creation like outside the gated walls of social media platforms and big tech.", link: "https://mozilla.org"},
-        { title: "AI & machine learning", desc: "Mozilla Common Voice is an initiative to help teach machines how real people speak.", link: "https://mozilla.org"},
-        { title: "Innovation ecosystem", desc: "The Mozilla Internet Ecosystem (MIECO) Program funds innovators building a healthier internet experience.", link: "/mieco"}
+        { "title": "Metaverse / XR", "desc": "Hubs is our private, fully open-source virtual world platform that runs right in your browser.", "link": "https://mozilla.org"},
+        { "title": "Creation & user generated content", "desc": "Exploring the future of content creation like outside the gated walls of social media platforms and big tech.", "link": "https://mozilla.org"},
+        { "title": "AI & machine learning", "desc": "Mozilla Common Voice is an initiative to help teach machines how real people speak.", "link": "https://mozilla.org"},
+        { "title": "Innovation ecosystem", "desc": "The Mozilla Internet Ecosystem (MIECO) Program funds innovators building a healthier internet experience.", "link": "/mieco"}
     ]
 %}
 
+{% block page_title %}Innovations{% endblock %}
+
+{% block page_css %}<link rel="stylesheet" href="/css/style.css">{% endblock %}
+
 {% block content %}
     <!-- Hero -->
-    <section class="c-innovation-hero">
-        <div>
-            <h1>The exponential power of building on trust</h1>
-            <h2>Innovations</h2>
+    <section class="c-innovation-hero mzp-t-dark">
+        <div class="mzp-l-content">
+            <div class="hero-text-wrapper">
+                <h1>Innovations</h2>
+                <h2>The exponential power of building on trust</h1>
+                <p>Join us in accelerating the future of a more ethically responsible, human-centered internet.</p>
+                <a class="mzp-c-button mzp-t-dark" href="#newsletter">Connect with us</a>
+            </div>
         </div>
-        <p>Join us in accelerating the future of a more ethically responsible, human-centered internet.</p>
-        <a href="#newsletter">Connect with us</a>
     </section>
     <!-- vision -->
     <section class="c-innovation-split mzp-c-split mzp-l-split-body-wide">
         <div class="mzp-c-split-container">
             <div class="mzp-c-split-body">
-                <div class="heading-grid">
-                    <h2>A better internet, designed to serve humanity’s best interests</h2>
-                    <h3>Our Vision</h3>
-                </div>
+                <h2>Our Vision</h2>
+                <h3>A better internet, designed to serve humanity’s best interests</h3>
                 <p>We see a powerful new wave of internet innovation and transformation taking shape, formed in a way that enriches
                 humanity — not just a handful of private companies.</p>
             </div>
@@ -35,13 +39,11 @@
         </div>
     </section>
     <!-- approach -->
-    <section class="c-innovation-split mzp-c-split mzp-l-split-body-wide">
+    <section class="c-innovation-split mzp-c-split mzp-l-split-body-wide mzp-l-split-reversed">
         <div class="mzp-c-split-container">
             <div class="mzp-c-split-body">
-                <div class="heading-grid">
-                    <h2>Experimentation + community</h2>
-                    <h3>Our Approach</h3>
-                </div>
+                <h2>Experimentation + community</h2>
+                <h3>Our Approach</h3>
                 <p>We believe the best innovation happens when a larger ecosystem of diverse people with diverse perspectives collaborate,
                 swap code, and openly trade ideas. In short, innovation doesn’t need to be a lonely business.</p>
             </div>
@@ -51,15 +53,82 @@
         </div>
     </section>
     <!-- initiatives -->
-    <section class="c-innovation-initiatives">
-        <div class="heading-grid">
-            <h2>Turning bold ideas into reality</h2>
-            <h3>Our Initiatives</h3>
-        </div>
-        <div class="c-innovations-picto-grid">
+    <section class="c-innovation-initiatives mzp-l-content">
+        <h2>Our Initiatives</h2>
+        <h3>Turning bold ideas into reality</h3>
+        <div class="c-innovation-picto-grid">
             {% for initiative in initiatives %}
+                <section class="mzp-c-picto">
+                    <div class="mzp-c-picto-image">
+                        <img src="/img/placeholder.png" alt="">
+                    </div>
+                    <h4 class="mzp-c-picto-heading">{{ initiative.title }}</h4>
+                    <p>{{ initiative.desc }}</p>
+                    <a href="{{ initiative.link }}">Learn more</a>
+                </section>
+            {% endfor %}
         </div>
     </section>
     <!-- newsletter -->
-    <section class="c-innovation-newsletter"></section>
+    <section class="c-innovation-newsletter">
+        <aside class="mzp-c-newsletter">
+            <h3>Keep up with our latest work</h3>
+            <form id="newsletter-form" class="mzp-c-newsletter-form" name="newsletter-form">
+                <fieldset class="mzp-c-newsletter-content">
+                    <div class="mzp-c-form-errors hidden" id="newsletter-errors">
+                        <ul class="mzp-u-list-styled">
+                            <li class="error-email-invalid hidden">Please enter a valid email address with less than 120
+                                characters</li>
+                            <li class="error-privacy-policy hidden">You must agree to the privacy notice</li>
+                            <li class="error-try-again-later hidden">We are sorry, but there was a problem with our system.
+                                Please try again later!</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <label for="email">Your email address</label>
+                        <input type="email" class="mzp-js-email-field" id="email" name="email" placeholder="yourname@example.com"
+                            required aria-required="true">
+                    </div>
+                    <div id="newsletter-details" class="mzp-c-newsletter-details">
+                        <div>
+                            <label for="name">Name</label>
+                            <input type="text" class="name" id="name" name="name">
+                        </div>
+                        <fieldset class="mzp-u-inline interests">
+                            <label>What are you interested in learning more about?</label>
+                            <label for="application" class="mzp-u-inline">
+                                <input type="checkbox" id="application" name="interests" value="application">Application
+                            </label>
+                            <label for="collaboration" class="mzp-u-inline">
+                                <input type="checkbox" id="collaboration" name="interests" value="collaboration">Collaboration
+                            </label>
+                            <label for="other" class="mzp-u-inline">
+                                <input type="checkbox" id="other" name="interests" value="other">Other
+                            </label>
+                        </fieldset>
+                        <div class="mzp-c-field">
+                            <label for="description">Description</label>
+                            <textarea placeholder="What would you like to have us contact you about?" rows="5" cols="38"
+                                name="description" id="description" maxlength="750"></textarea>
+                        </div>
+                        <p>
+                            <label for="privacy" class="mzp-u-inline">
+                                <input type="checkbox" id="privacy" name="privacy" required aria-required="true">
+                                I’m okay with Mozilla handling my info as explained in <a
+                                    href="https://www.mozilla.org/privacy/websites/">this Privacy Notice</a>
+                            </label>
+                        </p>
+                    </div>
+                    <p class="mzp-c-form-submit">
+                        <button type="submit" class="mzp-c-button" id="newsletter-submit">Get in touch</button>
+                        <span class="mzp-c-fieldnote">We will only send you Mozilla-related information.</span>
+                    </p>
+                </fieldset>
+            </form>
+        </aside>
+    </section>
+{% endblock %}
+
+{% block js %}
+    <script type="module" src="/scripts/email.js"></script>
 {% endblock %}

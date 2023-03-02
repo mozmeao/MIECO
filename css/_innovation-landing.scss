@@ -1,0 +1,68 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+$image-path: '../../img';
+$font-path: '../../fonts';
+
+@import '/node_modules/@mozilla-protocol/core/protocol/css/components/split';
+
+
+
+.c-innovation-hero .hero-text-wrapper {
+    max-width: 50%;
+
+    h1 {
+        @include font-size(28px);
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    h2 {
+        @include font-size(56px);
+    }
+}
+
+.c-innovation-split {
+    h2 {
+        @include font-base;
+        @include font-size(18px);
+        font-weight: 500;;
+        text-transform: uppercase;
+    }
+
+    h3 {
+        @include font-mozilla;
+        @include font-size(48px)
+    }
+}
+
+.c-innovation-initiatives {
+    h2 {
+        @include font-base;
+        @include font-size(20px);
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    h3 {
+        @include font-mozilla;
+        @include font-size(48px);
+    }
+
+    .c-innovation-picto-grid {
+        display: grid;
+        grid-template-columns: [start] 1fr 1fr 1fr 1fr [end];
+        column-gap: 48px;
+        row-gap: 32px;
+        margin-top: $layout-lg;
+    }
+}
+
+.c-innovation-newsletter {
+    background-color: #d9d9d9;
+
+    h3 {
+        @include font-size(48px);
+    }
+}

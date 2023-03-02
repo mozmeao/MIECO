@@ -52,6 +52,7 @@ module.exports = {
   devServer: {
     port: 8000,
     static: false,
+    hot: true,
     watchFiles: ["html_output/**/*.html", "css/*.scss", "scripts/*.js"],
   },
   plugins: [
@@ -60,7 +61,7 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: "mieco/**/*.html",
+          from: "**/*.html",
           context: path.resolve(__dirname, "html_output"),
         },
         {
