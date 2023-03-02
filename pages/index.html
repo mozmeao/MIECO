@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% set initiatives = [
+        { title: "Metaverse / XR", desc: "Hubs is our private, fully open-source virtual world platform that runs right in your browser.", link: "https://mozilla.org"},
+        { title: "Creation & user generated content", desc: "Exploring the future of content creation like outside the gated walls of social media platforms and big tech.", link: "https://mozilla.org"},
+        { title: "AI & machine learning", desc: "Mozilla Common Voice is an initiative to help teach machines how real people speak.", link: "https://mozilla.org"},
+        { title: "Innovation ecosystem", desc: "The Mozilla Internet Ecosystem (MIECO) Program funds innovators building a healthier internet experience.", link: "/mieco"}
+    ]
+%}
+
+{% block content %}
+    <!-- Hero -->
+    <section class="c-innovation-hero">
+        <div>
+            <h1>The exponential power of building on trust</h1>
+            <h2>Innovations</h2>
+        </div>
+        <p>Join us in accelerating the future of a more ethically responsible, human-centered internet.</p>
+        <a href="#newsletter">Connect with us</a>
+    </section>
+    <!-- vision -->
+    <section class="c-innovation-split mzp-c-split mzp-l-split-body-wide">
+        <div class="mzp-c-split-container">
+            <div class="mzp-c-split-body">
+                <div class="heading-grid">
+                    <h2>A better internet, designed to serve humanity’s best interests</h2>
+                    <h3>Our Vision</h3>
+                </div>
+                <p>We see a powerful new wave of internet innovation and transformation taking shape, formed in a way that enriches
+                humanity — not just a handful of private companies.</p>
+            </div>
+            <div class="mzp-c-split-media">
+                <img src="/img/placeholder.png">
+            </div>
+        </div>
+    </section>
+    <!-- approach -->
+    <section class="c-innovation-split mzp-c-split mzp-l-split-body-wide">
+        <div class="mzp-c-split-container">
+            <div class="mzp-c-split-body">
+                <div class="heading-grid">
+                    <h2>Experimentation + community</h2>
+                    <h3>Our Approach</h3>
+                </div>
+                <p>We believe the best innovation happens when a larger ecosystem of diverse people with diverse perspectives collaborate,
+                swap code, and openly trade ideas. In short, innovation doesn’t need to be a lonely business.</p>
+            </div>
+            <div class="mzp-c-split-media">
+                <img src="/img/placeholder.png">
+            </div>
+        </div>
+    </section>
+    <!-- initiatives -->
+    <section class="c-innovation-initiatives">
+        <div class="heading-grid">
+            <h2>Turning bold ideas into reality</h2>
+            <h3>Our Initiatives</h3>
+        </div>
+        <div class="c-innovations-picto-grid">
+            {% for initiative in initiatives %}
+        </div>
+    </section>
+    <!-- newsletter -->
+    <section class="c-innovation-newsletter"></section>
+{% endblock %}
