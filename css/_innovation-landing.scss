@@ -9,17 +9,28 @@ $font-path: '../../fonts';
 
 
 
-.c-innovation-hero .hero-text-wrapper {
-    max-width: 50%;
+.c-innovation-hero {
+    background-image: url("/img/landing/innovations-hero.svg");
+    background-position: right;
+    background-repeat: no-repeat;
 
-    h1 {
-        @include font-size(28px);
-        font-weight: 500;
-        text-transform: uppercase;
+    .hero-text-wrapper {
+        h1 {
+            @include font-size(28px);
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            @include font-size(56px);
+        }
     }
+    @media #{$mq-md} {
+        background-size: 50%;
 
-    h2 {
-        @include font-size(56px);
+        .hero-text-wrapper {
+            max-width: 50%;
+        }
     }
 }
 
@@ -33,7 +44,7 @@ $font-path: '../../fonts';
 
     h3 {
         @include font-mozilla;
-        @include font-size(48px)
+        @include font-size(42px)
     }
 }
 
@@ -52,17 +63,47 @@ $font-path: '../../fonts';
 
     .c-innovation-picto-grid {
         display: grid;
-        grid-template-columns: [start] 1fr 1fr 1fr 1fr [end];
+        grid-template-columns: 1fr;
         column-gap: 48px;
         row-gap: 32px;
         margin-top: $layout-lg;
+
+        .mzp-c-picto-image {
+            // this will keep the image container the same size for all items in the grid - and won't resize any of the images
+            height: 84px;
+        }
+
+        .c-picto-cta {
+            color: $color-white;
+            position: relative;
+
+            &:before {
+                content: "\002b  ";
+            }
+        }
+
+        @media #{$mq-md} {
+             grid-template-columns: 1fr 1fr;
+        }
+
+        @media #{$mq-lg} {
+             grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
     }
 }
 
 .c-innovation-newsletter {
-    background-color: #d9d9d9;
 
     h3 {
         @include font-size(48px);
     }
+
+
+
+    // default state - (will only show if user selects "collaborate" radio btn
+    .description {
+        display: none;
+    }
+
 }
+

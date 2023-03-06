@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 
 {% set initiatives = [
-        { "title": "Metaverse / XR", "desc": "Hubs is our private, fully open-source virtual world platform that runs right in your browser.", "link": "https://mozilla.org"},
-        { "title": "Creation & user generated content", "desc": "Exploring the future of content creation like outside the gated walls of social media platforms and big tech.", "link": "https://mozilla.org"},
-        { "title": "AI & machine learning", "desc": "Mozilla Common Voice is an initiative to help teach machines how real people speak.", "link": "https://mozilla.org"},
-        { "title": "Innovation ecosystem", "desc": "The Mozilla Internet Ecosystem (MIECO) Program funds innovators building a healthier internet experience.", "link": "/mieco"}
+        { "title": "Metaverse / XR", "desc": "Mozilla Hubs is our private, fully open-source virtual world platform that runs right in your browser.", "link": "https://mozilla.org", "img": "/img/landing/xr.svg"},
+        { "title": "Creation & user generated content", "desc": "Exploring the future of content creation outside the gated walls of social media platforms and big tech.", "link": "https://mozilla.org", "img": "/img/landing/creation.svg"},
+        { "title": "AI & machine learning", "desc": "Mozilla Common Voice is an initiative to help teach machines how real people speak.", "link": "https://mozilla.org", "img": "/img/landing/ai.svg"},
+        { "title": "Innovation ecosystem", "desc": "The Mozilla Internet Ecosystem (MIECO) Program funds innovators building a healthier internet experience.", "link": "/mieco", "img": "/img/landing/innovation.svg"}
     ]
 %}
 
@@ -19,8 +19,8 @@
             <div class="hero-text-wrapper">
                 <h1>Innovations</h2>
                 <h2>The exponential power of building on trust</h1>
-                <p>Join us in accelerating the future of a more ethically responsible, human-centered internet.</p>
-                <a class="mzp-c-button mzp-t-dark" href="#newsletter">Connect with us</a>
+                <p>Accelerating the future of a more human-centered internet</p>
+                <a class="mzp-c-button mzp-t-dark" href="#newsletter">Join us</a>
             </div>
         </div>
     </section>
@@ -30,11 +30,11 @@
             <div class="mzp-c-split-body">
                 <h2>Our Vision</h2>
                 <h3>A better internet, designed to serve humanity’s best interests</h3>
-                <p>We see a powerful new wave of internet innovation and transformation taking shape, formed in a way that enriches
-                humanity — not just a handful of private companies.</p>
+                <p>We're shaping a powerful new wave of innovation and transformation that enriches humanity — not just a handful of big
+                companies.</p>
             </div>
             <div class="mzp-c-split-media">
-                <img src="/img/placeholder.png">
+                <img src="/img/landing/vision.svg">
             </div>
         </div>
     </section>
@@ -42,35 +42,37 @@
     <section class="c-innovation-split mzp-c-split mzp-l-split-body-wide mzp-l-split-reversed">
         <div class="mzp-c-split-container">
             <div class="mzp-c-split-body">
-                <h2>Experimentation + community</h2>
-                <h3>Our Approach</h3>
+                <h2>Our Approach</h2>
+                <h3>Experimentation + community</h3>
                 <p>We believe the best innovation happens when a larger ecosystem of diverse people with diverse perspectives collaborate,
-                swap code, and openly trade ideas. In short, innovation doesn’t need to be a lonely business.</p>
+                swap code and openly trade ideas.</p>
             </div>
             <div class="mzp-c-split-media">
-                <img src="/img/placeholder.png">
+                <img src="/img/landing/experimentation.svg">
             </div>
         </div>
     </section>
     <!-- initiatives -->
-    <section class="c-innovation-initiatives mzp-l-content">
-        <h2>Our Initiatives</h2>
-        <h3>Turning bold ideas into reality</h3>
-        <div class="c-innovation-picto-grid">
-            {% for initiative in initiatives %}
-                <section class="mzp-c-picto">
-                    <div class="mzp-c-picto-image">
-                        <img src="/img/placeholder.png" alt="">
-                    </div>
-                    <h4 class="mzp-c-picto-heading">{{ initiative.title }}</h4>
-                    <p>{{ initiative.desc }}</p>
-                    <a href="{{ initiative.link }}">Learn more</a>
-                </section>
-            {% endfor %}
+    <section class="c-innovation-initiatives mzp-t-dark">
+        <div class="mzp-l-content">
+            <h2>Our Initiatives</h2>
+            <div class="c-innovation-picto-grid">
+                {% for initiative in initiatives %}
+                    <section class="mzp-c-picto">
+                        <div class="mzp-c-picto-image">
+                            <img src="{{ initiative.img }}" alt="">
+                        </div>
+                        <h4 class="mzp-c-picto-heading">{{ initiative.title }}</h4>
+                        <p>{{ initiative.desc }}</p>
+                        <a class="c-picto-cta" href="{{ initiative.link }}">Learn more</a>
+                    </section>
+                {% endfor %}
+            </div>
         </div>
+
     </section>
     <!-- newsletter -->
-    <section class="c-innovation-newsletter">
+    <section class="mzp-l-content c-innovation-newsletter" id="newsletter-section">
         <aside class="mzp-c-newsletter">
             <h3>Keep up with our latest work</h3>
             <form id="newsletter-form" class="mzp-c-newsletter-form" name="newsletter-form">
@@ -96,17 +98,14 @@
                         </div>
                         <fieldset class="mzp-u-inline interests">
                             <label>What are you interested in learning more about?</label>
-                            <label for="application" class="mzp-u-inline">
-                                <input type="checkbox" id="application" name="interests" value="application">Application
+                            <label for="newsletter" class="mzp-u-inline">
+                                <input class="newsletter" type="radio" name="interest" id="newsletter">Project Updates
                             </label>
                             <label for="collaboration" class="mzp-u-inline">
-                                <input type="checkbox" id="collaboration" name="interests" value="collaboration">Collaboration
-                            </label>
-                            <label for="other" class="mzp-u-inline">
-                                <input type="checkbox" id="other" name="interests" value="other">Other
+                                <input type="radio" name="interest" id="collaboration">Collaboration
                             </label>
                         </fieldset>
-                        <div class="mzp-c-field">
+                        <div class="mzp-c-field description">
                             <label for="description">Description</label>
                             <textarea placeholder="What would you like to have us contact you about?" rows="5" cols="38"
                                 name="description" id="description" maxlength="750"></textarea>

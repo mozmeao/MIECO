@@ -101,6 +101,17 @@ const EmailForm = {
         )
     },
 
+    handleRadioChange: ({target}) => {
+       const isCollaboration = target.id === "collaboration";
+        const description = document.querySelector(".description");
+        if (isCollaboration && target.checked) {
+            description.style.display = "block";
+        } else {
+            description.style.display = "none";
+        }
+
+    },
+
     init: () => {
         form = document.getElementById('newsletter-form');
 
@@ -109,6 +120,11 @@ const EmailForm = {
         }
 
         form.addEventListener('submit', EmailForm.submit, false);
+
+        form.querySelectorAll("input[name=interest]").forEach(function (radio) {
+            radio.checked = false;
+            radio.addEventListener("change", EmailForm.handleRadioChange, false);
+        })
     }
 };
 
