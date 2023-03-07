@@ -59,11 +59,13 @@
             <div class="c-innovation-picto-grid">
                 {% for initiative in initiatives %}
                     <section class="mzp-c-picto">
-                        <div class="mzp-c-picto-image">
-                            <img src="{{ initiative.img }}" alt="">
+                        <div>
+                            <div class="mzp-c-picto-image">
+                                <img src="{{ initiative.img }}" alt="">
+                            </div>
+                            <h4 class="mzp-c-picto-heading">{{ initiative.title }}</h4>
+                             <p>{{ initiative.desc }}</p>
                         </div>
-                        <h4 class="mzp-c-picto-heading">{{ initiative.title }}</h4>
-                        <p>{{ initiative.desc }}</p>
                         <a class="c-picto-cta" href="{{ initiative.link }}">Learn more</a>
                     </section>
                 {% endfor %}
@@ -82,13 +84,14 @@
                             <li class="error-email-invalid hidden">Please enter a valid email address with less than 120
                                 characters</li>
                             <li class="error-privacy-policy hidden">You must agree to the privacy notice</li>
+                            <li class="error-newsletter hidden">Please check at least one of the newsletter options.</li>
                             <li class="error-try-again-later hidden">We are sorry, but there was a problem with our system.
                                 Please try again later!</li>
                         </ul>
                     </div>
                     <div>
                         <label for="email">Your email address</label>
-                        <input type="email" class="mzp-js-email-field" id="email" name="email" placeholder="yourname@example.com"
+                        <input type="email" class="mzp-js-email-field" id="email" name="email" placeholder="Enter your email here"
                             required aria-required="true">
                     </div>
                     <div id="newsletter-details" class="mzp-c-newsletter-details">
@@ -99,16 +102,18 @@
                         <fieldset class="mzp-u-inline interests">
                             <label>What are you interested in learning more about?</label>
                             <label for="newsletter" class="mzp-u-inline">
-                                <input class="newsletter" type="radio" name="interest" id="newsletter">Project Updates
+                                <input class="newsletter" type="checkbox" name="interests" id="newsletter" value="newsletter" >Project Updates
                             </label>
                             <label for="collaboration" class="mzp-u-inline">
-                                <input type="radio" name="interest" id="collaboration">Collaboration
+                                <input type="checkbox" name="interests" id="collaboration" value="collaboration">Collaboration
                             </label>
                         </fieldset>
                         <div class="mzp-c-field description">
                             <label for="description">Description</label>
                             <textarea placeholder="What would you like to have us contact you about?" rows="5" cols="38"
                                 name="description" id="description" maxlength="750"></textarea>
+                            <label for="website" class="">Website</label>
+                            <input type="text" id="website" name="website" placeholder="ex: mozilla.org">
                         </div>
                         <p>
                             <label for="privacy" class="mzp-u-inline">
@@ -124,6 +129,11 @@
                     </p>
                 </fieldset>
             </form>
+            <div id="newsletter-thanks" class="mzp-c-newsletter-thanks">
+                <h3>Thanks!</h3>
+                <p>If you haven’t previously confirmed a subscription to a Mozilla-related newsletter, you may have to do so. Please check
+                your inbox or your spam filter for an email from us.</p>
+            </div>
         </aside>
     </section>
 {% endblock %}

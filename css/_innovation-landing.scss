@@ -68,10 +68,21 @@ $font-path: '../../fonts';
         row-gap: 32px;
         margin-top: $layout-lg;
 
+        .mzp-c-picto {
+            height: 100%;
+
+            @media #{$mq-md} {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+        }
+
         .mzp-c-picto-image {
             // this will keep the image container the same size for all items in the grid - and won't resize any of the images
             height: 84px;
         }
+
 
         .c-picto-cta {
             color: $color-white;
@@ -98,11 +109,13 @@ $font-path: '../../fonts';
         @include font-size(48px);
     }
 
-
-
     // default state - (will only show if user selects "collaborate" radio btn
     .description {
         display: none;
+    }
+
+    .mzp-c-newsletter-thanks {
+        padding-top: 0;
     }
 
 }

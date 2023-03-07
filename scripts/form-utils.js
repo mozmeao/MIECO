@@ -31,7 +31,9 @@ function checkEmailValidity(email) {
 function clearFormErrors(form) {
     const errorMsgs = form.querySelectorAll('.mzp-c-form-errors li');
 
-    form.querySelector('.mzp-c-form-errors').classList.add('hidden');
+    const errorContainer = form.querySelector(".mzp-c-form-errors");
+    errorContainer.classList.add("hidden");
+    errorContainer.style.display = "hidden";
 
     for (let i = 0; i < errorMsgs.length; i++) {
         errorMsgs[i].classList.add('hidden');
@@ -64,7 +66,12 @@ function enableFormFields(form) {
 
 function postToEmailServer(params, successCallback, errorCallback) {
     const xhr = new XMLHttpRequest();
-    const url = "https://www.mozilla.org/en-US/email-mieco/";
+    let url = "https://www.mozilla.org/en-US/email-mieco/";
+
+    if (params.newsletters) {
+        url = "https://basket.mozilla.org/news/subscribe/";
+    }
+
     const { email } = params;
 
     // Emails used in automation for page-level integration tests
@@ -103,12 +110,26 @@ function postToEmailServer(params, successCallback, errorCallback) {
 
     xhr.onerror = errorCallback;
     xhr.open('POST', url, true);
-    xhr.setRequestHeader('Content-type', 'application/json');
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     xhr.timeout = 5000;
     xhr.ontimeout = errorCallback;
     xhr.responseType = 'json';
-    xhr.send(JSON.stringify(params));
+
+    if (params.newsletters) {
+      xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xhr.send(serialize(params));
+    } else {
+      xhr.setRequestHeader("Content-type", "application/json");
+      xhr.send(JSON.stringify(params));
+    }
+}
+
+function serialize(params) {
+    const email = encodeURIComponent(params.email);
+    const newsletters = encodeURIComponent(params.newsletters);
+    const sourceUrl = encodeURIComponent("https://future.mozilla.org");
+
+    return `email=${email}&format=${params.format}${params.country}&lang=${params.lang}&source_url=${sourceUrl}&newsletters=${newsletters}`
 }
 
 
