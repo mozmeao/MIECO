@@ -49,11 +49,20 @@ body {
             content: none;
         }
 
+        .mzp-c-button {
+            display: none;
+        }
+
         @media #{$mq-xs} {
             flex-direction: row;
         }
-    }
 
+        @media #{$mq-md} {
+            .mzp-c-button {
+                display: block;
+            }
+        }
+    }
 }
 
 
@@ -261,6 +270,10 @@ body {
             .interests {
                 margin-bottom: $spacing-md;
             }
+        }
+
+        .mzp-c-form-submit button[type="submit"] {
+            margin-bottom: $spacing-lg;
         }
     }
 }
