@@ -30,6 +30,7 @@ $font-path: '../../fonts';
         }
     }
     @media #{$mq-md} {
+        background-position: right;
         background-size: 50%;
 
         .mzp-l-content {
