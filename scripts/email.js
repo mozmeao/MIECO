@@ -78,14 +78,14 @@ const EmailForm = {
 
 
   submit: (e) => {
-    const name = form.querySelector("input[id=name]").value;
+    const name = form.querySelector('input[id="name"]').value;
     const email = form.querySelector('input[type="email"]').value;
     const interests =
-      Array.from(form.querySelectorAll("input[name=interests]:checked"))
+      Array.from(form.querySelectorAll('input[name="interests"]:checked'))
         .map((interests) => `${interests.value}`)
         .join(",");
     const description = form.querySelector("textarea").value;
-    const website = form.querySelector("input[name=website]")
+    const website = form.querySelector('input["name=website"]');
 
     const params = {
       email,
@@ -157,15 +157,23 @@ const EmailForm = {
       return;
     }
 
-    form.addEventListener("submit", EmailForm.submit, false);
+    if (form.classList.contains("innovations-form")) {
+      const newsletter = form.querySelector("input#newsletter");
+      const checkbox = form.querySelector("input#collaboration");
 
-    const checkbox = form.querySelector("input#collaboration");
-    form.querySelector("input#newsletter").checked = true;
-    if (checkbox.checked) {
-      const description = document.querySelector(".description");
-      description.style.display = "block";
+      if (newsletter) {
+        newsletter.checked = true;
+      }
+
+      if (checkbox?.checked) {
+        const description = document.querySelector(".description");
+        description.style.display = "block";
+      }
+
+      checkbox.addEventListener("change", EmailForm.handleCheckboxChange, false);
     }
-    checkbox.addEventListener("change", EmailForm.handleCheckboxChange, false);
+
+    form.addEventListener("submit", EmailForm.submit, false);
   },
 };
 

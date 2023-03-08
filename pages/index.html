@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% set initiatives = [
-        { "title": "Metaverse / XR", "desc": "Mozilla Hubs is our fully open-source virtual world platform that runs right in your browser..", "link": "https://hubs.mozilla.com/", "img": "/img/landing/xr.svg"},
+        { "title": "Metaverse / XR", "desc": "Mozilla Hubs is our fully open-source virtual world platform that runs right in your browser.", "link": "https://hubs.mozilla.com/", "img": "/img/landing/xr.svg"},
         { "title": "Creation & user generated content", "desc": "Exploring the future of content creation outside the gated walls of social media platforms and big tech.", "link": "https://blog.mozilla.org/en/mozilla/mozilla-launch-fediverse-instance-social-media-alternative/", "img": "/img/landing/creation.svg"},
         { "title": "AI & machine learning", "desc": "Mozilla Common Voice is an initiative to help teach machines how real people speak.", "link": "https://commonvoice.mozilla.org/en", "img": "/img/landing/ai.svg"},
         { "title": "Innovation ecosystem", "desc": "The Mozilla Internet Ecosystem (MIECO) Program funds innovators building a healthier internet experience.", "link": "/mieco", "img": "/img/landing/innovation.svg"}
@@ -21,12 +21,12 @@
                 <h2>An internet built on behalf of humanity</h1>
                 <p>We're shaping a powerful new wave of innovation and transformation that enriches humanity — not just a handful of big
                 companies.</p>
-                <a class="mzp-c-button mzp-t-dark" href="#newsletter">Connect with us</a>
+                <a class="mzp-c-button mzp-t-dark" href="#newsletter-section">Connect with us</a>
             </div>
         </div>
     </section>
     <!-- vision -->
-    <section class="c-innovation-split mzp-c-split mzp-l-split-body-wide">
+    <section class="c-innovation-split mzp-c-split mzp-l-split-body-wide mzp-l-split-center-on-sm-md">
         <div class="mzp-c-split-container">
             <div class="mzp-c-split-body">
                 <h3>People over profits</h3>
@@ -39,7 +39,7 @@
         </div>
     </section>
     <!-- approach -->
-    <section class="c-innovation-split mzp-c-split mzp-l-split-body-wide mzp-l-split-reversed">
+    <section class="c-innovation-split mzp-c-split mzp-l-split-body-wide mzp-l-split-reversed mzp-l-split-center-on-sm-md">
         <div class="mzp-c-split-container">
             <div class="mzp-c-split-body">
                 <h3>Empowering community-driven innovation</h3>
@@ -63,7 +63,7 @@
                     <section class="mzp-c-picto">
                         <div>
                             <div class="mzp-c-picto-image">
-                                <img src="{{ initiative.img }}" alt="">
+                                <img src="{{ initiative.img }}" alt="" height="100%">
                             </div>
                             <h4 class="mzp-c-picto-heading">{{ initiative.title }}</h4>
                              <p>{{ initiative.desc }}</p>
@@ -79,7 +79,7 @@
     <section class="mzp-l-content c-innovation-newsletter" id="newsletter-section">
         <aside class="mzp-c-newsletter">
             <h3>Keep up with our latest work</h3>
-            <form id="newsletter-form" class="mzp-c-newsletter-form" name="newsletter-form">
+            <form id="newsletter-form" class="mzp-c-newsletter-form innovations-form" name="newsletter-form">
                 <fieldset class="mzp-c-newsletter-content">
                     <div class="mzp-c-form-errors hidden" id="newsletter-errors">
                         <ul class="mzp-u-list-styled">
@@ -98,13 +98,13 @@
                     </div>
                     <div id="newsletter-details" class="mzp-c-newsletter-details">
                         <div>
-                            <label for="first-name">Name</label>
-                            <input type="text" class="name" id="first-name" name="name">
+                            <label for="name">Name</label>
+                            <input type="text" class="name" id="name" name="name">
                         </div>
                         <fieldset class="mzp-u-inline interests">
                             <label>What are you interested in learning more about?</label>
                             <label for="newsletter" class="mzp-u-inline">
-                                <input class="newsletter" type="checkbox" name="interests" id="newsletter" value="newsletter" >Project Updates
+                                <input class="newsletter" type="checkbox" name="interests" id="newsletter" value="newsletter">Project Updates
                             </label>
                             <label for="collaboration" class="mzp-u-inline">
                                 <input type="checkbox" name="interests" id="collaboration" value="collaboration">Collaboration

@@ -11,8 +11,12 @@ $font-path: '../../fonts';
 
 .c-innovation-hero {
     background-image: url("/img/landing/innovations-hero.svg");
-    background-position: right;
+    background-position: $spacing-2xl;
     background-repeat: no-repeat;
+
+    .mzp-l-content {
+        background: linear-gradient(43.8deg, rgba(0, 0, 0, 0.6) 47.4%, rgba(0, 0, 0, 0) 144.39%);
+    }
 
     .hero-text-wrapper {
         h1 {
@@ -27,6 +31,10 @@ $font-path: '../../fonts';
     }
     @media #{$mq-md} {
         background-size: 50%;
+
+        .mzp-l-content {
+            background: none;
+        }
 
         .hero-text-wrapper {
             max-width: 50%;
@@ -46,6 +54,10 @@ $font-path: '../../fonts';
         @include font-mozilla;
         @include font-size(42px)
     }
+
+    img {
+        display: block;
+    }
 }
 
 .c-innovation-initiatives {
@@ -64,12 +76,16 @@ $font-path: '../../fonts';
     .c-innovation-picto-grid {
         display: grid;
         grid-template-columns: 1fr;
-        column-gap: 48px;
-        row-gap: 32px;
+        column-gap: $spacing-2xl;
+        row-gap: $spacing-xl;
         margin-top: $layout-lg;
 
         .mzp-c-picto {
             height: 100%;
+
+            p {
+                @include font-size(16px);
+            }
 
             @media #{$mq-md} {
                 display: flex;
@@ -81,16 +97,14 @@ $font-path: '../../fonts';
         .mzp-c-picto-image {
             // this will keep the image container the same size for all items in the grid - and won't resize any of the images
             height: 84px;
-        }
 
+            img {
+                height: 100%;
+            }
+        }
 
         .c-picto-cta {
             color: $color-white;
-            position: relative;
-
-            &:before {
-                content: "\002b  ";
-            }
         }
 
         @media #{$mq-md} {
