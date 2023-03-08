@@ -87,12 +87,6 @@ $font-path: '../../fonts';
             p {
                 @include font-size(16px);
             }
-
-            @media #{$mq-md} {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-            }
         }
 
         .mzp-c-picto-image {
