@@ -109,6 +109,10 @@ $font-path: '../../fonts';
         @include font-size(48px);
     }
 
+    label[for="email"] {
+        @include visually-hidden;
+    }
+
     // default state - (will only show if user selects "collaborate" radio btn
     .description {
         display: none;

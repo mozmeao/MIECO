@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
 {% set initiatives = [
-        { "title": "Metaverse / XR", "desc": "Mozilla Hubs is our private, fully open-source virtual world platform that runs right in your browser.", "link": "https://mozilla.org", "img": "/img/landing/xr.svg"},
-        { "title": "Creation & user generated content", "desc": "Exploring the future of content creation outside the gated walls of social media platforms and big tech.", "link": "https://mozilla.org", "img": "/img/landing/creation.svg"},
-        { "title": "AI & machine learning", "desc": "Mozilla Common Voice is an initiative to help teach machines how real people speak.", "link": "https://mozilla.org", "img": "/img/landing/ai.svg"},
+        { "title": "Metaverse / XR", "desc": "Mozilla Hubs is our fully open-source virtual world platform that runs right in your browser..", "link": "https://hubs.mozilla.com/", "img": "/img/landing/xr.svg"},
+        { "title": "Creation & user generated content", "desc": "Exploring the future of content creation outside the gated walls of social media platforms and big tech.", "link": "https://blog.mozilla.org/en/mozilla/mozilla-launch-fediverse-instance-social-media-alternative/", "img": "/img/landing/creation.svg"},
+        { "title": "AI & machine learning", "desc": "Mozilla Common Voice is an initiative to help teach machines how real people speak.", "link": "https://commonvoice.mozilla.org/en", "img": "/img/landing/ai.svg"},
         { "title": "Innovation ecosystem", "desc": "The Mozilla Internet Ecosystem (MIECO) Program funds innovators building a healthier internet experience.", "link": "/mieco", "img": "/img/landing/innovation.svg"}
     ]
 %}
@@ -17,10 +17,11 @@
     <section class="c-innovation-hero mzp-t-dark">
         <div class="mzp-l-content">
             <div class="hero-text-wrapper">
-                <h1>Innovations</h2>
-                <h2>The exponential power of building on trust</h1>
-                <p>Accelerating the future of a more human-centered internet</p>
-                <a class="mzp-c-button mzp-t-dark" href="#newsletter">Join us</a>
+                <h1>Innovation at Mozilla</h2>
+                <h2>An internet built on behalf of humanity</h1>
+                <p>We're shaping a powerful new wave of innovation and transformation that enriches humanity — not just a handful of big
+                companies.</p>
+                <a class="mzp-c-button mzp-t-dark" href="#newsletter">Connect with us</a>
             </div>
         </div>
     </section>
@@ -28,10 +29,9 @@
     <section class="c-innovation-split mzp-c-split mzp-l-split-body-wide">
         <div class="mzp-c-split-container">
             <div class="mzp-c-split-body">
-                <h2>Our Vision</h2>
-                <h3>A better internet, designed to serve humanity’s best interests</h3>
-                <p>We're shaping a powerful new wave of innovation and transformation that enriches humanity — not just a handful of big
-                companies.</p>
+                <h3>People over profits</h3>
+                <p>We're backed by a non-profit, which means we prioritize the interests of people first, not corporate profits. We aim to
+                inspire like-minded innovators who share our vision for a better internet — whether we directly benefit from it or not.</p>
             </div>
             <div class="mzp-c-split-media">
                 <img src="/img/landing/vision.svg">
@@ -42,10 +42,12 @@
     <section class="c-innovation-split mzp-c-split mzp-l-split-body-wide mzp-l-split-reversed">
         <div class="mzp-c-split-container">
             <div class="mzp-c-split-body">
-                <h2>Our Approach</h2>
-                <h3>Experimentation + community</h3>
-                <p>We believe the best innovation happens when a larger ecosystem of diverse people with diverse perspectives collaborate,
-                swap code and openly trade ideas.</p>
+                <h3>Empowering community-driven innovation</h3>
+                <p>We work as part of a larger ecosystem of builders dedicated to enabling people to create and choose technology that’s
+                most meaningful to them.</p>
+                <p>We believe the most groundbreaking innovations arise when people of diverse backgrounds —
+                especially those who have been historically marginalized — come together to collaborate, share code and openly trade
+                ideas.</p>
             </div>
             <div class="mzp-c-split-media">
                 <img src="/img/landing/experimentation.svg">
@@ -96,8 +98,8 @@
                     </div>
                     <div id="newsletter-details" class="mzp-c-newsletter-details">
                         <div>
-                            <label for="name">Name</label>
-                            <input type="text" class="name" id="name" name="name">
+                            <label for="first-name">Name</label>
+                            <input type="text" class="name" id="first-name" name="name">
                         </div>
                         <fieldset class="mzp-u-inline interests">
                             <label>What are you interested in learning more about?</label>
@@ -110,7 +112,7 @@
                         </fieldset>
                         <div class="mzp-c-field description">
                             <label for="description">Description</label>
-                            <textarea placeholder="What would you like to have us contact you about?" rows="5" cols="38"
+                            <textarea placeholder="What would you like to collaborate on?" rows="5" cols="38"
                                 name="description" id="description" maxlength="750"></textarea>
                             <label for="website" class="">Website</label>
                             <input type="text" id="website" name="website" placeholder="ex: mozilla.org">

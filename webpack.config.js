@@ -83,6 +83,13 @@ module.exports = {
           ),
           to: "img/logos/mozilla",
         },
+        {
+          from: path.resolve(
+            __dirname,
+            "node_modules/@mozilla-protocol/core/protocol/img/icons"
+          ),
+          to: "img/icons",
+        },
       ],
     }),
     new MiniCssExtractPlugin({
