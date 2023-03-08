@@ -29,6 +29,7 @@ $font-path: '../../fonts';
             @include font-size(56px);
         }
     }
+
     @media #{$mq-md} {
         background-position: right;
         background-size: 50%;
@@ -41,9 +42,21 @@ $font-path: '../../fonts';
             max-width: 50%;
         }
     }
+
+    @media #{$mq-xl} {
+        .hero-text-wrapper {
+            max-width: 45%;
+        }
+    }
 }
 
 .c-innovation-split {
+
+    .mzp-c-split-container {
+        // Design request - keep split at 1440px max-width (including padding)
+        box-sizing: border-box
+    }
+
     h2 {
         @include font-base;
         @include font-size(18px);
@@ -54,10 +67,6 @@ $font-path: '../../fonts';
     h3 {
         @include font-mozilla;
         @include font-size(42px)
-    }
-
-    img {
-        display: block;
     }
 }
 
