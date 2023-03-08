@@ -57,6 +57,11 @@ $font-path: '../../fonts';
         box-sizing: border-box
     }
 
+    .mzp-c-split-media img {
+        display: block;
+        margin: 0 auto;
+    }
+
     h2 {
         @include font-base;
         @include font-size(18px);
@@ -91,10 +96,16 @@ $font-path: '../../fonts';
         margin-top: $layout-lg;
 
         .mzp-c-picto {
-            height: 100%;
 
             p {
                 @include font-size(16px);
+            }
+
+            > div {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                justify-content: space-evenly;
             }
         }
 
