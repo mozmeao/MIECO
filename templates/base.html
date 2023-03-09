@@ -10,8 +10,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIECO</title>
-    {% block page_css %}<link rel="stylesheet" href="/css/style.css">{% endblock %}
+    <title>{% block page_title %}MIECO{% endblock %}</title>
+    {% block page_css %}{% endblock %}
     <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/img/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="196x196" href="/img/favicons/favicon-196x196.png">
     <link rel="shortcut icon" href="/img/favicons/favicon.ico">
@@ -23,39 +23,15 @@
                 <div class="mzp-c-navigation-logo">
                     <a href="https://www.mozilla.com">Mozilla</a>
                 </div>
-                <div class="mzp-c-navigation-download" id="navigation-demo">
-                    <div class="mzp-c-button-download-container">
-                        <a href="#newsletter-section" class="mzp-c-button mzp-t-dark">
-                            Collaborate with us
-                        </a>
-                    </div>
-                </div>
+                <a href="#newsletter-section" class="mzp-c-button mzp-t-dark">
+                    Collaborate with us
+                </a>
             </div>
         </div>
     </nav>
     <main>
         {% block content %}{% endblock %}
     </main>
-    <footer class="mzp-c-footer">
-        <div class="mzp-l-content">
-            <nav class="mzp-c-footer-secondary">
-                <div class="mzp-c-footer-legal">
-                    <p class="mzp-c-footer-license">
-                        Portions of this content are ©1998–2022 by individual mozilla.org contributors.
-                        Content available under a <a rel="license"
-                            href="https://www.mozilla.org/foundation/licensing/website-content/">Creative Commons
-                            license</a>.
-                    </p>
-                    <ul class="mzp-c-footer-terms">
-                        <li><a href="https://www.mozilla.org/privacy/websites/">Website Privacy Notice</a></li>
-                        <li><a href="https://www.mozilla.org/privacy/websites/#cookies">Cookies</a></li>
-                        <li><a href="https://www.mozilla.org/about/legal/">Legal</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </footer>
-    {% block js %}
-        <script type="module" src="/scripts/email.js"></script>
-    {% endblock %}
+    {% block footer %}{% include "partials/footer.html" %} {%endblock%}
+    {% block js %}{% endblock %}
 </body>

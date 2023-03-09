@@ -52,6 +52,7 @@ module.exports = {
   devServer: {
     port: 8000,
     static: false,
+    hot: true,
     watchFiles: ["html_output/**/*.html", "css/*.scss", "scripts/*.js"],
   },
   plugins: [
@@ -60,7 +61,7 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: "mieco/**/*.html",
+          from: "**/*.html",
           context: path.resolve(__dirname, "html_output"),
         },
         {
@@ -81,6 +82,13 @@ module.exports = {
             "node_modules/@mozilla-protocol/core/protocol/img/logos/mozilla/"
           ),
           to: "img/logos/mozilla",
+        },
+        {
+          from: path.resolve(
+            __dirname,
+            "node_modules/@mozilla-protocol/core/protocol/img/icons"
+          ),
+          to: "img/icons",
         },
       ],
     }),

@@ -12,8 +12,15 @@ $font-path: '../../fonts';
 @import '/node_modules/@mozilla-protocol/core/protocol/css/components/picto';
 @import '/node_modules/@mozilla-protocol/core/protocol/css/components/newsletter-form';
 @import '/node_modules/@mozilla-protocol/core/protocol/css/templates/multi-column';
+@import '/node_modules/@mozilla-protocol/core/protocol/css/components/footer';
 
 @import 'cohort';
+@import "innovation-landing";
+@import "footer";
+
+body {
+    font-size: 18px;
+}
 
 // Helper classes
 .gradient-bg {
@@ -31,16 +38,33 @@ $font-path: '../../fonts';
 .mzp-c-navigation {
     background-color: $color-black;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
 
-.mzp-c-navigation-download {
-    text-align: right;
+    .mzp-c-navigation-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
 
-    @media #{$mq-md} {
-        text-align: center;
+        &:after {
+            content: none;
+        }
+
+        .mzp-c-button {
+            display: none;
+        }
+
+        @media #{$mq-xs} {
+            flex-direction: row;
+        }
+
+        @media #{$mq-md} {
+            .mzp-c-button {
+                display: block;
+            }
+        }
     }
-
 }
+
 
 .hero-section {
     background-image: url("/img/hero-bg.svg"), linear-gradient(90.29deg, rgba(0, 0, 0, 0.5) 72.2%, rgba(0, 0, 0, 0) 99.74%);
@@ -247,5 +271,10 @@ $font-path: '../../fonts';
                 margin-bottom: $spacing-md;
             }
         }
+
+        .mzp-c-form-submit button[type="submit"] {
+            margin-bottom: $spacing-lg;
+        }
     }
 }
+

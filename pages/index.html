@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+
+{% set initiatives = [
+        { "title": "Metaverse / XR", "desc": "Mozilla Hubs is our fully open-source virtual world platform that runs right in your browser.", "link": "https://hubs.mozilla.com/", "img": "/img/landing/xr.svg"},
+        { "title": "Creation & user generated content", "desc": "Exploring the future of content creation outside the gated walls of social media platforms and big tech.", "link": "https://blog.mozilla.org/en/mozilla/mozilla-launch-fediverse-instance-social-media-alternative/", "img": "/img/landing/creation.svg"},
+        { "title": "AI & machine learning", "desc": "Mozilla Common Voice is an initiative to help teach machines how real people speak.", "link": "https://commonvoice.mozilla.org/en", "img": "/img/landing/ai.svg"},
+        { "title": "Innovation ecosystem", "desc": "The Mozilla Internet Ecosystem (MIECO) Program funds innovators building a healthier internet experience.", "link": "/mieco", "img": "/img/landing/innovation.svg"}
+    ]
+%}
+
+{% block page_title %}Innovations{% endblock %}
+
+{% block page_css %}<link rel="stylesheet" href="/css/style.css">{% endblock %}
+
+{% block content %}
+    <!-- Hero -->
+    <section class="c-innovation-hero mzp-t-dark">
+        <div class="mzp-l-content">
+            <div class="hero-text-wrapper">
+                <h1>Innovation at Mozilla</h2>
+                <h2>An internet built on behalf of humanity</h1>
+                <p>We're shaping a powerful new wave of innovation and transformation that enriches humanity — not just a handful of big
+                companies.</p>
+                <a class="mzp-c-button mzp-t-dark" href="#newsletter-section">Connect with us</a>
+            </div>
+        </div>
+    </section>
+    <!-- vision -->
+    <section class="c-innovation-split mzp-c-split mzp-l-split-body-wide mzp-l-split-center-on-sm-md">
+        <div class="mzp-c-split-container">
+            <div class="mzp-c-split-body">
+                <h3>People over profits</h3>
+                <p>We're backed by a non-profit, which means we prioritize the interests of people first, not corporate profits. We aim to
+                inspire like-minded innovators who share our vision for a better internet — whether we directly benefit from it or not.</p>
+            </div>
+            <div class="mzp-c-split-media">
+                <img src="/img/landing/vision.svg">
+            </div>
+        </div>
+    </section>
+    <!-- approach -->
+    <section class="c-innovation-split mzp-c-split mzp-l-split-body-wide mzp-l-split-reversed mzp-l-split-center-on-sm-md">
+        <div class="mzp-c-split-container">
+            <div class="mzp-c-split-body">
+                <h3>Empowering community-driven innovation</h3>
+                <p>We work as part of a larger ecosystem of builders dedicated to enabling people to create and choose technology that’s
+                most meaningful to them.</p>
+                <p>We believe the most groundbreaking innovations arise when people of diverse backgrounds —
+                especially those who have been historically marginalized — come together to collaborate, share code and openly trade
+                ideas.</p>
+            </div>
+            <div class="mzp-c-split-media">
+                <img src="/img/landing/experimentation.svg">
+            </div>
+        </div>
+    </section>
+    <!-- initiatives -->
+    <section class="c-innovation-initiatives mzp-t-dark">
+        <div class="mzp-l-content">
+            <h2>Our Initiatives</h2>
+            <div class="c-innovation-picto-grid">
+                {% for initiative in initiatives %}
+                    <section class="mzp-c-picto">
+                        <div>
+                            <div class="mzp-c-picto-image">
+                                <img src="{{ initiative.img }}" alt="" height="100%">
+                            </div>
+                            <h4 class="mzp-c-picto-heading">{{ initiative.title }}</h4>
+                             <p>{{ initiative.desc }}</p>
+                            <a class="c-picto-cta" href="{{ initiative.link }}">Learn more</a>
+                        </div>
+                    </section>
+                {% endfor %}
+            </div>
+        </div>
+
+    </section>
+    <!-- newsletter -->
+    <section class="mzp-l-content c-innovation-newsletter" id="newsletter-section">
+        <aside class="mzp-c-newsletter">
+            <div>
+                <h3>Stay connected</h3>
+                <p>Stay up to date on innovation announcements, projects and news. Plus, reach out if you want to collaborate.</p>
+            </div>
+            <form id="newsletter-form" class="mzp-c-newsletter-form innovations-form" name="newsletter-form">
+                <fieldset class="mzp-c-newsletter-content">
+                    <div class="mzp-c-form-errors hidden" id="newsletter-errors">
+                        <ul class="mzp-u-list-styled">
+                            <li class="error-email-invalid hidden">Please enter a valid email address with less than 120
+                                characters</li>
+                            <li class="error-privacy-policy hidden">You must agree to the privacy notice</li>
+                            <li class="error-newsletter hidden">Please check at least one of the newsletter options.</li>
+                            <li class="error-try-again-later hidden">We are sorry, but there was a problem with our system.
+                                Please try again later!</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <label for="email">Your email address</label>
+                        <input type="email" class="mzp-js-email-field" id="email" name="email" placeholder="Enter your email here"
+                            required aria-required="true">
+                    </div>
+                    <div id="newsletter-details" class="mzp-c-newsletter-details">
+                        <div>
+                            <label for="name">Name</label>
+                            <input type="text" class="name" id="name" name="name">
+                        </div>
+                        <fieldset class="mzp-u-inline interests">
+                            <label>What are you interested in learning more about?</label>
+                            <label for="newsletter" class="mzp-u-inline">
+                                <input class="newsletter" type="checkbox" name="interests" id="newsletter" value="newsletter">Innovation Updates
+                            </label>
+                            <label for="collaboration" class="mzp-u-inline">
+                                <input type="checkbox" name="interests" id="collaboration" value="collaboration">Collaboration
+                            </label>
+                        </fieldset>
+                        <div class="mzp-c-field description">
+                            <label for="description">Description</label>
+                            <textarea placeholder="What would you like to collaborate on?" rows="5" cols="38"
+                                name="description" id="description" maxlength="750"></textarea>
+                            <label for="website" class="">Website</label>
+                            <input type="text" id="website" name="website" placeholder="ex: mozilla.org">
+                        </div>
+                        <p>
+                            <label for="privacy" class="mzp-u-inline">
+                                <input type="checkbox" id="privacy" name="privacy" required aria-required="true">
+                                I’m okay with Mozilla handling my info as explained in <a
+                                    href="https://www.mozilla.org/privacy/websites/">this Privacy Notice</a>
+                            </label>
+                        </p>
+                    </div>
+                    <p class="mzp-c-form-submit">
+                        <button type="submit" class="mzp-c-button" id="newsletter-submit">Submit</button>
+                        <span class="mzp-c-fieldnote">We will only send you Mozilla-related information.</span>
+                    </p>
+                </fieldset>
+            </form>
+            <div id="newsletter-thanks" class="mzp-c-newsletter-thanks">
+                <h3>Thanks!</h3>
+                <p>If you haven’t previously confirmed a subscription to a Mozilla-related newsletter, you may have to do so. Please check
+                your inbox or your spam filter for an email from us.</p>
+            </div>
+        </aside>
+    </section>
+{% endblock %}
+
+{% block js %}
+    <script type="module" src="/scripts/email.js"></script>
+{% endblock %}

@@ -1,0 +1,155 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+$image-path: '../../img';
+$font-path: '../../fonts';
+
+@import '/node_modules/@mozilla-protocol/core/protocol/css/components/split';
+
+
+
+.c-innovation-hero {
+    background-image: url("/img/landing/innovations-hero.svg");
+    background-position: $spacing-2xl;
+    background-repeat: no-repeat;
+
+    .mzp-l-content {
+        background: rgba(0,0,0, 0.7);
+    }
+
+    .hero-text-wrapper {
+        h1 {
+            @include font-size(28px);
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            @include font-size(56px);
+        }
+    }
+
+    @media #{$mq-md} {
+        background-position: right;
+        background-size: 50%;
+
+        .mzp-l-content {
+            background: none;
+        }
+
+        .hero-text-wrapper {
+            max-width: 50%;
+        }
+    }
+
+    @media #{$mq-xl} {
+        .hero-text-wrapper {
+            max-width: 45%;
+        }
+    }
+}
+
+.c-innovation-split {
+
+    .mzp-c-split-container {
+        // Design request - keep split at 1440px max-width (including padding)
+        box-sizing: border-box
+    }
+
+    .mzp-c-split-media img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    h2 {
+        @include font-base;
+        @include font-size(18px);
+        font-weight: 500;;
+        text-transform: uppercase;
+    }
+
+    h3 {
+        @include font-mozilla;
+        @include font-size(42px)
+    }
+}
+
+.c-innovation-initiatives {
+    h2 {
+        @include font-base;
+        @include font-size(20px);
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    h3 {
+        @include font-mozilla;
+        @include font-size(48px);
+    }
+
+    .c-innovation-picto-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: $spacing-2xl;
+        row-gap: $spacing-xl;
+        margin-top: $layout-lg;
+
+        .mzp-c-picto {
+
+            p {
+                @include font-size(16px);
+            }
+
+            > div {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                justify-content: space-evenly;
+            }
+        }
+
+        .mzp-c-picto-image {
+            // this will keep the image container the same size for all items in the grid - and won't resize any of the images
+            height: 84px;
+
+            img {
+                height: 100%;
+            }
+        }
+
+        .c-picto-cta {
+            color: $color-white;
+        }
+
+        @media #{$mq-md} {
+             grid-template-columns: 1fr 1fr;
+        }
+
+        @media #{$mq-lg} {
+             grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+    }
+}
+
+.c-innovation-newsletter {
+
+    h3 {
+        @include font-size(48px);
+    }
+
+    label[for="email"] {
+        @include visually-hidden;
+    }
+
+    // default state - (will only show if user selects "collaborate" radio btn
+    .description {
+        display: none;
+    }
+
+    .mzp-c-newsletter-thanks {
+        padding-top: 0;
+    }
+
+}
+

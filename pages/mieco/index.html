@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% block page_css %}<link rel="stylesheet" href="/css/style.css">{% endblock %}
+
 {% block content %}
     <!-- Hero section -->
     <section class="mzp-t-dark hero-section">
@@ -151,7 +153,7 @@
             <div class="mzp-c-newsletter-image">
                 <img src="/img/sign-up-high-res.png" width="465" height="412" alt="">
             </div>
-            <form id="newsletter-form" class="mzp-c-newsletter-form" name="newsletter-form">
+            <form id="newsletter-form" class="mzp-c-newsletter-form mieco-form" name="newsletter-form">
                 <header class="mzp-c-newsletter-header">
                     <p class="mzp-c-newsletter-tagline">Connect with us to learn more, and we'll be in touch soon.</p>
                 </header>
@@ -213,4 +215,8 @@
             </div>
         </aside>
     </section>
+{% endblock %}
+
+{% block js %}
+    <script type="module" src="/scripts/email.js"></script>
 {% endblock %}
