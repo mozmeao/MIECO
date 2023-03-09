@@ -16,6 +16,7 @@ import {
 import "/node_modules/@mozilla-protocol/core/protocol/js/protocol-newsletter.min.js";
 
 let form;
+let isBuilderPage;
 
 const EmailForm = {
   handleFormError: (msg) => {
@@ -68,7 +69,8 @@ const EmailForm = {
       EmailForm.handleFormError(errorList.PRIVACY_POLICY_ERROR);
       return false;
     }
-    if (newsletters.length === 0) {
+    // the form on the builder page already includes a newsletter so these aren't required
+    if (newsletters.length === 0 && !isBuilderPage) {
       EmailForm.handleFormError(errorList.NEWSLETTER_ERROR);
       return false;
     }
@@ -78,21 +80,11 @@ const EmailForm = {
 
 
   submit: (e) => {
-    const name = form.querySelector('input[id="name"]').value;
     const email = form.querySelector('input[type="email"]').value;
     const interests =
       Array.from(form.querySelectorAll('input[name="interests"]:checked'))
         .map((interests) => `${interests.value}`)
         .join(",");
-    const description = form.querySelector("textarea").value;
-    const website = form.querySelector('input["name=website"]');
-
-    const params = {
-      email,
-      name,
-      description,
-      interests,
-    };
 
     e.preventDefault();
     e.stopPropagation();
@@ -108,37 +100,59 @@ const EmailForm = {
       return;
     }
 
+    if (isBuilderPage) {
+      const newsletters = interests.length > 0 ? `mozilla-ai-challenge, ${interests}` : "mozilla-ai-challenge"
+      const params = { email, newsletters }
 
-    if (form.classList.contains("mieco-form")) {
-    postToEmailServer(
-        { ...params, message_id: "mieco" },
-        EmailForm.handleFormSuccess,
-        EmailForm.handleFormError
-    );
-    } else if (interests.includes("newsletter")) {
-        // This will only come from the innovation home page and will post to Basket
-      postToEmailServer(
-        {...params,
-            format: "H",
-            country: "us",
-            lang: "en",
-            newsletters: "mozilla-technology",
-            message_id: "innovations"
-        },
-        EmailForm.handleFormSuccess,
-        EmailForm.handleFormError
-      );
+      postToEmailServer(params, EmailForm.handleFormSuccess, EmailForm.handleFormError)
+    } else {
+      const name = form.querySelector('input[id="name"]').value;
+      const description = form.querySelector("textarea").value;
+      const website = form.querySelector('input["name=website"]');
+
+      const params = {
+        email,
+        name,
+        description,
+        interests,
+      };
+
+      if (form.classList.contains("mieco-form")) {
+        postToEmailServer(
+          { ...params, message_id: "mieco" },
+          EmailForm.handleFormSuccess,
+          EmailForm.handleFormError
+        );
+      } else if (interests.includes("newsletter")) {
+         // This will only come from the innovation home page and will post to Basket
+         postToEmailServer(
+           {
+             ...params,
+             format: "H",
+             country: "us",
+             lang: "en",
+             newsletters: "mozilla-technology",
+             message_id: "innovations",
+           },
+           EmailForm.handleFormSuccess,
+           EmailForm.handleFormError
+         );
+       }
+       if (interests.includes("collaboration")) {
+         postToEmailServer(
+           {
+             ...params,
+             website: website.value || "",
+             message_id: "innovations",
+           },
+           EmailForm.handleFormSuccess,
+           EmailForm.handleFormError
+         );
+       }
     }
-    if (interests.includes("collaboration")) {
-      postToEmailServer(
-        { ...params,
-            website: website.value || "",
-            message_id: "innovations"
-        },
-        EmailForm.handleFormSuccess,
-        EmailForm.handleFormError
-      );
-    }
+
+
+
   },
 
   handleCheckboxChange: ({ target }) => {
@@ -152,6 +166,7 @@ const EmailForm = {
 
   init: () => {
     form = document.getElementById("newsletter-form");
+    isBuilderPage = form.classList.contains("builders-form");
 
     if (!form) {
       return;

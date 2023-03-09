@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block page_title %}Responsible AI Challenge{% endblock %}
+
+{% block page_css %}<link rel="stylesheet" href="/css/style.css">{% endblock %}
+
+{% block cta_text %}Get email updates{% endblock%}
+
+{% block content %}
+<!-- Hero -->
+<section class="c-builders-hero mzp-t-dark">
+    <div class="mzp-l-content">
+        <h1>Responsible AI Challenge</h1>
+        <h2>by Mozilla Builders</h2>
+    </div>
+</section>
+<!-- email capture form -->
+<section class="mzp-l-content mzp-t-content-md c-builders-newsletter" id="newsletter-section">
+    <aside class="mzp-c-newsletter">
+        <h3>Get notified about challenge details</h3>
+        <form id="newsletter-form" class="mzp-c-newsletter-form builders-form" name="newsletter-form">
+            <fieldset class="mzp-c-newsletter-content">
+                <div class="mzp-c-form-errors hidden" id="newsletter-errors">
+                    <ul class="mzp-u-list-styled">
+                        <li class="error-email-invalid hidden">Please enter a valid email address with less than 120
+                            characters</li>
+                        <li class="error-privacy-policy hidden">You must agree to the privacy notice</li>
+                        <li class="error-newsletter hidden">Please check at least one of the newsletter options.</li>
+                        <li class="error-try-again-later hidden">We are sorry, but there was a problem with our system.
+                            Please try again later!</li>
+                    </ul>
+                </div>
+                <div>
+                    <label for="email">Your email address</label>
+                    <input type="email" class="mzp-js-email-field" id="email" name="email"
+                        placeholder="Enter your email here" required aria-required="true">
+                </div>
+                <div id="newsletter-details" class="mzp-c-newsletter-details">
+                    <fieldset class="interests">
+                        <label>What else are you interested in?</label>
+                        <label for="newsletter">
+                            <input class="newsletter" type="checkbox" name="interests" id="newsletter"
+                                value="mozilla-technology">AI and machine learning, the metaverse, extended reality (XR) and the future of web
+                        </label>
+                    </fieldset>
+                    <p>
+                        <label for="privacy" class="mzp-u-inline">
+                            <input type="checkbox" id="privacy" name="privacy" required aria-required="true">
+                            I’m okay with Mozilla handling my info as explained in <a
+                                href="https://www.mozilla.org/privacy/websites/">this Privacy Notice</a>
+                        </label>
+                    </p>
+                </div>
+                <p class="mzp-c-form-submit">
+                    <button type="submit" class="mzp-c-button" id="newsletter-submit">Submit</button>
+                    <span class="mzp-c-fieldnote">We will only send you Mozilla-related information.</span>
+                </p>
+            </fieldset>
+        </form>
+        <div id="newsletter-thanks" class="mzp-c-newsletter-thanks">
+            <h3>Thanks!</h3>
+            <p>If you haven’t previously confirmed a subscription to a Mozilla-related newsletter, you may have to do
+                so. Please check
+                your inbox or your spam filter for an email from us.</p>
+        </div>
+    </aside>
+</section>
+<!-- Body copy -->
+<section class="mzp-l-content mzp-t-content-md mzp-t-content-nospace c-builders-copy">
+    <div>
+        <h3>The challenge</h3>
+        <p>We’re at a tipping point. It’s never been more essential that we create a movement toward trustworthy AI — and this
+        requires collaboration with the brightest minds working on AI technology today.</p>
+
+        <p>Join us for the <span>Mozilla Builders: Responsible AI Challenge</span>, and be part of creating a future where AI benefits humanity.</p>
+    </div>
+    <div>
+        <h3>The opportunity</h3>
+        <p>In addition to a $50k in prizes, this contest offers a unique chance to showcase your talents and receive mentorship
+        from some of the world’s leading thinkers, technologists, ethicists and business people who can help guide you with your
+        own responsible AI project.</p>
+        <p><strong>Enter your email address to get updates about the Responsible AI Contest including participating mentors, judges, prizes and more.</strong></p>
+        <p><strong>Applications open starting March 30, 2023.</strong></p>
+    </div>
+</section>
+{% endblock %}
+
+{% block js %}
+<script type="module" src="/scripts/email.js"></script>
+{% endblock %}

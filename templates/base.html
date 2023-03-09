@@ -21,11 +21,13 @@
         <div class="mzp-c-navigation-l-content">
             <div class="mzp-c-navigation-container">
                 <div class="mzp-c-navigation-logo">
-                    <a href="https://www.mozilla.com">Mozilla</a>
+                    <a href="/">Mozilla</a>
                 </div>
+                {% block nav_cta %}
                 <a href="#newsletter-section" class="mzp-c-button mzp-t-dark">
-                    Collaborate with us
+                    {% block cta_text %}Collaborate with us{% endblock %}
                 </a>
+                {% endblock %}
             </div>
         </div>
     </nav>
