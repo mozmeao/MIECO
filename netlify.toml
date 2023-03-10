@@ -38,7 +38,3 @@
   [headers.values]
     Cache-Control = "max-age=31536000,public,immutable"
 
-[[redirects]]
-  from = "/"
-  to = "/mieco/"
-  status = 302
