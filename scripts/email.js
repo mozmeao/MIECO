@@ -17,6 +17,8 @@ import "/node_modules/@mozilla-protocol/core/protocol/js/protocol-newsletter.min
 
 let form;
 let isBuilderPage;
+let isMIECO;
+let isInnovationPage
 
 const EmailForm = {
   handleFormError: (msg) => {
@@ -103,8 +105,7 @@ const EmailForm = {
     if (isBuilderPage) {
       const newsletters = interests.length > 0 ? `mozilla-ai-challenge, ${interests}` : "mozilla-ai-challenge"
       const params = { email, newsletters }
-
-      postToEmailServer(params, EmailForm.handleFormSuccess, EmailForm.handleFormError)
+      postToEmailServer(params, EmailForm.handleFormSuccess, EmailForm.handleFormError);
     } else {
       const name = form.querySelector('input[id="name"]').value;
       const description = form.querySelector("textarea").value;
@@ -117,42 +118,45 @@ const EmailForm = {
         interests,
       };
 
-      if (form.classList.contains("mieco-form")) {
+      if (isMIECO) {
+        // The MIECO page will only send user info to email server on bedrock
         postToEmailServer(
           { ...params, message_id: "mieco" },
           EmailForm.handleFormSuccess,
           EmailForm.handleFormError
         );
-      } else if (interests.includes("newsletter")) {
-         // This will only come from the innovation home page and will post to Basket
-         postToEmailServer(
-           {
-             ...params,
-             format: "H",
-             country: "us",
-             lang: "en",
-             newsletters: "mozilla-technology",
-             message_id: "innovations",
-           },
-           EmailForm.handleFormSuccess,
-           EmailForm.handleFormError
-         );
-       }
-       if (interests.includes("collaboration")) {
-         postToEmailServer(
-           {
-             ...params,
-             website: website.value || "",
-             message_id: "innovations",
-           },
-           EmailForm.handleFormSuccess,
-           EmailForm.handleFormError
-         );
-       }
+      }
+      if (isInnovationPage) {
+        // On the innovation landing page the user can do the following in the form:
+        //    - Sign up for the mozilla-technology newsletter
+        //    - Send an interest email to innovations@mozilla.com
+        //    - They can also both of the above options
+
+        if (interests.includes("newsletter")) {
+          postToEmailServer(
+            {
+              ...params,
+              newsletters: "mozilla-technology",
+              message_id: "innovations",
+            },
+            EmailForm.handleFormSuccess,
+            EmailForm.handleFormError
+          );
+        }
+
+        if (interests.includes("collaboration")) {
+          postToEmailServer(
+            {
+              ...params,
+              website: website.value || "",
+              message_id: "innovations",
+            },
+            EmailForm.handleFormSuccess,
+            EmailForm.handleFormError
+          );
+        }
+      }
     }
-
-
-
   },
 
   handleCheckboxChange: ({ target }) => {
@@ -167,18 +171,15 @@ const EmailForm = {
   init: () => {
     form = document.getElementById("newsletter-form");
     isBuilderPage = form.classList.contains("builders-form");
+    isMIECO = form.classList.contains("mieco-form");
+    isInnovationPage = form.classList.contains("innovations-form")
 
     if (!form) {
       return;
     }
 
-    if (form.classList.contains("innovations-form")) {
-      const newsletter = form.querySelector("input#newsletter");
+    if (isInnovationPage) {
       const checkbox = form.querySelector("input#collaboration");
-
-      if (newsletter) {
-        newsletter.checked = true;
-      }
 
       if (checkbox?.checked) {
         const description = document.querySelector(".description");
