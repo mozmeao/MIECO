@@ -7,15 +7,10 @@ $font-path: '../../fonts';
 
 .c-builders-hero {
     text-align: center;
-
-    .mzp-l-content {
-        background-image: url("/img/builders-challenge/hero.png");
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        padding-top: 96px;
-        padding-bottom: 96px;
-    }
+    background-image: url("/img/builders-challenge/hero-sm.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 
     h1 {
         @include font-size(56px);
@@ -23,6 +18,27 @@ $font-path: '../../fonts';
 
     h2 {
         @include font-size(28px);
+    }
+
+    .mzp-l-content {
+        padding-top: 96px;
+        padding-bottom: 96px;
+    }
+
+    @media #{$mq-sm} {
+        background-image: url("/img/builders-challenge/hero-md.png");
+    }
+
+    @media #{$mq-lg} {
+        background-image: url("/img/builders-challenge/hero-lg.png")
+    }
+
+    @media #{$mq-xl} {
+        background-image: url("/img/builders-challenge/hero-xl.png")
+    }
+
+    @media (min-width: 1440px) {
+        background-image: url("/img/builders-challenge/hero-2x.png")
     }
 }
 
