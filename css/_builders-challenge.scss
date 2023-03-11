@@ -57,6 +57,9 @@ $font-path: '../../fonts';
 
         .builders-form {
             grid-column: 1;
+            margin: 0 auto;
+            max-width: 510px;
+            width: 100%;
 
             .interests {
                 max-width: 100%;
@@ -73,17 +76,6 @@ $font-path: '../../fonts';
 
             label[for="newsletter"] {
                 display: flex;
-                font-weight: 500;
-
-                .bold {
-                    font-weight: bold;
-                }
-            }
-
-            @media #{$mq-lg} {
-                .interests {
-                    max-width: 75%;
-                }
             }
         }
 
@@ -102,6 +94,19 @@ $font-path: '../../fonts';
         h3 {
             @include font-size(38px);
         }
+
+        p {
+            @include font-size(24px);
+        }
+
+        span {
+            font-weight: bold;
+        }
     }
+
+    div:last-child {
+        margin-top: $layout-lg;
+    }
+    
     margin-bottom: $layout-lg;
 }
