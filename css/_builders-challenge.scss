@@ -70,9 +70,12 @@ $font-path: '../../fonts';
                 @include visually-hidden;
             }
 
+
             input[type="checkbox"] {
                 margin: $spacing-xs 12px 0 0;
                 align-self: flex-start;
+                // Fix for issue with webkit that checkboxes will shrink in a flex container
+                min-width: 14px;
             }
 
             label[for="newsletter"] {
