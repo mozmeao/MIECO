@@ -1,0 +1,116 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+$image-path: '../../img';
+$font-path: '../../fonts';
+
+.c-builders-hero {
+    text-align: center;
+    background-image: url("/img/builders-challenge/hero-sm.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    h1 {
+        @include font-size(56px);
+    }
+
+    h2 {
+        @include font-size(28px);
+    }
+
+    .mzp-l-content {
+        padding-top: 96px;
+        padding-bottom: 96px;
+    }
+
+    @media #{$mq-sm} {
+        background-image: url("/img/builders-challenge/hero-md.png");
+    }
+
+    @media #{$mq-lg} {
+        background-image: url("/img/builders-challenge/hero-lg.png")
+    }
+
+    @media #{$mq-xl} {
+        background-image: url("/img/builders-challenge/hero-xl.png")
+    }
+
+    @media (min-width: 1440px) {
+        background-image: url("/img/builders-challenge/hero-2x.png")
+    }
+}
+
+// overrides from protocol newsletter to have single column layout
+.c-builders-newsletter {
+    padding-bottom: $spacing-xl;
+
+    h3 {
+        text-align: center;
+    }
+
+    .interests {
+        max-width: 100%;
+    }
+
+    .mzp-c-newsletter {
+        padding-left: 0;
+        padding-right: 0;
+        grid-template-columns: 1fr;
+
+        .builders-form {
+            grid-column: 1;
+            margin: 0 auto;
+            max-width: 510px;
+            width: 100%;
+
+
+            label[for="email"] {
+                @include visually-hidden;
+            }
+
+
+            input[type="checkbox"] {
+                margin: $spacing-xs 12px 0 0;
+                align-self: flex-start;
+                // Fix for issue with webkit that checkboxes will shrink in a flex container
+                min-width: 14px;
+            }
+
+            label[for="newsletter"] {
+                display: flex;
+            }
+        }
+
+        .mzp-c-newsletter-thanks {
+            grid-column: 1;
+            padding-top: 0;
+            text-align: center;
+        }
+    }
+}
+
+.c-builders-copy {
+    > div {
+        text-align: center;
+
+        h3 {
+            @include font-size(38px);
+        }
+
+        p {
+            @include font-size(24px);
+        }
+
+        span {
+            font-weight: bold;
+        }
+    }
+
+    div:last-child {
+        margin-top: $layout-lg;
+    }
+
+    margin-bottom: $layout-lg;
+}
