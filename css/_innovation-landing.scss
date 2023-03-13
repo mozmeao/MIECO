@@ -50,6 +50,34 @@ $font-path: '../../fonts';
     }
 }
 
+.c-innovation-body-header {
+    max-width: 1440px;
+    margin: 0 auto $spacing-lg;
+    padding: $layout-lg $layout-xs 0;
+    box-sizing: border-box;
+    text-align: center;
+
+    h3 {
+        @include font-base;
+        @include font-size(20px);
+        text-transform: uppercase;
+    }
+
+    @media #{$mq-md} {
+        margin-bottom: 0;
+        padding: $layout-lg $layout-lg 0;
+        text-align: left;
+    }
+
+    @media #{$mq-xl} {
+        padding: $layout-lg 80px 0;
+    }
+}
+
+.c-innovation-split:first-of-type {
+    padding-top: 0;
+}
+
 .c-innovation-split {
 
     .mzp-c-split-container {
