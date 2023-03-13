@@ -109,7 +109,6 @@ const EmailForm = {
     } else {
       const name = form.querySelector('input[id="name"]').value;
       const description = form.querySelector("textarea").value;
-      const website = form.querySelector('input["name=website"]');
 
       const params = {
         email,
@@ -119,7 +118,7 @@ const EmailForm = {
       };
 
       if (isMIECO) {
-        // The MIECO page will only send user info to email server on bedrock
+        // The MIECO page will only send form info to email server -> mieco@mozilla.com
         postToEmailServer(
           { ...params, message_id: "mieco" },
           EmailForm.handleFormSuccess,
@@ -132,6 +131,7 @@ const EmailForm = {
         //    - Send an interest email to innovations@mozilla.com
         //    - They can also both of the above options
 
+        const website = form.querySelector('input["name=website"]');
         if (interests.includes("newsletter")) {
           postToEmailServer(
             {
