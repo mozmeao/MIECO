@@ -131,7 +131,7 @@ const EmailForm = {
         //    - Send an interest email to innovations@mozilla.com
         //    - They can also both of the above options
 
-        const website = form.querySelector('input["name=website"]');
+        const website = form.querySelector('input[name="website"]');
         if (interests.includes("newsletter")) {
           postToEmailServer(
             {
