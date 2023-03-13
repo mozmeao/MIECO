@@ -129,7 +129,7 @@ function serialize(params) {
     const newsletters = encodeURIComponent(params.newsletters);
     const sourceUrl = encodeURIComponent("https://future.mozilla.org");
 
-    return `email=${email}&format=${params.format}${params.country}&lang=${params.lang}&source_url=${sourceUrl}&newsletters=${newsletters}`
+    return `email=${email}&format=H&lang=en&source_url=${sourceUrl}&newsletters=${newsletters}`
 }
 
 
