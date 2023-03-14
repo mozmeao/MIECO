@@ -127,7 +127,7 @@ const EmailForm = {
       }
       if (isInnovationPage) {
         // On the innovation landing page the user can do the following in the form:
-        //    - Sign up for the mozilla-technology newsletter
+        //    - Sign up for the mozilla-innovation newsletter
         //    - Send an interest email to innovations@mozilla.com
         //    - They can also both of the above options
 
@@ -136,7 +136,7 @@ const EmailForm = {
           postToEmailServer(
             {
               ...params,
-              newsletters: "mozilla-technology",
+              newsletters: "mozilla-innovation",
               message_id: "innovations",
             },
             EmailForm.handleFormSuccess,
