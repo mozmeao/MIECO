@@ -10,10 +10,14 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  entry: ["./scripts/email.js", "./css/style.scss"],
+  entry: {
+    email: "./scripts/email.js",
+    analytics: "./scripts/analytics.js",
+    style: "./css/style.scss"
+  },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "scripts/email.js",
+    filename: "scripts/[name].js",
   },
   module: {
     rules: [
