@@ -57,8 +57,11 @@ module.exports = {
   devServer: {
     port: 8000,
     static: false,
-    hot: true,
+    hot: false,
     watchFiles: ["html_output/**/*.html", "css/*.scss", "scripts/*.js"],
+    devMiddleware: {
+      writeToDisk: true,
+    },
   },
   plugins: [
     // Clean out /assets before processing
