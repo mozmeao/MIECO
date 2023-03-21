@@ -1,5 +1,5 @@
 # MIECO
-Webpage for the Mozilla Innovations team at https://future.mozilla.org and the Mozilla Internet Ecosystem (MIECO).
+Webpage for the Mozilla Innovations team at https://future.mozilla.org and the Mozilla Internet Ecosystem (MIECO). It may be useful to know that the MIECO site came first and then this repo expanded to have both - the old heirarchy lingers in the docs and code in places.
 
 ## Getting Started
 
@@ -55,7 +55,7 @@ The `pages/` folder contains the Jinja files which will be compiled to HTML and 
 
 Branches in the pull request queue will be given a demo server by Netlify. The bot will comment on the PR with the link.
 
-The `main` branch is automatically deployed to the staging server https://future-mozilla.netlify.app/
+The `main` branch is automatically deployed to the staging server https://main--future-mozilla.netlify.app/
 
 To deploy to production push the main branch to the production branch.
 
