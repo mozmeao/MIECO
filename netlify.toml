@@ -10,12 +10,12 @@
     X-XSS-Protection = "1; mode=block"
     Cache-Control = "public,max-age=3600"
     Content-Security-Policy = '''
-    style-src 'self' 'unsafe-inline';
+    style-src 'self' 'unsafe-inline' www.surveygizmo.com fonts.googleapis.com;
     default-src 'self' www.google-analytics.com;
     child-src 'self' www.youtube.com www.youtube-nocookie.com www.google-analytics.com;
     connect-src 'self' *.mozilla.org www.google-analytics.com;
-    img-src 'self' data: www.google-analytics.com;
-    script-src 'self' 'unsafe-inline' 'unsafe-eval' s.ytimg.com www.youtube.com www.googletagmanager.com;
+    img-src 'self' data: www.google-analytics.com surveygizmolibrary.s3.amazonaws.com www.surveygizmo.com;
+    script-src 'self' 'unsafe-inline' 'unsafe-eval' s.ytimg.com www.youtube.com www.googletagmanager.com survey.alchemer.com www.surveygizmo.com;
     '''
 
 [[headers]]
