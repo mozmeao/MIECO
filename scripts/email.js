@@ -50,9 +50,14 @@ const EmailForm = {
   },
 
   handleFormSuccess: () => {
-    form.classList.add("hidden");
-    const thanks = document.getElementById("newsletter-thanks");
-    thanks.style.display = "block";
+    if (isBuilderPage) {
+      window.location.href =
+        "https://survey.alchemer.com/s3/7275783/Responsible-AI-Challenge";
+    } else {
+      form.classList.add("hidden");
+      const thanks = document.getElementById("newsletter-thanks");
+      thanks.style.display = "block";
+    }
   },
 
   validateFields: () => {
