@@ -5,7 +5,9 @@
 $image-path: '../../img';
 $font-path: '../../fonts';
 
-.c-builders-hero {
+@import 'ticker';
+
+.c-challenge-hero {
     text-align: center;
     background-image: url("/img/builders-challenge/hero-sm.png");
     background-position: center;
@@ -39,6 +41,119 @@ $font-path: '../../fonts';
 
     @media (min-width: 1440px) {
         background-image: url("/img/builders-challenge/hero-2x.png")
+    }
+}
+
+.c-challenge-event {
+    text-align: center;
+
+    h4 {
+        font-weight: normal;
+    }
+
+    .strong {
+        font-weight: bold;
+    }
+}
+
+.c-challenge-opportunity {
+    background-color: $color-light-gray-20;
+
+    h3 {
+        text-align: center;
+    }
+
+    .mzp-l-columns {
+        margin-top: $layout-md;
+    }
+
+    .c-opportunity-card {
+        display: grid;
+        grid-template-rows: minmax(60px, 80px) 1fr;
+
+        h4 {
+            font-weight: 500;
+        }
+    }
+}
+
+.c-details-section {
+
+    .mzp-l-columns {
+        margin: $layout-md 0;
+    }
+
+    .c-details-card {
+        color: $color-black;
+        padding: $spacing-xl;
+
+        .strong {
+            font-weight: bold;
+        }
+
+        h4 {
+            color: $color-black;
+            font-weight: 500;
+        }
+
+        &:nth-child(1) {
+            background-color: $color-green-20;
+
+            ul {
+                list-style: disc;
+                padding-left: 40px;
+            }
+        }
+
+        &:nth-child(2) {
+            background-color: $color-purple-20;
+
+            li {
+                margin-bottom: $spacing-md;
+            }
+        }
+
+        &:nth-child(3) {
+            background-color: $color-yellow-20;
+
+            p {
+                font-style: italic;
+            }
+        }
+    }
+}
+
+.c-evaluation-section .mzp-l-columns {
+    margin-top: $layout-lg;
+
+    .c-evaluation-card {
+        &:nth-child(1) {
+            --card-number-color: #{$color-purple-20};
+        }
+
+        &:nth-child(2) {
+            --card-number-color: #{$color-violet-20};
+        }
+
+        &:nth-child(3) {
+            --card-number-color: #{$color-red-20};
+        }
+
+        p:first-of-type {
+            color: var(--card-number-color);
+        }
+    }
+}
+
+.c-discord-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: $spacing-md 0;
+
+    p {
+        margin: 0 $spacing-lg 0;
+
     }
 }
 

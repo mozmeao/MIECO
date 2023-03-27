@@ -8,11 +8,99 @@
 
 {% block content %}
 <!-- Hero -->
-<section class="c-builders-hero mzp-t-dark">
+<section class="c-challenge-hero mzp-t-dark">
     <div class="mzp-l-content">
         <h1>Responsible AI Challenge</h1>
         <h2>by Mozilla Builders</h2>
     </div>
+</section>
+{% include 'partials/ticker.html' %}
+<section class="mzp-l-content mzp-t-content-md c-challenge-event">
+    <h4>We’re launching a global competition to steer AI toward trustworthy solutions. Join us in shaping the future of AI.</h4>
+    <p class="strong">Live event: May 31, 2023 in San Francisco, CA</p>
+    <a class="mzp-c-button">Apply Now</a>
+</section>
+<section class="c-challenge-opportunity">
+    <div class="mzp-l-content">
+        <h3>Your opportunity</h3>
+        <div class="mzp-l-columns mzp-t-columns-three">
+            <div class="c-opportunity-card">
+                <h4>Network with other innovators</h4>
+                <p>Connect with a community of like-minded innovators who want to create healthier internet experiences and build
+                relationships that can help support your journey.</p>
+            </div>
+            <div class="c-opportunity-card">
+                <h4>Pitch your idea and access mentorship</h4>
+                <p>Attend workshops and listen to speakers discussing topics such as algorithmic bias, evaluation and transparency.
+                Additionally, take the opportunity to pitch your idea live.</p>
+            </div>
+            <div class="c-opportunity-card">
+                <h4>Unlock resources</h4>
+                <p>With our partners providing various technology resources, we'll supply you with the proper support to bring your idea to
+                life. Plus, tap into our 50k prize money pool.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="mzp-t-dark c-details-section">
+    <div class="mzp-l-content">
+        <h3>Things you should know</h3>
+        <p>The challenge is open to everyone regardless of geographical location* but you must be present for the in-person event.</p>
+        <div class="mzp-l-columns mzp-t-columns-three">
+            <div class="c-details-card">
+                <h4>The requirements</h4>
+                <ul>
+                    <li>Project must be no more than 90 days old by March 30th, 2023</li>
+                    <li>Make sure you have have rights to any IP, code or data in use</li>
+                    <li>Individuals and teams can apply</li>
+                    <li>No cap on number of teammates</li>
+                </ul>
+            </div>
+            <div class="c-details-card">
+                <h4>The key dates</h4>
+                <ul>
+                    <li><span class="strong">March 30th: </span>Applications open</li>
+                    <li><span class="strong">April 20th: </span>Applications close</li>
+                    <li><span class="strong">May 8th: </span>Top 10 finalists announced</li>
+                    <li><span class="strong">May 31st: </span>In-person event for top 10 finalists</li>
+                </ul>
+            </div>
+            <div class="c-details-card">
+                <h4>The prizes</h4>
+                <ul>
+                    <li class="strong">1st Prize: $25,000</li>
+                    <li class="strong">2nd Prize: $15,000</li>
+                    <li class="strong">3rd Prize: $10,000</li>
+                </ul>
+                <p>Modest travel and accommodation stipends will be provided for finalists. One winner for each prize.</p>
+            </div>
+        </div>
+        <p>*Terms and Conditions</p>
+    </div>
+</section>
+<section class="mzp-l-content c-evaluation-section">
+    <h3>How projects will be evaluated</h3>
+    <div class="mzp-l-columns mzp-t-columns-three">
+        <div class="c-evaluation-card">
+            <p>01</p>
+            <h4>Concept creativity</h4>
+            <p>How is your project unique in its approach and how does it solve a specific problem or need in society?</p>
+        </div>
+        <div class="c-evaluation-card">
+            <p>02</p>
+            <h4>Technical implementation</h4>
+            <p>What technology stack and datasets will you leverage to make your AI solution work?</p>
+        </div>
+        <div class="c-evaluation-card">
+            <p>03</p>
+            <h4>Social impact</h4>
+            <p>How will your project be developed responsibly? How does it address the Responsible AI Guidelines?</p>
+        </div>
+    </div>
+</section>
+<section class="c-discord-banner mzp-t-dark">
+    <p>Got questions? Get more info and support on Discord.</p>
+    <a class="mzp-c-button mzp-t-secondary mzp-t-dark" href="discord.com" target="_blank">Go now</a>
 </section>
 <!-- email capture form -->
 <section class="mzp-l-content mzp-t-content-md c-builders-newsletter" id="newsletter-section">
@@ -65,7 +153,7 @@
     </aside>
 </section>
 <!-- Body copy -->
-<section class="mzp-l-content mzp-t-content-md mzp-t-content-nospace c-builders-copy">
+{# <section class="mzp-l-content mzp-t-content-md mzp-t-content-nospace c-builders-copy">
     <div>
         <h3>The challenge</h3>
         <p>We’re at a tipping point. It’s never been more essential that we create a movement toward trustworthy AI — and this
@@ -81,7 +169,7 @@
         <p><strong>Enter your email address to get updates about the Responsible AI Contest including participating mentors, judges, prizes and more.</strong></p>
         <p><strong>Applications open starting March 30, 2023.</strong></p>
     </div>
-</section>
+</section> #}
 {% endblock %}
 
 {% block js %}
