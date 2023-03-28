@@ -68,56 +68,101 @@ $font-path: '../../fonts';
     }
 
     .c-opportunity-card {
-        display: grid;
-        grid-template-rows: minmax(60px, 80px) 1fr;
+        margin-bottom: $spacing-2xl;
+        display: block;
 
         h4 {
             font-weight: 500;
+        }
+
+        @media #{$mq-lg} {
+            display: grid;
+            grid-template-rows: min-content 1fr;
+            margin-bottom: 0;
         }
     }
 }
 
 .c-details-section {
+    position: relative;
 
-    .mzp-l-columns {
-        margin: $layout-md 0;
+    .half-circle-left {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateY(-75%);
+    }
+
+    .half-circle-right {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transform: translateY(50%);
+    }
+
+    .c-details-grid {
+        .grid-card-container {
+            margin-top: $layout-md;
+        }
+
+        @media #{$mq-lg} {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            column-gap: $layout-md;
+
+            .grid-card-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                column-gap: $spacing-xl;
+                margin-top: 0;
+            }
+        }
     }
 
     .c-details-card {
-        color: $color-black;
-        padding: $spacing-xl;
+        margin-bottom: $layout-md;
 
         .strong {
             font-weight: bold;
         }
 
-        h4 {
-            color: $color-black;
+        h3 {
             font-weight: 500;
         }
 
-        &:nth-child(1) {
-            background-color: $color-green-20;
+        .card-subtext {
+            @include font-size(14px);
+            font-style: italic;
+        }
+
+        &.requirements {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            border-top: 1px solid $color-white;
+            border-left: 0;
+            padding-top: $layout-sm;
+
+            .requirements-title {
+                font-weight: 600;
+            }
+
 
             ul {
-                list-style: disc;
-                padding-left: 40px;
+                list-style-type: disc;
+                padding-left: $spacing-md;
+            }
+
+            a {
+                color: $color-white;
             }
         }
 
-        &:nth-child(2) {
-            background-color: $color-purple-20;
-
-            li {
-                margin-bottom: $spacing-md;
-            }
-        }
-
-        &:nth-child(3) {
-            background-color: $color-yellow-20;
-
-            p {
-                font-style: italic;
+        @media #{$mq-lg} {
+            &.requirements {
+                border-left: 1px solid $color-white;
+                border-top: 0;
+                padding-left: $layout-md;
             }
         }
     }
@@ -125,48 +170,35 @@ $font-path: '../../fonts';
 
 .c-evaluation-section .mzp-l-columns {
     margin-top: $layout-lg;
-
-    .c-evaluation-card {
-        &:nth-child(1) {
-            --card-number-color: #{$color-purple-20};
-        }
-
-        &:nth-child(2) {
-            --card-number-color: #{$color-violet-20};
-        }
-
-        &:nth-child(3) {
-            --card-number-color: #{$color-red-20};
-        }
-
-        p:first-of-type {
-            color: var(--card-number-color);
-        }
-    }
 }
 
 .c-discord-banner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: $spacing-md 0;
+    text-align: center;
+    padding: $spacing-md;
+    flex-direction: column;
 
     p {
-        margin: 0 $spacing-lg 0;
-
+        margin: 0 0 $spacing-lg 0;
     }
+
+   @media #{$mq-md} {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+
+        p {
+            margin: 0 $spacing-lg 0 0;
+        }
+   }
 }
 
 // overrides from protocol newsletter to have single column layout
 .c-builders-newsletter {
     padding-bottom: $spacing-xl;
 
-    h3 {
+    .newsletter-header {
         text-align: center;
-    }
-
-    .interests {
-        max-width: 100%;
     }
 
     .mzp-c-newsletter {
@@ -204,28 +236,4 @@ $font-path: '../../fonts';
             text-align: center;
         }
     }
-}
-
-.c-builders-copy {
-    > div {
-        text-align: center;
-
-        h3 {
-            @include font-size(38px);
-        }
-
-        p {
-            @include font-size(24px);
-        }
-
-        span {
-            font-weight: bold;
-        }
-    }
-
-    div:last-child {
-        margin-top: $layout-lg;
-    }
-
-    margin-bottom: $layout-lg;
 }
