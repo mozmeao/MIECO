@@ -75,6 +75,7 @@
 
         &-item {
             @include text-body-md;
+            font-weight: 600;
             text-transform: uppercase;
             display: inline;
             margin-bottom: 0; // protocol override

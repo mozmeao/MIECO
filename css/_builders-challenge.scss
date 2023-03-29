@@ -7,6 +7,7 @@ $font-path: '../../fonts';
 
 @import 'ticker';
 
+
 .c-challenge-hero {
     text-align: center;
     background-image: url("/img/builders-challenge/hero-sm.png");
@@ -47,13 +48,11 @@ $font-path: '../../fonts';
 .c-challenge-event {
     text-align: center;
 
-    h4 {
-        font-weight: normal;
+    h3 {
+        @include font-base;
+        font-weight: 400;
     }
 
-    .strong {
-        font-weight: bold;
-    }
 }
 
 .c-challenge-opportunity {
@@ -90,7 +89,22 @@ $font-path: '../../fonts';
         position: absolute;
         top: 0;
         left: 0;
-        transform: translateY(-75%);
+        transform: translateY(-50%);
+        width: 45px;
+
+        @media #{$mq-md} {
+            width: 60px;
+            transform: translateY(-75%);
+        }
+
+        @media #{$mq-lg} {
+            width: 70px;
+        }
+
+        @media #{$mq-xl} {
+            // full image width
+            width: 97px;
+        }
     }
 
     .half-circle-right {
@@ -98,6 +112,14 @@ $font-path: '../../fonts';
         bottom: 0;
         right: 0;
         transform: translateY(50%);
+
+        @media #{$mq-lg} {
+            width: 90px;
+        }
+
+        @media #{$mq-xl} {
+            width: 100px;
+        }
     }
 
     .c-details-grid {
@@ -114,7 +136,6 @@ $font-path: '../../fonts';
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 column-gap: $spacing-xl;
-                margin-top: 0;
             }
         }
     }
@@ -126,13 +147,17 @@ $font-path: '../../fonts';
             font-weight: bold;
         }
 
-        h3 {
+        h4 {
             font-weight: 500;
         }
 
         .card-subtext {
             @include font-size(14px);
             font-style: italic;
+        }
+
+        ul li {
+            margin-bottom: $spacing-md;
         }
 
         &.requirements {
@@ -144,6 +169,7 @@ $font-path: '../../fonts';
             padding-top: $layout-sm;
 
             .requirements-title {
+                @include text-body-lg;
                 font-weight: 600;
             }
 
@@ -170,6 +196,21 @@ $font-path: '../../fonts';
 
 .c-evaluation-section .mzp-l-columns {
     margin-top: $layout-lg;
+
+    .c-evaluation-card {
+        h4 {
+            font-weight: 500;
+            min-height: max-content;
+
+            @media #{$mq-lg} {
+                min-height: 60px;
+            }
+
+            @media #{$mq-xl} {
+                min-height: inherit;
+            }
+        }
+    }
 }
 
 .c-discord-banner {

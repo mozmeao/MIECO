@@ -52,7 +52,7 @@ const EmailForm = {
   handleFormSuccess: () => {
     if (isBuilderPage) {
       window.location.href =
-        "https://survey.alchemer.com/s3/7275783/Responsible-AI-Challenge";
+        "https://docs.google.com/forms/d/e/1FAIpQLScBsZLnrnII9VbzzjOxBh9wRDRcoNTryT3rqhNsoGprye7OKA/viewform?usp=sf_link";
     } else {
       form.classList.add("hidden");
       const thanks = document.getElementById("newsletter-thanks");
