@@ -48,11 +48,21 @@ $font-path: '../../fonts';
 .c-challenge-event {
     text-align: center;
 
-    h3 {
-        @include font-size(28px);
+    .c-event-tagline {
+        @include font-size(22px);
         @include font-base;
         line-height: 1.5;
         font-weight: 400;
+
+        @media #{$mq-lg} {
+            @include font-size(28px);
+        }
+    }
+
+    .c-event-date {
+        @include font-mozilla;
+        @include font-size(28px);
+        font-weight: bold;
     }
 
     .mzp-c-button {
@@ -176,6 +186,7 @@ $font-path: '../../fonts';
 
             .requirements-title {
                 @include text-body-lg;
+                @include font-base;
                 font-weight: 600;
             }
 
@@ -231,7 +242,7 @@ $font-path: '../../fonts';
     flex-direction: column;
 
     p {
-        font-size: 18px;
+        @include font-size(18px);
         margin: 0 0 $spacing-lg 0;
     }
 
