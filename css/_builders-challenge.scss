@@ -49,8 +49,14 @@ $font-path: '../../fonts';
     text-align: center;
 
     h3 {
+        @include font-size(28px);
         @include font-base;
+        line-height: 1.5;
         font-weight: 400;
+    }
+
+    .mzp-c-button {
+        margin-top: $spacing-xl;
     }
 
 }
@@ -201,14 +207,20 @@ $font-path: '../../fonts';
         h4 {
             font-weight: 500;
             min-height: max-content;
+            margin-bottom: $spacing-xl;
 
             @media #{$mq-lg} {
                 min-height: 60px;
+                margin-bottom: 0.5em;
             }
 
             @media #{$mq-xl} {
                 min-height: inherit;
             }
+        }
+
+        a {
+            color: $color-black;
         }
     }
 }
@@ -219,6 +231,7 @@ $font-path: '../../fonts';
     flex-direction: column;
 
     p {
+        font-size: 18px;
         margin: 0 0 $spacing-lg 0;
     }
 
