@@ -21,24 +21,28 @@
 [[headers]]
   for = "/fonts/*"
   [headers.values]
-    Cache-Control = "max-age=31536000,public,immutable"
+    # Temporary cache header change until we can get immutable files back
+    # Cache-Control = "max-age=31536000,public,immutable"
+    Cache-Control = "public,max-age=3600"
 
 [[headers]]
   for = "/css/*"
   [headers.values]
-    Cache-Control = "max-age=31536000,public,immutable"
+    # Cache-Control = "max-age=31536000,public,immutable"
+    Cache-Control = "public,max-age=3600"
 
 [[headers]]
   for = "/img/*"
   [headers.values]
-    Cache-Control = "max-age=31536000,public,immutable"
+    # Cache-Control = "max-age=31536000,public,immutable"
+    Cache-Control = "public,max-age=3600"
 
 [[headers]]
   for = "/js/*"
   [headers.values]
-    Cache-Control = "max-age=31536000,public,immutable"
+    # Cache-Control = "max-age=31536000,public,immutable"
+    Cache-Control = "public,max-age=3600"
 
 [[redirects]]
   from = "/builders-challenge/application/"
   to = "https://docs.google.com/forms/d/e/1FAIpQLScBsZLnrnII9VbzzjOxBh9wRDRcoNTryT3rqhNsoGprye7OKA/viewform?usp=sf_link"
-
