@@ -1,0 +1,92 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+// Hide the ticker for reduced motion or older browsers
+.c-news-ticker {
+    display: none;
+
+    &-content,
+    .set-one {
+        animation: none;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    @keyframes ticker {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    @keyframes repeat {
+        0%,
+        50% {
+            left: 0;
+        }
+
+        50.01%,
+        100% {
+            left: 100%;
+        }
+    }
+
+    .c-news-ticker {
+        $duration: 100s;
+        background-color: $color-green-20;
+        color: $color-black;
+        display: block;
+        max-width: 100%;
+        overflow: hidden;
+        padding: 0.5em 0;
+        position: relative;
+
+        &-content {
+            animation: ticker $duration linear infinite;
+            position: relative;
+            width: max-content;
+
+            &:hover {
+                animation-play-state: paused;
+            }
+        }
+
+        .set-one {
+            animation: repeat $duration linear infinite;
+            display: inline;
+            left: 0;
+            position: relative;
+        }
+
+        .set-two {
+            display: inline;
+        }
+
+        &-item {
+
+            &::before {
+                content: '  \00B7  ';
+            }
+        }
+
+        &-item {
+            @include text-body-md;
+            font-weight: 600;
+            text-transform: uppercase;
+            display: inline;
+            margin-bottom: 0; // protocol override
+        }
+    }
+
+    @media #{$mq-md} {
+        .c-news-ticker {
+            &-item {
+                @include text-body-lg;
+            }
+        }
+    }
+}

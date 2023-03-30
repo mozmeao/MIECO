@@ -38,3 +38,7 @@
   [headers.values]
     Cache-Control = "max-age=31536000,public,immutable"
 
+[[redirects]]
+  from = "/builders-challenge/application/"
+  to = "https://docs.google.com/forms/d/e/1FAIpQLScBsZLnrnII9VbzzjOxBh9wRDRcoNTryT3rqhNsoGprye7OKA/viewform?usp=sf_link"
+
