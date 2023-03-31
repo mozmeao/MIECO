@@ -11,6 +11,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block page_title %}MIECO{% endblock %}</title>
+    <meta name="description" content="{% filter striptags|e %}{% block page_desc %}{% endblock %}{% endfilter %}">
+
+    {% block social_meta %}
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Mozilla">
+    <meta property="og:image" content="{% block page_image %}/img/mozilla-256.jpg{% endblock %}">
+    <meta property="og:title" content="{% filter striptags|e %}{% block og_page_title %}{{ self.page_title() }}{% endblock %}{% endfilter %}">
+    <meta property="og:description" content="{% filter striptags|e %}{% block page_og_desc %}{{ self.page_desc() }}{% endblock %}{% endfilter %}">
+    <meta name="twitter:card" content="{% block twitter_card %}summary{% endblock %}">
+    <meta name="twitter:site" content="@{% block twitter_id %}mozilla{% endblock %}">
+    <meta name="twitter:domain" content="future.mozilla.org">
+    {% endblock social_meta %}
+
     {% block page_css %}{% endblock %}
     <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/img/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="196x196" href="/img/favicons/favicon-196x196.png">
