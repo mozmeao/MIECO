@@ -1,15 +1,20 @@
 {% extends "base.html" %}
 
-{% block page_css %}<link rel="stylesheet" href="/css/style.css">{% endblock %}
+{% block page_css %}<link rel="stylesheet" href="/css/style.scss">{% endblock %}
+
+{% block page_title %}{% endblock %}
+{% block page_desc %}{% endblock %}
 
 {% block content %}
+    {% set member_name %}{% block member_name %}{% endblock %}{% endset %}
+
     <nav aria-label="breadcrumb" class="mzp-c-breadcrumb">
         <ol class="mzp-c-breadcrumb-list">
             <li class="mzp-c-breadcrumb-item">
                 <a href="/mieco">About MIECO</a>
             </li>
             <li aria-current="page" class="mzp-c-breadcrumb-item">
-                {% block member_name %}{% endblock %}
+                {{ member_name }}
             </li>
         </ol>
     </nav> <!-- end breadcrumb -->
@@ -30,7 +35,7 @@
             {% block member_photo %}<img src="/img/placeholder.png" width="400" height="400" srcset="{{ profile_photo_src_high_res }} 2x" alt="">{% endblock %}
             <div>
                 <p class="project-company">{% block member_company %}{% endblock %}</p>
-                <h4>{{ self.member_name() }}</h4>
+                <h4>{{ member_name }}</h4>
                 <p>{% block member_bio %}{% endblock %}</p>
                 <p class="c-card-mission"><strong>Mission: </strong>{% block member_mission %}{% endblock %}</p>
                 <p><strong>Interests: </strong>{% block interests %}{% endblock %}</p>

@@ -5,9 +5,7 @@
 $image-path: '../../img';
 $font-path: '../../fonts';
 
-@import '/node_modules/@mozilla-protocol/core/protocol/css/components/split';
-
-
+@import '@mozilla-protocol/core/protocol/css/components/split';
 
 .c-innovation-hero {
     background-image: url("/img/landing/innovations-hero.svg");
@@ -180,4 +178,3 @@ $font-path: '../../fonts';
     }
 
 }
-
