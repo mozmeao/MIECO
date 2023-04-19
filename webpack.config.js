@@ -52,7 +52,7 @@ module.exports = {
   // enable HMR with live reload
   devServer: {
     port: 8000,
-    open: true,
+    open: false,
     static: {
       directory: path.join(__dirname, "dist"),
     },
@@ -68,18 +68,15 @@ module.exports = {
     new HtmlBundlerPlugin({
       entry: "pages/",
       js: {
-        // output filename of extracted JS
         filename: "scripts/[name].[contenthash:8].js",
       },
       css: {
-        // output filename of extracted CSS
         filename: "css/[name].[contenthash:8].css",
       },
       loaderOptions: {
         root: __dirname,
         preprocessor: 'nunjucks',
         preprocessorOptions: {
-          // an array of relative or absolute templates paths
           views: [
             "pages",
             "templates",

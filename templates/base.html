@@ -4,17 +4,15 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 -->
+{% set page_title %}{% block page_title %}MIECO{% endblock %}{% endset %}
+{% set page_desc %}{{ striptags|e }}{% block page_desc %}{% endblock %}{{ endfilter }}{% endset %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    {% set page_title %}{% block page_title %}MIECO{% endblock %}{% endset %}
     <title>{{ page_title }}</title>
-
-    {% set page_desc %}{{ striptags|e }}{% block page_desc %}{% endblock %}{{ endfilter }}{% endset %}
     <meta name="description" content="{{ page_desc }}">
 
     {% block social_meta %}

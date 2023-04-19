@@ -1,13 +1,11 @@
 {% extends "base.html" %}
 
+{% set member_name %}{% block member_name %}{% endblock %}{% endset %}
 {% block page_css %}<link rel="stylesheet" href="/css/style.scss">{% endblock %}
-
 {% block page_title %}{% endblock %}
 {% block page_desc %}{% endblock %}
 
 {% block content %}
-    {% set member_name %}{% block member_name %}{% endblock %}{% endset %}
-
     <nav aria-label="breadcrumb" class="mzp-c-breadcrumb">
         <ol class="mzp-c-breadcrumb-list">
             <li class="mzp-c-breadcrumb-item">

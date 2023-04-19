@@ -71,8 +71,13 @@ $font-path: '../../fonts';
 
 }
 
+.c-challenge-about h3 {
+    text-align: center;
+}
+
 .c-challenge-opportunity {
     background-color: $color-light-gray-20;
+    position: relative;
 
     h3 {
         text-align: center;
@@ -90,27 +95,21 @@ $font-path: '../../fonts';
             font-weight: 500;
         }
 
-        @media #{$mq-lg} {
-            display: grid;
-            grid-template-rows: min-content 1fr;
+        @media #{$mq-md} {
             margin-bottom: 0;
         }
     }
-}
-
-.c-details-section {
-    position: relative;
 
     .half-circle-left {
         position: absolute;
         top: 0;
         left: 0;
-        transform: translateY(-50%);
+        transform: translateY(-25%);
         width: 45px;
 
         @media #{$mq-md} {
             width: 60px;
-            transform: translateY(-75%);
+            transform: translateY(-40%);
         }
 
         @media #{$mq-lg} {
@@ -127,9 +126,11 @@ $font-path: '../../fonts';
         position: absolute;
         bottom: 0;
         right: 0;
-        transform: translateY(50%);
+        transform: translateY(45%);
+        width: 60px;
 
         @media #{$mq-lg} {
+            transform: translateY(55%);
             width: 90px;
         }
 
@@ -137,7 +138,9 @@ $font-path: '../../fonts';
             width: 100px;
         }
     }
+}
 
+.c-details-section {
     .c-details-grid {
         .grid-card-container {
             margin-top: $layout-md;
@@ -211,6 +214,56 @@ $font-path: '../../fonts';
     }
 }
 
+.c-info-section {
+    margin: -$layout-md auto -#{$layout-xs};
+
+    @media #{$mq-xl} {
+        margin-top: -$layout-xl;
+        margin-bottom: -$layout-xl;
+    }
+}
+
+.c-info-block {
+    padding: $layout-sm $layout-xs;
+    margin: 0 -#{$layout-xs};
+
+    &.t-types {
+        background: $color-green-20;
+    }
+
+    &.t-explanation {
+        background: $color-purple-10;
+    }
+
+    .c-info-block-title {
+        margin-bottom: $spacing-xl;
+    }
+
+    .c-info-block-intro {
+        @include text-body-lg;
+        max-width: $content-md;
+
+        h4 {
+            margin-top: $layout-sm;
+        }
+    }
+
+    h4 {
+        font-weight: 500;
+    }
+
+    h5 {
+        @include font-base;
+        @include text-body-lg;
+    }
+
+    @media #{$mq-md} {
+        padding: $layout-sm;
+        margin: 0 -#{$layout-sm} $layout-sm;
+        margin-bottom: $layout-md;
+    }
+}
+
 .c-evaluation-section .mzp-l-columns {
     margin-top: $layout-lg;
 
@@ -237,6 +290,7 @@ $font-path: '../../fonts';
 }
 
 .c-discord-banner {
+    background: #5865f2;
     text-align: center;
     padding: $spacing-md;
     flex-direction: column;
