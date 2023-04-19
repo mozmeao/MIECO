@@ -13,7 +13,7 @@ import {
     postToEmailServer
 } from './form-utils';
 
-import "/node_modules/@mozilla-protocol/core/protocol/js/protocol-newsletter.min.js";
+import "@mozilla-protocol/core/protocol/js/protocol-newsletter.min.js";
 
 let form;
 let isBuilderPage;

@@ -1,14 +1,11 @@
 {
   "name": "meico",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Static webpage for the Mozilla Internet Ecosystem (MIECO)",
   "scripts": {
-    "prestart": "npm run build:jinja",
-    "start": "npx concurrently \"npm:watch:jinja\" \"npm:watch:webpack\"",
-    "build": "npm run build:jinja && webpack --mode=production",
-    "build:jinja": "python build.py",
-    "watch:jinja": "npx watch 'npm run build:jinja' pages/  templates/",
-    "watch:webpack": "webpack serve --mode=development"
+    "start": "export NODE_ENV=development && webpack serve",
+    "build": "export NODE_ENV=production && webpack",
+    "watch": "export NODE_ENV=development && webpack watch"
   },
   "repository": {
     "type": "git",
@@ -21,24 +18,18 @@
   },
   "homepage": "https://github.com/mozmeao/MEICO#readme",
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.8.0",
+    "@parcel/transformer-sass": "^2.8.3",
     "babel-loader": "^9.1.2",
-    "clean-webpack-plugin": "^4.0.0",
-    "concurrently": "^7.6.0",
-    "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.3",
-    "html-loader": "^4.2.0",
-    "html-webpack-plugin": "^5.5.0",
-    "mini-css-extract-plugin": "^2.7.2",
-    "sass-loader": "^13.2.0",
-    "watch": "^1.0.2",
-    "webpack": "^5.75.0",
+    "html-bundler-webpack-plugin": "^1.17.1",
+    "nunjucks": "^3.2.4",
+    "sass-loader": "^13.2.2",
+    "webpack": "^5.80.0",
     "webpack-cli": "^5.0.1",
-    "webpack-dev-server": "^4.11.1",
-    "webpack-remove-empty-scripts": "^1.0.1"
+    "webpack-dev-server": "^4.13.2"
   },
   "dependencies": {
-    "@mozilla-protocol/core": "^16.0.1",
+    "@mozilla-protocol/core": "^16.1.0",
     "@mozmeao/dnt-helper": "^1.0.0"
   }
 }
