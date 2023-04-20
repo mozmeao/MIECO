@@ -79,6 +79,11 @@
             text-transform: uppercase;
             display: inline;
             margin-bottom: 0; // protocol override
+
+            span {
+                text-decoration: underline;
+                font-weight: bold;
+            }
         }
     }
 
