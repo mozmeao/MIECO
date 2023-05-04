@@ -11,6 +11,40 @@
 
 {% block main_class %}builders-container{% endblock %}
 
+{% set judges = [
+        { "name": "Raffi Krikorian", "desc": "Raffi is an Armenian-American technology executive and the CTO of the Emerson Collective.", "img": "/img/builders-challenge/judges/Raffi_Krikorian.jpg" },
+        { "name": "Lauren Wagner", "desc": "Lauren is an early-stage investor and Fellow at the Berggruen Institute.", "img": "/img/builders-challenge/judges/Lauren_Wagner.jpg" },
+        { "name": "Ramak Molavi", "desc": "Ramak is a digital rights lawyer and has led the 'Meaningful AI Transparency' research project at Mozilla since 2021.", "img": "/img/builders-challenge/judges/Ramak_Molavi.jpg" },
+        { "name": "Raesetje Sefala", "desc": "Raesetje is an AI Research Fellow at the Distributed AI Research Institute (DAIR).", "img": "/img/builders-challenge/judges/Raesetje_Sefala.jpg" },
+        { "name": "Damon Horowitz", "desc": "Damon is a technologist, philosophy professor and serial entrepreneur.", "img": "/img/builders-challenge/judges/Damon_Horowitz.jpg" },
+        { "name": "James Hodsen", "desc": "James is the CEO of the AI for Good Foundation, which is building economic and community resilience through technology.", "img": "/img/builders-challenge/judges/James_Hodsen.jpg" }
+    ]
+%}
+
+{% set speakers = [
+        { "name": "Margaret Mitchell", "desc": "Margaret is the Chief Ethics Scientist at Hugging Face, with deep experience in ML development, ML data governance, and AI evaluation.", "img": "/img/builders-challenge/judges/Margaret_Mitchell.jpg" },
+        { "name": "Gary Marcus", "desc": "Gary is the Emeritus Professor of Psychology and Neural Science at NYU and the author of five books, including New York Times Bestseller Guitar Zero.", "img": "/img/builders-challenge/judges/Gary_Marcus.jpg" }
+    ]
+%}
+
+{% set projects = [
+        { "name": "AI Cockpit", "desc": "creates open-source software for human supervisors to oversee and control automated decisions at various levels of AI autonomy." },
+        { "name": "AI Vulnerability Database (AVID)", "desc": "is an open-source knowledge base of failure modes for AI models, datasets, and systems."},
+        { "name": "Blind AI", "desc": "provides a confidential deployment solution for LLMs, enabling the protection of sensitive data when leveraging AI SaaS solutions." },
+        { "name": "Droomverhalen", "desc": "(Dutch for ‘dream stories’) is an AI-based story generator that enables parents to craft unique and personalized stories for their little ones." },
+        { "name": "Emakia", "desc": "is a research and development project looking to filter out social media harassment to provide a safer social media environment." },
+        { "name": "Kwanele Chat Bot", "desc": "aims to empower women in communities plagued by violence by enabling them to access help fast and ensure the collection of admissible evidence." },
+        { "name": "LivePose Portal", "desc": "trains participants and deep-learning models for camera-based group interactivity in the immersive arts." },
+        { "name": "Micro Adventures", "desc": "is an AI-powered app that combines gamified local learning adventures for parents and kids." },
+        { "name": "Nolano", "desc": "is a trained language model that uses natural language processing to run on laptops and smartphones." },
+        { "name": "Quirk", "desc": "is building game-based virtual worlds where children learn character building skills with the help of AI guidance and through play." },
+        { "name": "Rule-Based Fairness", "desc": "seeks to leverage rule-based learning and causality to mitigate biases and promote fairness." },
+        { "name": "Sanative AI", "desc": "provides anti-AI watermarks to protect images and artwork from being used as training data for diffusion models." },
+        { "name": "Simprints", "desc": "is developing unbiased face biometrics with AI for NGOs and governments in global health and humanitarian programs." },
+        { "name": "Visually Impaired Assistant System", "desc": "is a multi-disciplinary AI project that aims to improve accessibility for the visually impaired community." }
+    ]
+%}
+
 {% block content %}
 <!-- Hero -->
 <section class="c-challenge-hero mzp-t-dark">
@@ -26,6 +60,28 @@
     <p class="c-event-tagline">AI is changing everything. Now is the time to develop it responsibly. <br> Join us in the Responsible AI Challenge and help us shape the future of AI.</p>
     <p class="c-event-date">In-person event: May 31, 2023 in San Francisco, CA</p>
     <p>Applications have closed. Thank you for your interest and participation</p>
+</section>
+
+<section class="c-finalists-section">
+    <div class="mzp-l-content">
+        <h3>Our Top 10 Finalists</h3>
+        <table class="mzp-u-data-table">
+            <thead>
+                <tr>
+                    <th scope="column">Project Name</th>
+                    <th scope="column">Project Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for project in projects %}
+                <tr>
+                    <td>{{ project.name }}</td>
+                    <td>{{ project.desc }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </section>
 
 <section class="c-challenge-about mzp-t-dark">
@@ -209,6 +265,34 @@
     </section>
 </div>
 
+<section class="c-builders-judges mzp-l-content">
+    <h3>Meet our judges and speakers</h3>
+    <div class="judges-section">
+        <h4>Judges</h4>
+        <div class="c-judges-grid">
+            {% for judge in judges %}
+            <div class="c-judge-card">
+                <img width="300" src="{{ judge.img }}">
+                <p class="c-judges-card-name">{{ judge.name }}</p>
+                <p class="c-judges-card-desc">{{ judge.desc }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="judges-section">
+        <h4>Speakers</h4>
+        <div class="c-speakers-grid">
+            {% for speaker in speakers %}
+                <div class="c-judge-card">
+                    <img src="{{ speaker.img }}">
+                    <p class="c-judges-card-name">{{ speaker.name }}</p>
+                    <p class="c-judges-card-desc">{{ speaker.desc }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
 <section class="c-partner-section">
     <div class="mzp-l-content">
         <h3>Our Partners</h3>
@@ -216,6 +300,9 @@
             <img src="/img/builders-challenge/cohere.png " alt="Cohere">
             <img src="/img/builders-challenge/fiddler.png " alt="Fiddler">
             <img src="/img/builders-challenge/hugging-face.svg " alt="Hugging Face">
+            <img src="/img/builders-challenge/Center-for-Humane-Technology.png" alt="Center for Humane Technology">
+            <img src="/img/builders-challenge/Credo-AI.png" alt="Credo AI">
+            <img src="/img/builders-challenge/EleutherAI.png" alt="EleutherAI">
         </div>
     </div>
 </section>
