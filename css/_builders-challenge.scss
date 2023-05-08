@@ -141,7 +141,6 @@ $font-path: '../../fonts';
 }
 
 .c-details-section {
-
     .prize-doubled-section {
         padding: $spacing-lg;
         background-color: #ffd178;
@@ -261,6 +260,23 @@ $font-path: '../../fonts';
     }
 }
 
+.c-finalists-section {
+    background-color: #f5f5f5;
+
+    h3 {
+        text-align: center;
+        margin-bottom: $layout-lg;
+    }
+
+    @media #{$mq-md} {
+        .mzp-u-data-table {
+            th:first-of-type {
+                width: 180px;
+            }
+        }
+    }
+}
+
 .c-info-section {
     margin: -$layout-md auto -#{$layout-xs};
 
@@ -349,14 +365,87 @@ $font-path: '../../fonts';
         grid-template-columns: 1fr;
         justify-items: center;
         align-items: center;
+        gap: $layout-lg;
 
         img {
-            max-width: 300px;
+            max-width: 200px;
         }
 
         @media #{$mq-lg} {
             grid-template-columns: repeat(3, 1fr);
         }
+    }
+}
+
+.c-builders-judges {
+    h3 {
+        text-align: center;
+    }
+
+    .judges-section {
+        margin-top: $layout-lg;
+
+        h4 {
+            text-align: center;
+            font-weight: 500;
+            margin-bottom: $layout-md;
+        }
+
+        .c-judges-card-name {
+            @include font-mozilla;
+            @include font-size(28px);
+            margin-bottom: 0;
+        }
+    }
+}
+
+.c-judges-grid {
+    display: grid;
+    grid-template-columns: minmax(200px, 1fr);
+    column-gap: $layout-lg;
+    row-gap: $layout-sm;
+
+    @media #{$mq-md} {
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+    }
+
+    @media #{$mq-lg} {
+        grid-template-columns: repeat(3, minmax(200px, 1fr));
+    }
+}
+
+.c-speakers-grid {
+    display: grid;
+    grid-template-columns: minmax(200px, 1fr);
+    justify-items: flex-end;
+    column-gap: $layout-lg;
+
+    @media #{$mq-md} {
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+
+        .c-judge-card {
+            margin: 0;
+
+            &:first-child {
+                justify-self: flex-end;
+            }
+
+            &:nth-child(2) {
+                justify-self: flex-start;
+            }
+        }
+
+
+    }
+}
+
+.c-judge-card {
+    max-width: 300px;
+    margin: 0 auto;
+
+    img {
+        margin: 0 auto;
+        width: 100%;
     }
 }
 
