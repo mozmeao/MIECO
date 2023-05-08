@@ -12,18 +12,18 @@
 {% block main_class %}builders-container{% endblock %}
 
 {% set judges = [
-        { "name": "Raffi Krikorian", "desc": "Raffi is an Armenian-American technology executive and the CTO of the Emerson Collective.", "img": "/img/builders-challenge/judges/Raffi_Krikorian.jpg" },
-        { "name": "Lauren Wagner", "desc": "Lauren is an early-stage investor and Fellow at the Berggruen Institute.", "img": "/img/builders-challenge/judges/Lauren_Wagner.jpg" },
-        { "name": "Ramak Molavi", "desc": "Ramak is a digital rights lawyer and has led the 'Meaningful AI Transparency' research project at Mozilla since 2021.", "img": "/img/builders-challenge/judges/Ramak_Molavi.jpg" },
-        { "name": "Raesetje Sefala", "desc": "Raesetje is an AI Research Fellow at the Distributed AI Research Institute (DAIR).", "img": "/img/builders-challenge/judges/Raesetje_Sefala.jpg" },
-        { "name": "Damon Horowitz", "desc": "Damon is a technologist, philosophy professor and serial entrepreneur.", "img": "/img/builders-challenge/judges/Damon_Horowitz.jpg" },
-        { "name": "James Hodsen", "desc": "James is the CEO of the AI for Good Foundation, which is building economic and community resilience through technology.", "img": "/img/builders-challenge/judges/James_Hodsen.jpg" }
+        { "name": "Raffi Krikorian", "desc": "Raffi is an Armenian-American technology executive and the CTO of the Emerson Collective.", "img": "/img/builders-challenge/judges/raffi-krikorian.jpg" },
+        { "name": "Lauren Wagner", "desc": "Lauren is an early-stage investor and Fellow at the Berggruen Institute.", "img": "/img/builders-challenge/judges/lauren-wagner.jpg" },
+        { "name": "Ramak Molavi", "desc": "Ramak is a digital rights lawyer and has led the 'Meaningful AI Transparency' research project at Mozilla since 2021.", "img": "/img/builders-challenge/judges/ramak-molavi.jpg" },
+        { "name": "Raesetje Sefala", "desc": "Raesetje is an AI Research Fellow at the Distributed AI Research Institute (DAIR).", "img": "/img/builders-challenge/judges/raesetje-sefala.jpg" },
+        { "name": "Damon Horowitz", "desc": "Damon is a technologist, philosophy professor and serial entrepreneur.", "img": "/img/builders-challenge/judges/damon-horowitz.jpg" },
+        { "name": "James Hodsen", "desc": "James is the CEO of the AI for Good Foundation, which is building economic and community resilience through technology.", "img": "/img/builders-challenge/judges/james-hodsen.jpg" }
     ]
 %}
 
 {% set speakers = [
-        { "name": "Margaret Mitchell", "desc": "Margaret is the Chief Ethics Scientist at Hugging Face, with deep experience in ML development, ML data governance, and AI evaluation.", "img": "/img/builders-challenge/judges/Margaret_Mitchell.jpg" },
-        { "name": "Gary Marcus", "desc": "Gary is the Emeritus Professor of Psychology and Neural Science at NYU and the author of five books, including New York Times Bestseller Guitar Zero.", "img": "/img/builders-challenge/judges/Gary_Marcus.jpg" }
+        { "name": "Margaret Mitchell", "desc": "Margaret is the Chief Ethics Scientist at Hugging Face, with deep experience in ML development, ML data governance, and AI evaluation.", "img": "/img/builders-challenge/judges/margaret-mitchell.jpg" },
+        { "name": "Gary Marcus", "desc": "Gary is the Emeritus Professor of Psychology and Neural Science at NYU and the author of five books, including New York Times Bestseller Guitar Zero.", "img": "/img/builders-challenge/judges/gary-marcus.jpg" }
     ]
 %}
 
@@ -268,7 +268,7 @@
         <div class="c-judges-grid">
             {% for judge in judges %}
             <div class="c-judge-card">
-                <img width="300" src="{{ judge.img }}">
+                <img src="{{ judge.img }}" alt="" width="300" height="300">
                 <p class="c-judges-card-name">{{ judge.name }}</p>
                 <p class="c-judges-card-desc">{{ judge.desc }}</p>
             </div>
@@ -280,7 +280,7 @@
         <div class="c-speakers-grid">
             {% for speaker in speakers %}
                 <div class="c-judge-card">
-                    <img src="{{ speaker.img }}">
+                    <img src="{{ speaker.img }}" alt="" width="300" height="300">
                     <p class="c-judges-card-name">{{ speaker.name }}</p>
                     <p class="c-judges-card-desc">{{ speaker.desc }}</p>
                 </div>
