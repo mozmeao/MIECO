@@ -28,20 +28,16 @@
 %}
 
 {% set projects = [
-        { "name": "AI Cockpit", "desc": "creates open-source software for human supervisors to oversee and control automated decisions at various levels of AI autonomy." },
-        { "name": "AI Vulnerability Database (AVID)", "desc": "is an open-source knowledge base of failure modes for AI models, datasets, and systems."},
-        { "name": "Blind AI", "desc": "provides a confidential deployment solution for LLMs, enabling the protection of sensitive data when leveraging AI SaaS solutions." },
+        { "name": "Blind AI", "desc": "provides a confidential deployment solution for LLMs, in order to enable the protection of sensitive data when leveraging AI SaaS solutions." },
         { "name": "Droomverhalen", "desc": "(Dutch for ‘dream stories’) is an AI-based story generator that enables parents to craft unique and personalized stories for their little ones." },
-        { "name": "Emakia", "desc": "is a research and development project looking to filter out social media harassment to provide a safer social media environment." },
         { "name": "Kwanele Chat Bot", "desc": "aims to empower women in communities plagued by violence by enabling them to access help fast and ensure the collection of admissible evidence." },
         { "name": "LivePose Portal", "desc": "trains participants and deep-learning models for camera-based group interactivity in the immersive arts." },
         { "name": "Micro Adventures", "desc": "is an AI-powered app that combines gamified local learning adventures for parents and kids." },
         { "name": "Nolano", "desc": "is a trained language model that uses natural language processing to run on laptops and smartphones." },
         { "name": "Quirk", "desc": "is building game-based virtual worlds where children learn character building skills with the help of AI guidance and through play." },
-        { "name": "Rule-Based Fairness", "desc": "seeks to leverage rule-based learning and causality to mitigate biases and promote fairness." },
         { "name": "Sanative AI", "desc": "provides anti-AI watermarks to protect images and artwork from being used as training data for diffusion models." },
-        { "name": "Simprints", "desc": "is developing unbiased face biometrics with AI for NGOs and governments in global health and humanitarian programs." },
-        { "name": "Visually Impaired Assistant System", "desc": "is a multi-disciplinary AI project that aims to improve accessibility for the visually impaired community." }
+        { "name": "Simprints", "desc": "is developing privacy-preserving, unbiased face biometrics with AI for NGOs and governments in global health and humanitarian programs." },
+        { "name": "Visually Impaired <br> Assistant System", "desc": "is a multi-disciplinary AI project that aims to improve accessibility for the visually impaired community." }
     ]
 %}
 
@@ -75,7 +71,7 @@
             <tbody>
                 {% for project in projects %}
                 <tr>
-                    <td>{{ project.name }}</td>
+                    <td>{{ project.name|safe }}</td>
                     <td>{{ project.desc }}</td>
                 </tr>
                 {% endfor %}
