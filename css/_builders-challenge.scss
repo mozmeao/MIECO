@@ -397,6 +397,14 @@ $font-path: '../../fonts';
             margin-bottom: 0;
         }
     }
+
+    @media #{$mq-md} {
+        .c-judge-card {
+            &:last-child {
+                grid-column: 2/3;
+            }
+        }
+    }
 }
 
 .c-judges-grid {
