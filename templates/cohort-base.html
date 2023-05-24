@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 
-{% set member_name %}{% block member_name %}{% endblock %}{% endset %}
 {% block page_css %}<link rel="stylesheet" href="/css/style.scss">{% endblock %}
 {% block page_title %}{% endblock %}
 {% block page_desc %}{% endblock %}
@@ -12,6 +11,7 @@
                 <a href="/mieco">About MIECO</a>
             </li>
             <li aria-current="page" class="mzp-c-breadcrumb-item">
+                {% set member_name %}{% block member_name %}{{ member_name }}{% endblock %}{% endset %}
                 {{ member_name }}
             </li>
         </ol>
