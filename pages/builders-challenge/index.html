@@ -42,6 +42,24 @@
     ]
 %}
 
+{% set sessions = [
+        { "time": "10:30am - 11:00am", "desc": "Registration and check-in" }, 
+        { "time": "11:00am - 11:50am", "desc": "Workshop #1 (3 Choices):"},
+        { "name": "Robust and Reliable ML Application Development", "desc": " - This workshop aims to provide an in-depth understanding of CAPSA, a unified framework for quantifying risk in deep neural networks developed by Themis AI, in addition to risk-aware applications built with this framework."},
+        { "name": "What Is Humane Innovation?", "desc": " - Join Center for Humane Technology Innovation Lead Andrew Dunn for an interactive presentation on building AI with principles from their Foundations course."},
+        { "name": "Prototyping Social Norms and Agreements in Responsible AI", "desc": " - In this workshop led by Mozilla Senior Fellow in Trustworthy AI Bogdana Rakova, we’ll explore questions related to AI risks, safeguards, transparency, human autonomy, and digital sovereignty through social, computational, and legal mechanisms by applying a hands-on approach grounded in participant’s projects."},
+        { "time": "12:00pm - 12:50pm", "desc": "Lunch" },
+        { "time": "1:00pm - 1:50am", "desc": "Workshop #2 (4 Choices):" },
+        { "name": "Algorithmic Fairness: A Pathway to Developing Responsible AI Systems", "desc": " - Join Golnoosh Farnadi, Canada CIFAR AI Chair, Mila, as she discusses the importance of fairness and provides an overview of techniques for ensuring algorithmic fairness through the machine learning pipeline while also suggesting questions and future directions for building a responsible AI system."},
+        { "name": "Operationalizing AI Ethics", "desc": " - Dr. Karina Alexanyan, Director of Strategy at All Tech is Human, Katya Klinova, Head of AI, Labor and the Economy at Partnership on AI, Chris McClean, Director, Global Lead, Digital Ethics at Avanade, Gabriella de Queiroz, Principal Cloud Advocate at Microsoft, and Ehrik Aldana, Tech Policy Product Manager at Credo.ai will share insights and examples of how to be thoughtful and responsible about designing and deploying innovations in AI."},
+        { "name": "Building Trust into Gen AI: Model Visibility and Tracking Change in Data Distributions", "desc": " - The current generation of Generative AI excels at working directly with humans in human language– and for several reasons this increases the potential for harm. Join Fiddler AI to generate a dataset by collaborating on a toy genAI task and explore techniques for localizing model weaknesses and time-dependent semantic drift."},
+        { "name": "Wait Wait, Don't push that button!” Human Centered Design for Responsible AI ", "desc": " - Join Superbloom for a workshop on human-centered design and AI, where we'll talk about designing for users in responsible ways that take into account challenges, benefits, and what can go wrong.s"},
+        { "time": "2:00pm - 3:20pm", "desc": "Keynote Speakers" },
+        { "time": "3:35pm - 5:40pm", "desc": "Responsible AI Challenge Final Rounds" },
+        { "time": "5:40pm - 7:30pm", "desc": "Closing Reception" }
+    ]
+%}
+
 {% block content %}
 <!-- Hero -->
 <section class="c-challenge-hero mzp-t-dark">
@@ -56,7 +74,24 @@
 <section class="mzp-l-content mzp-t-content-xl c-challenge-event">
     <p class="c-event-tagline">AI is changing everything. Now is the time to develop it responsibly. <br> Join us in the Responsible AI Challenge and help us shape the future of AI.</p>
     <p class="c-event-date">In-person event: May 31, 2023 in San Francisco, CA</p>
-    <img id="challenge-schedule" src="/img/builders-challenge/AI-Challenge-schedule.png"></img>
+    <table id="challenge-schedule" class="mzp-u-data-table">
+        <thead>
+            <tr>
+                <img src="/img/builders-challenge/event-agenda.png" alt="Event Agenda">
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    {% for session in sessions %}
+                    <tr>
+                        <td><strong>{{ session.time }}</strong></td>
+                        <td><u>{{session.name}}</u>{{ session.desc }}</td>
+                    </tr>
+                    {% endfor %}
+                </tr>
+            </tbody>
+    </table>
+
 </section>
 
 <section class="c-finalists-section">
