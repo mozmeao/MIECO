@@ -42,29 +42,12 @@
     ]
 %}
 
-{% set sessions = [
-        { "time": "10:30am - 11:00am", "desc": "Registration and check-in" }, 
-        { "time": "11:00am - 11:50am", "desc": "Workshop #1 (3 Choices):"},
-        { "name": "Robust and Reliable ML Application Development", "desc": " - This workshop aims to provide an in-depth understanding of CAPSA, a unified framework for quantifying risk in deep neural networks developed by Themis AI, in addition to risk-aware applications built with this framework."},
-        { "name": "What Is Humane Innovation?", "desc": " - Join Center for Humane Technology Innovation Lead Andrew Dunn for an interactive presentation on building AI with principles from their Foundations course."},
-        { "name": "Prototyping Social Norms and Agreements in Responsible AI", "desc": " - In this workshop led by Mozilla Senior Fellow in Trustworthy AI Bogdana Rakova, we’ll explore questions related to AI risks, safeguards, transparency, human autonomy, and digital sovereignty through social, computational, and legal mechanisms by applying a hands-on approach grounded in participant’s projects."},
-        { "time": "12:00pm - 12:50pm", "desc": "Lunch" },
-        { "time": "1:00pm - 1:50am", "desc": "Workshop #2 (4 Choices):" },
-        { "name": "Algorithmic Fairness: A Pathway to Developing Responsible AI Systems", "desc": " - Join Golnoosh Farnadi, Canada CIFAR AI Chair, Mila, as she discusses the importance of fairness and provides an overview of techniques for ensuring algorithmic fairness through the machine learning pipeline while also suggesting questions and future directions for building a responsible AI system."},
-        { "name": "Operationalizing AI Ethics", "desc": " - Dr. Karina Alexanyan, Director of Strategy at All Tech is Human, Katya Klinova, Head of AI, Labor and the Economy at Partnership on AI, Chris McClean, Director, Global Lead, Digital Ethics at Avanade, Gabriella de Queiroz, Principal Cloud Advocate at Microsoft, and Ehrik Aldana, Tech Policy Product Manager at Credo.ai will share insights and examples of how to be thoughtful and responsible about designing and deploying innovations in AI."},
-        { "name": "Building Trust into Gen AI: Model Visibility and Tracking Change in Data Distributions", "desc": " - The current generation of Generative AI excels at working directly with humans in human language– and for several reasons this increases the potential for harm. Join Fiddler AI to generate a dataset by collaborating on a toy genAI task and explore techniques for localizing model weaknesses and time-dependent semantic drift."},
-        { "name": "Wait Wait, Don't push that button!” Human Centered Design for Responsible AI ", "desc": " - Join Superbloom for a workshop on human-centered design and AI, where we'll talk about designing for users in responsible ways that take into account challenges, benefits, and what can go wrong."},
-        { "time": "2:00pm - 3:20pm", "desc": "Keynote Speakers"},
-        { "name": "Imo Udom", "desc": " - SVP Innovation Ecosystems"},
-        { "name": "Margaret Mitchell", "desc": " - Chief Ethics Scientist, Hugging Face"},
-        { "name": "Gary Marcus", "desc": " - Emeritus Professor of Psychology and Neural Science at NYU"},
-        { "name": "Kevin Roose", "desc": " - Speaker, reporter and author of Futureproof"},
-        { "time": "3:35pm - 5:40pm", "desc": "Responsible AI Challenge Final Rounds" },
-        { "desc": "3-5 minute pitch + 5 minutes Q&A per team" },
-        { "desc": "Awards and prizes!"},
-        { "time": "5:40pm - 7:30pm", "desc": "Closing Reception" }
-    ]
-%}
+{% set winners = [
+    { "name": "Sanative AI", "desc": "provides anti-AI watermarks to protect images and artwork from being used as training data for diffusion models.", "img": "/img/builders-challenge/sanative-ai.jpg", "place": "1st" },
+    { "name": "Kwanele Chat Bot", "desc": "aims to empower women in communities plagued by violence by enabling them to access help fast and ensure the collection
+    of admissible evidence.", "img": "/img/builders-challenge/kwanele-chat-bot.jpg", "place": "2nd" },
+    { "name": "Nolano", "desc": "is a trained language model that uses natural language processing to run on laptops and smartphones.", "img": "/img/builders-challenge/nolano.jpg", "place": "3rd" }
+]%}
 
 {% block content %}
 <!-- Hero -->
@@ -78,47 +61,26 @@
 {% include 'partials/ticker.html' %}
 
 <section class="mzp-l-content mzp-t-content-xl c-challenge-event">
-    <p class="c-event-tagline">AI is changing everything. Now is the time to develop it responsibly. <br> Join us in the Responsible AI Challenge and help us shape the future of AI.</p>
-    <p class="c-event-date">In-person event: May 31, 2023 in San Francisco, CA</p>
-    <table id="challenge-schedule" class="mzp-u-data-table">
-        <thead>
-            <tr>
-                <img src="/img/builders-challenge/event-agenda.png" alt="Event Agenda">
-            </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    {% for session in sessions %}
-                    <tr>
-                        <td><strong>{{ session.time }}</strong></td>
-                        <td>{%if session.name %}<u>{{session.name}}</u>{% endif %}{{ session.desc }}</td>
-                    </tr>
-                    {% endfor %}
-                </tr>
-            </tbody>
-    </table>
+    <p class="c-event-tagline">Challenge accomplished. Thank you for making this a success!</p>
+    <p class="c-event-tagline">We are grateful to all participants, speakers, judges, and supporters whose passion and dedication paved the way for
+    responsible AI development. The event exceeded expectations, with insightful discussions and inspiring projects,
+    reaffirming our commitment to shaping the future of AI.</p>
 </section>
 
-<section class="c-finalists-section">
-    <div class="mzp-l-content">
-        <h3>Our Top 10 Finalists</h3>
-        <table class="mzp-u-data-table">
-            <thead>
-                <tr>
-                    <th scope="column">Project Name</th>
-                    <th scope="column">Project Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for project in projects %}
-                <tr>
-                    <td>{{ project.name|safe }}</td>
-                    <td>{{ project.desc }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+<section class="mzp-l-content c-winner-section">
+    <h3>Announcing top prize winners</h3>
+    <div class="mzp-l-columns mzp-t-columns-three">
+        {% for winner in winners %}
+        <div class="c-winner-card">
+            <p class="c-winner-card-place">{{ winner.place}} place</p>
+            <img src="{{ winner.img }}" alt="" width="300" height="300">
+            <p class="c-winner-card-name">{{ winner.name }}</p>
+            <p class="c-winner-card-desc">{{ winner.desc }}</p>
+        </div>
+        {% endfor %}
     </div>
+    <img class="half-circle-left" src="/img/builders-challenge/half-circle-left.png" role="presentation" alt="">
+    <img class="half-circle-right" src="/img/builders-challenge/half-circle-right.png" role="presentation" alt="">
 </section>
 
 <section class="c-challenge-about mzp-t-dark">
@@ -141,78 +103,10 @@
     </div>
 </section>
 
-<section class="c-challenge-opportunity">
-    <div class="mzp-l-content">
-        <h3>Your opportunity</h3>
-        <div class="mzp-l-columns mzp-t-columns-three">
-            <div class="c-opportunity-card">
-                <h4>Apply</h4>
-                <p>Tell us about the AI project you want to develop and how you’ll develop it responsibly. You don’t have to
-                have it all figured out (that’s why the application is short!) — we want to see how you think.</p>
-            </div>
-            <div class="c-opportunity-card">
-                <h4>Become a finalist</h4>
-                <p>10 teams will become finalists and be invited to an in-person event in San Francisco with some of the brightest
-                thinkers, technologists, ethicists and business leaders to help you get your idea off the ground and unlock a variety of
-                technology resources.</p>
-            </div>
-            <div class="c-opportunity-card">
-                <h4>Win big</h4>
-                <p>Attend workshops and talks about algorithmic bias, evaluation and transparency. Refine your pitch and get an opportunity
-                to win a cash prize. Plus, get access to mentorship from leaders in the industry and meet like-minded innovators.</p>
-            </div>
-        </div>
-    </div>
-    <img class="half-circle-left" src="/img/builders-challenge/half-circle-left.png" role="presentation" alt="">
-    <img class="half-circle-right" src="/img/builders-challenge/half-circle-right.png" role="presentation" alt="">
-</section>
 
-<section class="mzp-t-dark c-details-section">
-    <div class="mzp-l-content c-details-grid">
-        <div>
-            <h3>Things you should know</h3>
-            <p>The challenge is open to everyone regardless of geographical location* but you must be present for the in-person event.</p>
-            <div class="prize-doubled-section">
-                <p>Update: Craig Newmark Philanthropies makes a generous donation to the Responsible AI Challenge – prize amounts now <span>doubled</span><p>
-            </div>
-            <div class="grid-card-container">
-                <div class="c-details-card">
-                    <h4>The key dates</h4>
-                    <ul>
-                        <li><span class="strong">March 30th: </span>Applications open</li>
-                        <li><span class="strong">April 20th: </span>Applications close</li>
-                        <li><span class="strong">May 8th: </span>Top 10 finalists announced</li>
-                        <li><span class="strong">May 31st: </span>In-person event for top 10 finalists</li>
-                    </ul>
-                </div>
-                <div class="c-details-card">
-                    <h4>The prizes</h4>
-                    <ul>
-                        <li class="strong">1st prize: <s class="cross-out">$25,000</s> <span class="new-amount">$50,000</span></li>
-                        <li class="strong">2nd prize: <s class="cross-out">$15,000</s> <span class="new-amount">$30,000</span></li>
-                        <li class="strong">3rd prize: <s class="cross-out">$10,000</s> <span class="new-amount">$20,000</span></li>
-                    </ul>
-                </div>
-            </div>
-            <p>Update: Applications have closed. Thank you for your interest and participation</p>
-        </div>
-        <div class="c-details-card requirements">
-            <h4 class="requirements-title">The requirements</h4>
-            <ul>
-                <li>Early-stage projects only</li>
-                <li>Make sure you have the rights to any IP, code or data in use</li>
-                <li>Individuals and teams can apply</li>
-                <li>No cap on number of teammates</li>
-                <li>Modest travel and accommodation reimbursements will be provided for finalists</li>
-                <li>One winner for each prize</li>
-            </ul>
-            <p class="card-subtext">*<a href="https://www.mozilla.org/about/legal/terms/builders-challenge">Terms and Conditions</a></p>
-        </div>
-    </div>
-</section>
 
 <section class="mzp-l-content c-evaluation-section">
-    <h3>How applications will be evaluated</h3>
+    <h3>How applications were evaluated</h3>
     <div class="mzp-l-columns mzp-t-columns-three">
         <div class="c-evaluation-card">
             <h4>Concept innovation</h4>

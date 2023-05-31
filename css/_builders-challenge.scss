@@ -71,32 +71,47 @@ $font-path: '../../fonts';
 
 }
 
-.c-challenge-about h3 {
-    text-align: center;
-}
-
-.c-challenge-opportunity {
-    background-color: $color-light-gray-20;
-    position: relative;
+.c-winner-section {
+    background-color: #F5F5F5;
 
     h3 {
         text-align: center;
+
+        @media #{$mq-lg} {
+            text-align: left;
+        }
     }
 
     .mzp-l-columns {
-        margin-top: $layout-md;
+        display: grid;
+        justify-items: center;
     }
 
-    .c-opportunity-card {
-        margin-bottom: $spacing-2xl;
-        display: block;
+    .c-winner-card {
+        @include font-mozilla;
+        margin-left: 0;
+        margin-right: 0;
 
-        h4 {
+        .c-winner-card-place {
+            @include font-size(32px);
+            margin-bottom: $spacing-lg;
             font-weight: 500;
         }
 
-        @media #{$mq-md} {
-            margin-bottom: 0;
+        .c-winner-card-name {
+            margin-bottom: $spacing-sm;
+        }
+
+        &:first-child .c-winner-card-place {
+            color: #F55953;
+        }
+
+        &:nth-child(2) .c-winner-card-place {
+            color: #6464C9;
+        }
+
+        &:nth-child(3) .c-winner-card-place {
+            color: #CA61D4;
         }
     }
 
@@ -140,141 +155,36 @@ $font-path: '../../fonts';
     }
 }
 
-.c-details-section {
-    .prize-doubled-section {
-        padding: $spacing-lg;
-        background-color: #ffd178;
+.c-challenge-about h3 {
+    text-align: center;
+}
 
-        p {
-            text-transform: uppercase;
-            color: $color-black;
-            margin: 0;
-            font-weight: bold;
+.c-challenge-opportunity {
+    background-color: $color-light-gray-20;
+    position: relative;
 
-            span {
-                text-decoration: underline;
-            }
-        }
+    h3 {
+        text-align: center;
     }
 
-    .c-details-grid {
-        .grid-card-container {
-            margin-top: $layout-md;
-        }
-
-        @media #{$mq-lg} {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            column-gap: $layout-md;
-
-            .grid-card-container {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                column-gap: $spacing-xl;
-            }
-        }
+    .mzp-l-columns {
+        margin-top: $layout-md;
     }
 
-    .c-details-card {
-        margin-bottom: $layout-md;
-
-        .strong {
-            font-weight: bold;
-
-            .cross-out {
-                font-weight: normal;
-                color: #9d9d9d;
-                position: relative;
-
-                &::before,
-                &::after {
-                    clip-path: inset(100%);
-                    clip: rect(1px, 1px, 1px, 1px);
-                    height: 1px;
-                    overflow: hidden;
-                    position: absolute;
-                    white-space: nowrap;
-                    width: 1px;
-                }
-
-                &::before {
-                    content: " [start of stricken text] ";
-                }
-
-                &::after {
-                content: " [end of stricken text] ";
-                }
-            }
-
-            .new-amount {
-                @include font-size(20px);
-                color: #ffd178;
-            }
-        }
+    .c-opportunity-card {
+        margin-bottom: $spacing-2xl;
+        display: block;
 
         h4 {
             font-weight: 500;
         }
 
-        .card-subtext {
-            @include font-size(14px);
-            font-style: italic;
-        }
-
-        ul li {
-            margin-bottom: $spacing-md;
-        }
-
-        &.requirements {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            border-top: 1px solid $color-white;
-            border-left: 0;
-            padding-top: $layout-sm;
-
-            .requirements-title {
-                @include text-body-lg;
-                @include font-base;
-                font-weight: 600;
-            }
-
-
-            ul {
-                list-style-type: disc;
-                padding-left: $spacing-md;
-            }
-
-            a {
-                color: $color-white;
-            }
-        }
-
-        @media #{$mq-lg} {
-            &.requirements {
-                border-left: 1px solid $color-white;
-                border-top: 0;
-                padding-left: $layout-md;
-            }
+        @media #{$mq-md} {
+            margin-bottom: 0;
         }
     }
-}
 
-.c-finalists-section {
-    background-color: #f5f5f5;
 
-    h3 {
-        text-align: center;
-        margin-bottom: $layout-lg;
-    }
-
-    @media #{$mq-md} {
-        .mzp-u-data-table {
-            th:first-of-type {
-                width: 180px;
-            }
-        }
-    }
 }
 
 .c-info-section {
