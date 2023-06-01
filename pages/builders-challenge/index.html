@@ -283,21 +283,15 @@
 </section>
 
 <section class="mzp-l-content mzp-t-content-xl c-challenge-event">
+    <h3><img src="/img/builders-challenge/event-agenda.png" alt="Event Agenda"></h3>
     <table id="challenge-schedule" class="mzp-u-data-table">
-        <thead>
-            <tr>
-                <img src="/img/builders-challenge/event-agenda.png" alt="Event Agenda">
-            </tr>
-        </thead>
         <tbody>
-            <tr>
-                {% for session in sessions %}
-            <tr>
-                <td><strong>{{ session.time }}</strong></td>
-                <td>{%if session.name %}<u>{{session.name}}</u>{% endif %}{{ session.desc }}</td>
-            </tr>
+            {% for session in sessions %}
+                <tr>
+                    <td><strong>{{ session.time }}</strong></td>
+                    <td>{%if session.name %}<u>{{session.name}}</u>{% endif %}{{ session.desc }}</td>
+                </tr>
             {% endfor %}
-            </tr>
         </tbody>
     </table>
 </section>
