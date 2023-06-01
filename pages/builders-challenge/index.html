@@ -7,7 +7,7 @@
 
 {% block page_css %}<link rel="stylesheet" href="/css/style.scss">{% endblock %}
 
-{% block nav_cta_text %}Learn More{% endblock%}
+{% block nav_cta_text %}Stay tuned{% endblock%}
 
 {% block main_class %}builders-container{% endblock %}
 
@@ -42,6 +42,48 @@
     ]
 %}
 
+{% set sessions = [
+    { "time": "10:30am - 11:00am", "desc": "Registration and check-in" },
+    { "time": "11:00am - 11:50am", "desc": "Workshop #1 (3 Choices):"},
+    { "name": "Robust and Reliable ML Application Development", "desc": " - This workshop aims to provide an in-depth
+    understanding of CAPSA, a unified framework for quantifying risk in deep neural networks developed by Themis AI, in
+    addition to risk-aware applications built with this framework."},
+    { "name": "What Is Humane Innovation?", "desc": " - Join Center for Humane Technology Innovation Lead Andrew Dunn for an
+    interactive presentation on building AI with principles from their Foundations course."},
+    { "name": "Prototyping Social Norms and Agreements in Responsible AI", "desc": " - In this workshop led by Mozilla
+    Senior Fellow in Trustworthy AI Bogdana Rakova, we’ll explore questions related to AI risks, safeguards, transparency,
+    human autonomy, and digital sovereignty through social, computational, and legal mechanisms by applying a hands-on
+    approach grounded in participant’s projects."},
+    { "time": "12:00pm - 12:50pm", "desc": "Lunch" },
+    { "time": "1:00pm - 1:50am", "desc": "Workshop #2 (4 Choices):" },
+    { "name": "Algorithmic Fairness: A Pathway to Developing Responsible AI Systems", "desc": " - Join Golnoosh Farnadi,
+    Canada CIFAR AI Chair, Mila, as she discusses the importance of fairness and provides an overview of techniques for
+    ensuring algorithmic fairness through the machine learning pipeline while also suggesting questions and future
+    directions for building a responsible AI system."},
+    { "name": "Operationalizing AI Ethics", "desc": " - Dr. Karina Alexanyan, Director of Strategy at All Tech is Human,
+    Katya Klinova, Head of AI, Labor and the Economy at Partnership on AI, Chris McClean, Director, Global Lead, Digital
+    Ethics at Avanade, Gabriella de Queiroz, Principal Cloud Advocate at Microsoft, and Ehrik Aldana, Tech Policy Product
+    Manager at Credo.ai will share insights and examples of how to be thoughtful and responsible about designing and
+    deploying innovations in AI."},
+    { "name": "Building Trust into Gen AI: Model Visibility and Tracking Change in Data Distributions", "desc": " - The
+    current generation of Generative AI excels at working directly with humans in human language– and for several reasons
+    this increases the potential for harm. Join Fiddler AI to generate a dataset by collaborating on a toy genAI task and
+    explore techniques for localizing model weaknesses and time-dependent semantic drift."},
+    { "name": "Wait Wait, Don't push that button!” Human Centered Design for Responsible AI ", "desc": " - Join Superbloom
+    for a workshop on human-centered design and AI, where we'll talk about designing for users in responsible ways that take
+    into account challenges, benefits, and what can go wrong."},
+    { "time": "2:00pm - 3:20pm", "desc": "Keynote Speakers"},
+    { "name": "Imo Udom", "desc": " - SVP Innovation Ecosystems"},
+    { "name": "Margaret Mitchell", "desc": " - Chief Ethics Scientist, Hugging Face"},
+    { "name": "Gary Marcus", "desc": " - Emeritus Professor of Psychology and Neural Science at NYU"},
+    { "name": "Kevin Roose", "desc": " - Speaker, reporter and author of Futureproof"},
+    { "time": "3:35pm - 5:40pm", "desc": "Responsible AI Challenge Final Rounds" },
+    { "desc": "3-5 minute pitch + 5 minutes Q&A per team" },
+    { "desc": "Awards and prizes!"},
+    { "time": "5:40pm - 7:30pm", "desc": "Closing Reception" }
+]
+%}
+
 {% set winners = [
     { "name": "Sanative AI", "desc": "provides anti-AI watermarks to protect images and artwork from being used as training data for diffusion models.", "img": "/img/builders-challenge/sanative-ai.jpg", "place": "1st" },
     { "name": "Kwanele Chat Bot", "desc": "aims to empower women in communities plagued by violence by enabling them to access help fast and ensure the collection
@@ -63,8 +105,9 @@
 <section class="mzp-l-content mzp-t-content-xl c-challenge-event">
     <p class="c-event-tagline">Challenge accomplished. Thank you for making this a success!</p>
     <p class="c-event-tagline">We are grateful to all participants, speakers, judges, and supporters whose passion and dedication paved the way for
-    responsible AI development. The event exceeded expectations, with insightful discussions and inspiring projects,
+    Responsible AI development. The event exceeded expectations, with insightful discussions and inspiring projects,
     reaffirming our commitment to shaping the future of AI.</p>
+    <a href="#newsletter-section" class="mzp-c-button">Stay Tuned</a>
 </section>
 
 <section class="mzp-l-content c-winner-section">
@@ -73,7 +116,7 @@
         {% for winner in winners %}
         <div class="c-winner-card">
             <p class="c-winner-card-place">{{ winner.place}} place</p>
-            <img src="{{ winner.img }}" alt="" width="300" height="300">
+            <img src="{{ winner.img }}" alt="" width="400">
             <p class="c-winner-card-name">{{ winner.name }}</p>
             <p class="c-winner-card-desc">{{ winner.desc }}</p>
         </div>
@@ -239,11 +282,26 @@
     </div>
 </section>
 
+<section class="mzp-l-content mzp-t-content-xl c-challenge-event">
+    <h3><img src="/img/builders-challenge/event-agenda.png" alt="Event Agenda"></h3>
+    <table id="challenge-schedule" class="mzp-u-data-table">
+        <tbody>
+            {% for session in sessions %}
+                <tr>
+                    <td><strong>{{ session.time }}</strong></td>
+                    <td>{%if session.name %}<u>{{session.name}}</u>{% endif %}{{ session.desc }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+
+
 <!-- email capture form -->
 <section class="mzp-l-content mzp-t-content-md c-builders-newsletter" id="newsletter-section">
     <div class="mzp-c-newsletter">
         <div class="newsletter-header">
-            <h3>Get notified about challenge details</h3>
+            <h3>Sign up to get more details and updates</h3>
         </div>
         <form id="newsletter-form" class="mzp-c-newsletter-form builders-form" name="newsletter-form">
             <fieldset class="mzp-c-newsletter-content">
