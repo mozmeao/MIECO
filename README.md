@@ -1,5 +1,5 @@
 # MIECO
-Webpage for the Mozilla Innovations team at https://future.mozilla.org and the Mozilla Internet Ecosystem (MIECO). It may be useful to know that the MIECO site came first and then this repo expanded to have both - the old heirarchy lingers in the docs and code in places.
+Webpage for the Mozilla Innovations team at https://future.mozilla.org, the Mozilla Internet Ecosystem (MIECO), and the Mozilla Open Source AI Hub. It may be useful to know that the MIECO site came first and then this repo expanded to have both - the old heirarchy lingers in the docs and code in places.
 
 ## Getting Started
 
