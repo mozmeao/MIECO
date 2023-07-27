@@ -34,6 +34,29 @@ module.exports = {
         ],
       },
       {
+        test: /\.css$/i,
+        include: path.resolve(__dirname, "css"),
+        use: [
+          {
+            loader: "css-loader",
+            options: {
+              import: false, // disable @import at-rules handling
+            }
+          },
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: {
+                  tailwindcss: {},
+                  autoprefixer: {},
+                },
+              },
+            },
+          },
+        ],
+      },
+      {
         test: /\.(png|jpe?g|ico|svg)$/,
         type: "asset/resource",
         generator: {
