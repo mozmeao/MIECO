@@ -7,7 +7,7 @@
 
     <body class='bg-white w-full mx-auto'>
 
-        <div class="drawer lg:drawer-open">
+        <div class="drawer lg:drawer-open sm:drawer-closed">
             <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content x-10 w-bold">
                 <!-- Page content here -->
@@ -17,7 +17,7 @@
                     </div>
             
                     <div class="w-3xl x-10 y-100 mx-auto center ml-48">
-                        <div id='content' class='prose'>
+                        <div id='content' class='prose max-w-3xl'>
                           <div class="block">
                             <h4 class="question text-3xl font-medium mt-9 mb-0">Why this Guide?</h4>
                             <div class="leading-6 font-normal">
@@ -25,26 +25,28 @@
 
                                 <p>So far, onboarding into the state-of-the-art within AI has been challenging for new engineers. Current onboarding options require piecing-together various solutions in disjointed ways. Most of these solutions are also not default open source, and there are vast amounts of new terminology, entities and libraries to learn.</p>
 
-                                <div class="carousel carousel-center max-w-fit p-4 space-x-4 bg-neutral rounded-box ">
-                                  <div class="carousel-item card bg-yellow-50">
+                                <div class="carousel carousel-center max-w-3xl p-4 space-x-4 bg-neutral rounded-box ">
+                                  <div class="carousel-item card bg-yellow-50 w-72">
                                     <figure><img src="/img/profiles/adam_bouhenguel-200.jpg" class="rounded-box" /></figure>
                                     <div class='card-body'>
-                                      This is the first card.
+                                      <div class="font-semibold mb-0">1.</div>
+                                      <div class="font-semibold mt-0">Tokenization</div>
+                                      The LLM starts by breaking down the input text, or "prompt," into smaller pieces known as tokens.
                                     </div>
                                   </div> 
-                                  <div class="carousel-item card bg-blue-50">
+                                  <div class="carousel-item card bg-blue-50  w-72">
                                     <figure><img src="/img/profiles/francisco_tolmasky-200.jpg" class="rounded-box" /></figure>
                                     <div class='card-body'>
                                       This is the second card.
                                     </div>
                                   </div> 
-                                  <div class="carousel-item card bg-green-50">
+                                  <div class="carousel-item card bg-green-50  w-72">
                                     <figure><img src="/img/profiles/justine_tunney-200.jpg" class="rounded-box" /></figure>
                                     <div class='card-body'>
                                       This is the third card.
                                     </div>
                                   </div> 
-                                  <div class="carousel-item card bg-orange-50">
+                                  <div class="carousel-item card bg-orange-50  w-72">
                                     <figure><img src="/img/profiles/jeff_lindsay-200.jpg" class="rounded-box" /></figure>
                                     <div class='card-body'>
                                       This is the last card.
@@ -69,7 +71,9 @@
                               <p>Alongside this expansion in interest and development is the need for individuals in a variety of roles to quickly ramp up their understanding of AI. However, with the increasing complexity of these models, the substantial amount of new things to learn and the extensive list of new libraries being added every single day, onboarding into the state-of-the-art AI world has become challenging for new engineers. While resources exist, many of these resources (and increasingly so) depend on proprietary technologies. Moreover, the state of knowledge is rapidly changing, and existing resources are quickly out-of-date.</p>
                             </div>
                           </div>
+
                         </div>
+
                     </div>
 
                     <footer class="footer mt-16 p-10 bg-neutral text-neutral-content">
