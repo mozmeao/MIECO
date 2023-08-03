@@ -1,6 +1,15 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
+
+@font-face {
+    font-family: "Space Grotesk";
+    src: url("../fonts/SpaceGrotesk-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/Inter-VariableFont_slnt,wght.ttf")
+}
 
 @layer base {
     html {
@@ -13,7 +22,12 @@
 
     ul.menu a {
         font-family: "Inter", system-ui, sans-serif;
-        font-weight: 400
+        @apply group-hover:text-primary-content group-hover:bg-primary-focus
     }
 
+    div.prose {
+        color: #000
+    }
 }
+
+@tailwind utilities;

@@ -1,19 +1,18 @@
 <html data-theme="moz_ai_guide_base">
     <head>
         <title>Mozilla AI Guide</title>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk&family=Inter"/>
         <link rel="stylesheet" href="/css/ai.css">
     </head>
 
-    <body class='bg-white w-full mx-auto'>
+    <body class='bg-white w-auto mx-auto'>
 
         <div class="drawer lg:drawer-open sm:drawer-closed">
             <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content x-10 w-bold">
                 <!-- Page content here -->
-                <div id="page_content" class="min-w-fit max-w-3xl">
+                <div id="page_content" class="min-w-fit ">
                     <div class='mx-auto text-center mb-10 bg-gray h-80'>
-                        <img src="/img/landing/ai-guide.svg" alt="The Mozilla AI Guide" />
+                        <img src="/img/landing/ai-guide.svg" class='w-full' alt="The Mozilla AI Guide" />
                     </div>
             
                     <div class="w-3xl x-10 y-100 mx-auto center ml-48">
@@ -25,7 +24,7 @@
 
                                 <p>So far, onboarding into the state-of-the-art within AI has been challenging for new engineers. Current onboarding options require piecing-together various solutions in disjointed ways. Most of these solutions are also not default open source, and there are vast amounts of new terminology, entities and libraries to learn.</p>
 
-                                <div class="carousel carousel-center max-w-3xl p-4 space-x-4 bg-neutral rounded-box ">
+                                <div class="carousel carousel-center max-w-3xl p-4 space-x-4 bg-neutral rounded-box border shadow-md shadow-primary">
                                   <div class="carousel-item card bg-yellow-50 w-72">
                                     <figure><img src="/img/profiles/adam_bouhenguel-200.jpg" class="rounded-box" /></figure>
                                     <div class='card-body'>
@@ -109,12 +108,12 @@
               <div class="mt-14 pl-6">
                 <img class='h-10' src="/img/mozilla-only.png"/>
               </div>
-              <ul class="menu w-72 rounded-br-box">
-                <li><a>What is AI Guide?</a></li>
+              <ul class="menu w-72 rounded-br-box group">
+                <li><a class="font-medium">What is AI Guide?</a></li>
                 <li>
                   <details closed>
                     <summary>
-                      <a>Quick & Dirty Intro to AI</a>
+                      <a class="font-medium">Quick & Dirty Intro to AI</a>
                     </summary>
                     <ul>
                       <li><a>AI in 2023</a></li>
@@ -128,9 +127,9 @@
                     </ul>
                   </details>
                 </li>
-                <li><a>LLMs 101</a></li>
-                <li><a disabled>Fine-tuning [Sep '23]</a></li>
-                <li><a disabled>LLMs from scratch [Oct '23]</a></li>
+                <li><a class="font-medium">LLMs 101</a></li>
+                <li><a class="font-medium"disabled>Fine-tuning [Sep '23]</a></li>
+                <li><a class="font-medium" disabled>LLMs from scratch [Oct '23]</a></li>
                 <li><a></a></li>
               </ul>
             </div>
