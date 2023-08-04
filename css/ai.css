@@ -20,13 +20,43 @@
         font-family: "Space Grotesk", system-ui, sans-serif;
     }
 
-    ul.menu a {
+    ul.menu li {
+        @apply leading-6
+        /* padding: 0.125rem 0.4375rem; */
+    }
+
+    ul.menu > li:hover {
+        display: inline-flex;
+        /* padding: 0.125rem 0.4375rem; */
+        justify-content: left;
+        align-items: left;
+        gap: 0.625rem;
+        border-radius: 0.4375rem;
+        @apply bg-primary-focus 
+    }
+
+    ul.menu li:hover a {
+        @apply text-white
+    }
+
+    ul.menu li a {
         font-family: "Inter", system-ui, sans-serif;
-        @apply group-hover:text-primary-content group-hover:bg-primary-focus
     }
 
     div.prose {
         color: #000
+    }
+
+    .page-header {
+        @apply mt-0 pt-0
+    }
+
+    /* blue bar above the page headers*/
+    .page-header::before {
+        content: '';
+        display: block;
+        height: 0.3125rem;
+        @apply border-t-2 border-primary my-auto w-12 m-0
     }
 }
 

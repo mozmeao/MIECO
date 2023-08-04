@@ -31,7 +31,7 @@ module.exports = {
     themes: [
       {
         "moz_ai_guide_base": {
-          "primary": "#4579ff",
+          "primary": "#4579FF",
           "secondary": "#ff85ff",
           "accent": "#73fdaf",
           "neutral": "#252E37",
