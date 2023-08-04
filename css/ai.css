@@ -20,43 +20,80 @@
         font-family: "Space Grotesk", system-ui, sans-serif;
     }
 
-    ul.menu li {
+    ul.menu > li {
         @apply leading-6
-        /* padding: 0.125rem 0.4375rem; */
+    }
+
+    ul.menu > li.upcoming {
+        @apply opacity-50
+    }
+
+    ul.menu > li.upcoming:hover,
+    ul.menu > li.upcoming:hover a {
+        @apply opacity-50 text-gray-400 bg-transparent
+    }
+
+    ul.menu > li.upcoming .badge {
+        @apply badge-secondary text-secondary-content
+    }
+
+    ul.sub_menu > li {
+        @apply leading-3
     }
 
     ul.menu > li:hover {
-        display: inline-flex;
-        /* padding: 0.125rem 0.4375rem; */
-        justify-content: left;
-        align-items: left;
-        gap: 0.625rem;
-        border-radius: 0.4375rem;
-        @apply bg-primary-focus 
+        @apply bg-primary dark:bg-secondary rounded-md
     }
 
-    ul.menu li:hover a {
-        @apply text-white
+    ul.sub_menu > li:hover {
+        @apply bg-secondary dark:bg-primary rounded-md
     }
 
-    ul.menu li a {
-        font-family: "Inter", system-ui, sans-serif;
+    ul.menu > li:hover a {
+        @apply text-white dark:text-black
+    }
+
+    ul.sub_menu > li:hover a {
+        @apply text-black dark:text-white
     }
 
     div.prose {
-        color: #000
+        @apply dark:text-white
     }
 
     .page-header {
-        @apply mt-0 pt-0
+        @apply text-3xl font-medium mt-9 mb-0 
     }
 
+    #content a.button-next-page {
+        @apply btn btn-primary text-primary-content font-medium shadow-md shadow-accent pt-0 pb-0 pr-8 pl-8 no-underline 
+    }
+
+    .prose div.qa h4 {
+        @apply text-xl font-medium mb-0 text-inherit
+    }
+
+    .prose div.qa div.answer {
+        @apply leading-6 font-normal text-inherit
+    }
+
+    #content {
+        @apply prose max-w-3xl text-black dark:text-white bg-base-100
+    }
+
+    #content .page-header {
+        @apply text-3xl font-medium mt-9 mb-0 text-inherit 
+    }
     /* blue bar above the page headers*/
-    .page-header::before {
+    #content .page-header::before {
         content: '';
         display: block;
         height: 0.3125rem;
         @apply border-t-2 border-primary my-auto w-12 m-0
+    }
+
+    footer {
+        @apply bg-accent text-accent-content text-xs mt-10 border-t-2
     }
 }
 
