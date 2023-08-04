@@ -20,6 +20,7 @@
         font-family: "Space Grotesk", system-ui, sans-serif;
     }
 
+    /* Sidebar */
     ul.menu > li {
         @apply leading-6
     }
@@ -57,6 +58,7 @@
         @apply text-black dark:text-white
     }
 
+    /* Articles */
     div.prose {
         @apply dark:text-white
     }
