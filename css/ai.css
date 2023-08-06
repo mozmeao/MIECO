@@ -21,7 +21,7 @@
     }
 
     img#header_img {
-        @apply h-auto sm:h-80 sm:w-full sm:top-0 w-full -z-50 sm:z-0 absolute sm:relative !important
+        @apply h-auto sm:h-80 sm:w-screen sm:top-0 w-full -z-50 sm:z-0 absolute sm:relative !important
     }
 
     main {
@@ -34,11 +34,11 @@
     }
 
     img#sidebar-logo {
-        @apply w-32 mt-5 pl-5 !important
+        @apply w-32 mt-5 sm:mt-14 pl-5 sm:pl-6 !important
     }
 
     ul.menu {
-        @apply w-72 mt-12
+        @apply w-72 mt-12 sm:mt-0
     }
 
     ul.menu > li {
