@@ -95,7 +95,7 @@
     }
 
     footer {
-        @apply bg-accent text-accent-content text-xs mt-10 border-t-2
+        @apply bg-neutral text-neutral-content text-xs mt-10
     }
 }
 
