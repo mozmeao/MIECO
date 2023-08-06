@@ -21,7 +21,8 @@
     }
 
     body {
-        @apply dark:bg-base-100 my-0 top-0
+        max-width: 90rem;
+        @apply dark:bg-base-300 mx-auto top-0 
     }
 
     div#mobile_banner {
@@ -33,7 +34,7 @@
     }
 
     #header_img {
-        @apply max-h-full max-w-full sm:max-h-80 sm:mx-auto
+        @apply max-h-full max-w-full sm:max-h-72 sm:ml-0
     }
 
     main {
@@ -46,6 +47,7 @@
     }
 
     .drawer-open .drawer-side {
+        box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
         @apply bg-white dark:bg-black
     }
 
@@ -128,7 +130,7 @@
     }
 
     #content {
-        @apply prose pl-5 pr-5 sm:pl-0 sm:pr-0 sm:max-w-3xl text-black dark:text-white bg-base-100 mx-auto my-auto dark:bg-base-100 }
+        @apply prose pl-5 pr-5 sm:pl-0 sm:pr-0 sm:max-w-3xl text-black dark:text-white bg-transparent mx-auto my-auto dark:bg-transparent }
 
     #content h2 {
         @apply text-3xl font-medium mt-9 mb-5 text-inherit 
