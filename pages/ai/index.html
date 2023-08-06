@@ -1,9 +1,172 @@
-{% extends "base-ai.html" %}
+<html data-theme="moz_ai_guide_base">
+    <head>
+        <title>Mozilla AI Guide</title>
+        <link rel="stylesheet" href="/css/ai.css">
+        <script type='text/javascript'>
+          if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.setAttribute('data-theme', 'moz_ai_guide_base_dark')
+            document.documentElement.classList.add('dark')
+          } else {
+            document.documentElement.setAttribute('data-theme', 'moz_ai_guide_base')
+            document.documentElement.classList.remove('dark')
+          }
+        </script>
+    </head>
 
-{% block page_title %}Mozilla AI Guide{% endblock %}
-{% block page_desc %}Mozilla AI Guide{% endblock %}
-{% block main_id %}content{% endblock %}
-    
-{% block content %}
-    {% include "ai/content/readme/index.html"%}
-{% endblock %}
+    <body class='w-auto mx-auto'>
+        <div class="drawer lg:drawer-open sm:drawer-closed">
+            <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+            <div class="drawer-content x-10">
+                <!-- Page content here -->
+                <div id="page_content" class="sm:min-w-fit">
+                    <div class='mx-auto text-center mb-11 h-80'>
+                        <img src="/img/ai/ai-guide.svg" class='' alt="The Mozilla AI Guide" />
+                    </div>
+            
+                    <div class="max-w-3xl my-auto mx-auto center">
+                        <div id='content'>
+                          <h2>README</h2>
+                          <div class="qa">
+                            <h4 class="question">Why this Guide?</h4>
+                            <div class="leading-6 font-normal">
+                                <p>Large language and image/video generation models are opening up new ways to create, plan and execute the things we do at work and home every day.</p> 
+
+                                <p>So far, onboarding into the state-of-the-art within AI has been challenging for new engineers. Current onboarding options require piecing-together various solutions in disjointed ways. Most of these solutions are also not default open source, and there are vast amounts of new terminology, entities and libraries to learn.</p>
+
+                                <div class="carousel carousel-center max-w-3xl p-4 space-x-4 rounded-box border-2 border-gray-900 shadow-md shadow-primary">
+                                  <div class="carousel-item card bg-neutral w-72">
+                                    <figure><img src="/img/profiles/adam_bouhenguel-200.jpg" class="rounded-box" /></figure>
+                                    <div class='card-body'>
+                                      <div class="font-semibold mb-0">1.</div>
+                                      <div class="font-semibold mt-0">Tokenization</div>
+                                      The LLM starts by breaking down the input text, or "prompt," into smaller pieces known as tokens.
+                                    </div>
+                                  </div> 
+                                  <div class="carousel-item card bg-neutral  w-72">
+                                    <figure><img src="/img/profiles/francisco_tolmasky-200.jpg" class="rounded-box" /></figure>
+                                    <div class='card-body'>
+                                      This is the second card.
+                                    </div>
+                                  </div> 
+                                  <div class="carousel-item card bg-neutral  w-72">
+                                    <figure><img src="/img/profiles/justine_tunney-200.jpg" class="rounded-box" /></figure>
+                                    <div class='card-body'>
+                                      This is the third card.
+                                    </div>
+                                  </div> 
+                                  <div class="carousel-item card bg-neutral  w-72">
+                                    <figure><img src="/img/profiles/jeff_lindsay-200.jpg" class="rounded-box" /></figure>
+                                    <div class='card-body'>
+                                      This is the last card.
+                                    </div>
+                                  </div> 
+                                </div>
+
+                                <p>As of this moment, the historical pattern of engineers starting and ending projects with primarily open source components is at risk. Mozilla is planting a flag in the ground in this space and creating a new hub for open-source AI projects, kickstarting a vibrant open-source community, with clear shared goals and improved open-source visibility for this important new sector.</p>
+                            </div>
+                          </div>
+
+                          <div class="text-right">
+                            <a class="button-next-page" href="/ai/quick-and-dirty-intro-to-ai">The Quick & Dirty Intro to AI &RightAngleBracket;</a>
+                          </div>
+
+                          <h2 class="text-3xl font-medium mt-9 mb-0 page-header">The Quick & Dirty Intro to AI</h2>
+                          <div class="qa">
+                            <h4 class="question">AI in 2023</h4>
+                            <div class="answer">
+                              <p>Artificial intelligence (AI), machine learning (ML), large language models (LLMs) and related technologies and techniques have crossed the chasm from science fiction and niche research domains into widespread awareness and widely adopted products, services, and systems in 2023.</p> 
+
+                              <p>Although the history of AI research reaches back to the 1950s, the current widespread awareness of AI can be traced to a recent set of products and services using generative AI such as ChatGPT, Stable Diffusion, and the like. In particular, OpenAI's ChatGPT captured the imagination of many by removing many technical barriers to interacting with AI through “natural language” text conversations. As such, ChatGPT allowed individuals to see the power, promise, and pitfalls of such systems, and many heralded the moment as a new epoch in the history of computing.</p>
+
+                              <p>The rapid popularity of ChatGPT and other systems meant new attention and investment in the domain. Almost overnight, new applications and companies emerged that sought to make use of these technologies in new ways and new domains. As a result, a myriad of industries are finding new ways to use this technology for better decision-making, automation, and innovation.</p>
+
+                              <p>Alongside this expansion in interest and development is the need for individuals in a variety of roles to quickly ramp up their understanding of AI. However, with the increasing complexity of these models, the substantial amount of new things to learn and the extensive list of new libraries being added every single day, onboarding into the state-of-the-art AI world has become challenging for new engineers. While resources exist, many of these resources (and increasingly so) depend on proprietary technologies. Moreover, the state of knowledge is rapidly changing, and existing resources are quickly out-of-date.</p>
+                            </div>
+                          </div>
+
+                        </div>
+
+                    </div>
+
+                    <footer id='footer' class="mzp-c-footer ">
+                      <div class="mzp-l-content pt-10 pb-10 max-w-3xl mx-auto my-auto">
+                          <nav class="mzp-c-footer-secondary">
+                              <div class="mzp-c-footer-legal leading-6 columns-2 items-center">
+                                  <div class="container">
+                                    <ul class="mzp-c-footer-terms underline sm:max-w-3xl mx-auto my-auto">
+                                        <li><a href="https://www.mozilla.org/privacy/websites/" data-link-type="footer" data-link-name="Privacy">Website Privacy
+                                                Notice</a></li>
+                                        <li><a href="https://www.mozilla.org/privacy/websites/#user-choices" data-link-type="footer"
+                                                data-link-name="Cookies">Cookies</a></li>
+                                        <li><a href="https://www.mozilla.org/about/legal/" data-link-type="footer" data-link-name="Legal">Legal</a></li>
+                                        <li><a href="https://www.mozilla.org/about/governance/policies/participation/" data-link-type="footer"
+                                                data-link-name="Community Participation Guidelines">Community Participation Guidelines</a></li>
+                                        <li><a href="https://www.mozilla.org/about/this-site/" data-link-type="footer" data-link-name="About this site">About
+                                                this site</a></li>
+                                    </ul>
+                                  </div>
+                                  <div class="container">
+                                    <div class="mzp-c-footer-license leading-6" rel="license">
+                                        Visit <a href="https://www.mozilla.org/" class="underline">Mozilla Corporation’s</a> not-for-profit parent, the <a
+                                            href="https://foundation.mozilla.org/?utm_source=www.mozilla.org&amp;utm_medium=referral&amp;utm_campaign=footer" class="underline"
+                                            rel="external noopener">Mozilla Foundation</a>.
+                                        Portions of this content are ©1998–2023 by individual mozilla.org contributors. Content available under
+                                        a <a rel="license" href="https://www.mozilla.org/foundation/licensing/website-content/">Creative Commons license</a>.
+                                    </div>
+                                  </div>
+                              </div>
+                          </nav>
+                      </div>
+                  </footer>
+                  <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">Open drawer</label>
+                </div>
+            </div>
+
+
+            <div class="drawer-side open bg-white dark:bg-black dark:text-white dark:border-none text-black border-r-2 box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25)">
+              <label for="my-drawer" class="drawer-overlay"></label>
+              <div class="mt-14 pl-6">
+                <img class='h-10' src="/img/mozilla-only.png"/>
+              </div>
+              <ul class="menu w-72">
+                <li class="selected"><a class="font-medium">README</a></li>
+                <li>
+                  <details closed>
+                    <summary>
+                      <a class="font-medium">Quick & Dirty Intro to AI</a>
+                    </summary>
+                    <ul class="sub_menu">
+                      <li><a>AI in 2023</a></li>
+                      <li><a>What is an LLM?</a></li>
+                      <li><a>LLM pros and cons</a></li>
+                      <li><a>Try out an LLM</a></li>
+                      <li><a>Evaluate LLMs</a></li>
+                      <li><a>New behaviors unlocked</a></li>
+                      <li><a>Components of LLMs</a></li>
+                      <li><a>Transformer-based LLMs</a></li>
+                    </ul>
+                  </details>
+                </li>
+                <li><a class="font-medium">LLMs 101</a></li>
+                <li class="upcoming"><a disabled>
+                  <div class="badge">Sep '23</div>
+                  Fine-tuning</a></li>
+                <li class="upcoming"><a disabled>
+                  <div class="badge">Oct '23</div>
+                  LLMs from scratch</a></li>
+                <li class="upcoming"><a disabled>
+                  <div class="badge">Nov '23</div>
+                  Images</a></li>
+                <li class="upcoming"><a disabled>
+                  <div class="badge">Dec '23</div>
+                  Audio</a></li>
+                <li class="upcoming"><a disabled>
+                  <div class="badge">Dec '23</div>
+                  Video</a></li>
+              </ul>
+            </div>
+          </div>
+        
+          
+    </body>
+</html>
