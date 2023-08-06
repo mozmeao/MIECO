@@ -95,7 +95,19 @@
     }
 
     footer {
-        @apply bg-neutral text-neutral-content text-xs mt-10
+        @apply mt-10 p-4 pt-2 sm:pt-10 sm:pb-10 mx-auto my-auto bg-neutral text-neutral-content text-xs
+    }
+
+    footer nav {
+        @apply leading-6 columns-1 sm:columns-2 items-center sm:max-w-3xl sm:mx-auto sm:my-auto
+    }
+
+    footer nav div.container {
+        @apply mt-3 sm:h-36
+    }
+
+    footer ul {
+        @apply underline sm:max-w-3xl mx-auto my-auto
     }
 }
 
