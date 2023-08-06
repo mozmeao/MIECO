@@ -1,6 +1,7 @@
 #!/bin/bash
 
-$root_path = "templates/ai/content"
+ROOT_PATH="templates/ai/content"
+echo ">>>> Building AI Guide from $ROOT_PATH ..."
 
 # test if command `marked` exists
 if ! command -v marked &> /dev/null
@@ -11,7 +12,9 @@ then
     npm install -g marked
 fi
 
-find $root_path -name "*.md" | while read -r file; 
-    do echo "\n\nBuilding $file"; 
+find $ROOT_PATH -name "*.md" | while read -r file; 
+    do echo ">>>> Building $file"; 
+    echo
     marked -o "${file%.md}.html" "$file";
+    echo 
 done

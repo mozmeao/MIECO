@@ -1,4 +1,4 @@
-### README
+## README
 
 #### Why this guide? 
 Large language and image/video generation models are opening up new ways to create, plan and execute the things we do at work and home every day. 

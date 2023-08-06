@@ -20,12 +20,20 @@
         font-family: "Space Grotesk", system-ui, sans-serif;
     }
 
+    body {
+        @apply dark:bg-base-100 my-0 top-0
+    }
+
     div#mobile_banner {
         @apply relative sm:static 
     }
 
     #hamburger-btn {
         @apply absolute drawer-button lg:hidden z-0 text-accent bg-transparent top-2 left-2 !important
+    }
+
+    #header_img {
+        @apply max-h-full max-w-full sm:max-h-80 sm:mx-auto
     }
 
     main {
@@ -37,8 +45,12 @@
         @apply btn-square drawer-button z-20 bg-accent text-accent-content !important
     }
 
+    .drawer-open .drawer-side {
+        @apply bg-white dark:bg-black
+    }
+
     .drawer-toggle:checked ~ .drawer-side > .drawer-overlay {
-        @apply bg-white bg-opacity-100 text-black relative !important
+        @apply bg-white bg-opacity-100 dark:bg-black dark:text-white text-black relative !important
     }
 
     .drawer-toggle:checked ~  #sidebar-close-btn {
@@ -107,23 +119,23 @@
         @apply btn btn-primary text-primary-content font-medium shadow-md shadow-accent pt-0 pb-0 pr-8 pl-8 no-underline 
     }
 
-    .prose div.qa h4 {
-        @apply text-xl font-medium mb-0 text-inherit
+    #content h4 {
+        @apply text-xl font-medium mt-3 mb-3 text-inherit
     }
 
-    .prose div.qa div.answer {
+    #content p {
         @apply leading-6 font-normal text-inherit
     }
 
     #content {
-        @apply prose max-w-3xl text-black dark:text-white bg-base-100
+        @apply prose pl-5 pr-5 sm:pl-0 sm:pr-0 sm:max-w-3xl text-black dark:text-white bg-base-100 mx-auto my-auto dark:bg-base-100 }
+
+    #content h2 {
+        @apply text-3xl font-medium mt-9 mb-5 text-inherit 
     }
 
-    #content .page-header {
-        @apply text-3xl font-medium mt-9 mb-0 text-inherit 
-    }
     /* blue bar above the page headers*/
-    #content .page-header::before {
+    #content h2::before {
         content: '';
         display: block;
         height: 0.3125rem;

@@ -41,12 +41,9 @@
     <script type="module" src="/scripts/analytics.js"></script>
     {% block header_js %}
         {% include "ai/_dark_mode.html" %}
-
-        
     {% endblock %}
 </head>
 <body>
-
     <div class="drawer lg:drawer-open">
         <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
         <div class="drawer-content flex flex-col items-center justify-center relative">
@@ -62,7 +59,7 @@
                 <img src="/img/ai/ai-guide.svg" class="" alt="The Mozilla AI Guide" id="header_img" />
                 {% endblock %}
             </div>
-            <main class="{% block main_class %}{% endblock %}">
+            <main id="{% block main_id %}{% endblock %}" class="{% block main_class %}{% endblock %}">
                 {% block content %}{% endblock %}
             </main>
             {% block footer %}
@@ -76,6 +73,6 @@
         </div>
     </div>
     
-     {% block js %}{% endblock %}dd
+     {% block js %}{% endblock %}
 </body>
 </html>
