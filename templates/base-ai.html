@@ -42,17 +42,11 @@
     <div class="drawer lg:drawer-open">
         <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
         <div class="drawer-content flex flex-col items-center justify-center relative">
-            <div class="container relative">
-                <label class="absolute btn btn-square btn-neutral drawer-button lg:hidden ml-6 top-4 left-4 z-50" for="my-drawer-2">menu</label>
-            <!-- Page content here -->
-                <div class="banner w-full h-full relative m-0">
-                    {% block banner %}
-                        <div class='mx-auto text-center'>
-                            <img src="/img/ai/ai-guide.svg" class='' alt="The Mozilla AI Guide" />
-                        </div>
-                    {% endblock %}
-                    <!-- <label class="drawer-button lg:hidden float-left ml-6 top-4 z-50" for="my-drawer-2">menu</label> -->
-                </div>
+            <div class="relative h-96">
+                {% block banner %}
+                <img src="/img/ai/ai-guide.svg" class="" alt="The Mozilla AI Guide" id="header_img" />
+                {% endblock %}
+                <label class="btn btn-square btn-neutral drawer-button lg:hidden ml-6 top-4 left-4 z-50" for="my-drawer-2">menu</label>
             </div>
             <main class="{% block main_class %}{% endblock %}">
                 {% block content %}{% endblock %}
@@ -67,8 +61,6 @@
         {% endblock %}
         </div>
     </div>
-
-
 
     {% block js %}{% endblock %}
 </body>

@@ -20,7 +20,27 @@
         font-family: "Space Grotesk", system-ui, sans-serif;
     }
 
+    img#header_img {
+        @apply h-auto sm:h-80 sm:w-full sm:top-0 w-full -z-50 sm:z-0 absolute sm:relative !important
+    }
+
+    main {
+        @apply sm:min-h-screen
+    }
+
     /* Sidebar */
+    .drawer-toggle:checked ~ .drawer-side > .drawer-overlay {
+        @apply bg-white bg-opacity-100 -z-10 text-black !important
+    }
+
+    img#sidebar-logo {
+        @apply w-32 mt-5 pl-5 !important
+    }
+
+    ul.menu {
+        @apply w-72 mt-12
+    }
+
     ul.menu > li {
         @apply leading-6
     }
@@ -48,6 +68,10 @@
 
     ul.sub_menu > li:hover {
         @apply bg-secondary dark:bg-primary rounded-md
+    }
+
+    ul.menu > li a {
+        @apply text-black dark:text-black
     }
 
     ul.menu > li:hover a {
