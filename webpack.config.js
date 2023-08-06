@@ -6,6 +6,7 @@
 
 const path = require("path");
 const HtmlBundlerPlugin = require("html-bundler-webpack-plugin");
+const { Marked } = require("marked");
 
 const isDev = process.env.NODE_ENV === "development";
 
@@ -90,6 +91,9 @@ module.exports = {
   plugins: [
     new HtmlBundlerPlugin({
       entry: "pages/",
+      globals: {
+        env: process.env
+      },
       js: {
         filename: "scripts/[name].[contenthash:8].js",
       },
