@@ -20,8 +20,12 @@
         font-family: "Space Grotesk", system-ui, sans-serif;
     }
 
-    img#header_img {
-        @apply h-auto sm:h-80 sm:w-screen sm:top-0 w-full -z-50 sm:z-0 absolute sm:relative !important
+    div#mobile_banner {
+        @apply relative sm:static 
+    }
+
+    #hamburger-btn {
+        @apply absolute drawer-button lg:hidden z-0 text-accent bg-transparent top-2 left-2 !important
     }
 
     main {
@@ -29,8 +33,16 @@
     }
 
     /* Sidebar */
+    #sidebar-close-btn {
+        @apply btn-square drawer-button z-20 bg-accent text-accent-content !important
+    }
+
     .drawer-toggle:checked ~ .drawer-side > .drawer-overlay {
-        @apply bg-white bg-opacity-100 -z-10 text-black !important
+        @apply bg-white bg-opacity-100 text-black relative !important
+    }
+
+    .drawer-toggle:checked ~  #sidebar-close-btn {
+        @apply z-50 mr-10 mt-10 !important 
     }
 
     img#sidebar-logo {
@@ -71,7 +83,7 @@
     }
 
     ul.menu > li a {
-        @apply text-black dark:text-black
+        @apply text-black dark:text-white
     }
 
     ul.menu > li:hover a {
