@@ -29,7 +29,7 @@
     }
 
     #hamburger-btn {
-        @apply absolute drawer-button lg:hidden z-0 text-accent bg-transparent top-2 left-2 !important
+        @apply fixed drawer-button lg:hidden z-0 bg-primary text-primary-content top-2 left-2 btn-square w-fit h-fit p-1 rounded-md !important
     }
 
     #header_img {
@@ -46,11 +46,11 @@
     }
 
     .drawer-open .drawer-side {
-        @apply bg-white dark:bg-black
+        @apply bg-white dark:bg-black w-full
     }
 
     .drawer-toggle:checked ~ .drawer-side > .drawer-overlay {
-        @apply bg-white bg-opacity-100 dark:bg-black dark:text-white text-black relative !important
+        @apply bg-white bg-opacity-100 dark:bg-black dark:text-white text-black h-full !important
     }
 
     .drawer-toggle:checked ~  #sidebar-close-btn {
@@ -62,7 +62,7 @@
     }
 
     ul.menu {
-        @apply w-72 mt-12 sm:mt-0
+        @apply w-full sm:w-72 mt-12 sm:mt-0
     }
 
     ul.menu > li {
@@ -83,7 +83,7 @@
     }
 
     ul.sub_menu > li {
-        @apply leading-3
+        @apply leading-3 w-full
     }
 
     ul.menu > li:hover {
@@ -100,6 +100,10 @@
 
     ul.menu > li:hover a {
         @apply text-white dark:text-black
+    }
+
+    ul.sub_menu > li a {
+        @apply w-1/2
     }
 
     ul.sub_menu > li:hover a {
@@ -120,7 +124,7 @@
     }
 
     #content h4 {
-        @apply text-xl font-medium mt-3 mb-3 text-inherit
+        @apply text-xl font-medium mt-6 mb-3 text-secondary
     }
 
     #content p {
@@ -131,7 +135,7 @@
         @apply prose pl-5 pr-5 sm:pl-0 sm:pr-0 sm:max-w-3xl text-black dark:text-white bg-base-100 mx-auto my-auto dark:bg-base-100 }
 
     #content h2 {
-        @apply text-3xl font-medium mt-9 mb-5 text-inherit 
+        @apply text-3xl font-medium mt-9 mb-5 text-inherit
     }
 
     /* blue bar above the page headers*/

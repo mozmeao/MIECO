@@ -1,4 +1,4 @@
-## The quick & dirty intro to AI. 
+## The quick & dirty intro to AI 
 
 #### What is AI in 2023?
 
@@ -57,25 +57,6 @@ Although LLMs have made it possible for computers to process human language  way
 	- **Data Bias**: Because LLMs are trained on massive amounts of data, they can perpetuate biases that exist in the training data.
 	- **Lack of Transparency**: The inner workings of an LLM can be difficult to understand, which makes it challenging to identify how it arrived at a particular decision or prediction.
 	- **LLM hallucinations**: One of the most interesting and controversial aspects of LLMs is their ability to generate realistic language output that they have never been trained on. This phenomenon is known as LLM hallucination, and it has raised concerns about the potential misuse of these models. 
-
-#### How do I try out an LLM?
-
-#### How do I evaluate between multiple LLMs?
-
-- Architecture
-- Model size
-- Usage licenses
-	- Commercial vs. research use vs. open source
-	- Building on an existing model (i.e. fine-tuning)
-	- Model (weights) licensing vs. model architecture licensing
-- Sources of training data
-	- Copyright concerns
-	- Harmful or objectionable content
-- Performance measurements
-	- Quality
-	- Speed
-- Characterizing alignment
-	- Bias, misinformation, harmful content
 
 #### What new behaviors do LLMs unlock? 
 
