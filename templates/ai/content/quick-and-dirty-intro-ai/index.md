@@ -1,6 +1,6 @@
-#### The quick & dirty intro to AI. 
+## The quick & dirty intro to AI. 
 
-##### What is AI in 2023?
+#### What is AI in 2023?
 
 Artificial intelligence (AI), machine learning (ML), large language models (LLMs) and related technologies and techniques have crossed the chasm from science fiction and niche research domains into widespread awareness and widely adopted products, services, and systems in 2023. 
 
@@ -10,11 +10,11 @@ The rapid popularity of ChatGPT and other systems meant new attention and invest
 
 Alongside this expansion in interest and development is the need for individuals in a variety of roles to quickly ramp up their understanding of AI. However, with the increasing complexity of these models, the substantial amount of new things to learn and the extensive list of new libraries being added every single day, onboarding into the state-of-the-art AI world has become challenging for new engineers. While resources exist, many of these resources (and increasingly so) depend on proprietary technologies. Moreover, the state of knowledge is rapidly changing, and existing resources are quickly out-of-date.
 
-##### Why are people excited about LLMs?
+#### Why are people excited about LLMs?
 
 Large Language Models (LLMs) are AI models that use deep learning techniques to process and understand natural language text. These models have millions or even billions of parameters that allow them to generate human-like language output, making them ideal for tasks such as language translation, natural-sounding chatbots, document and code generation, and more. LLMs have been trained on massive amounts of data, allowing them to identify patterns in language that were previously difficult for computers to comprehend. This has led to breakthroughs in natural language processing, generated output and improved communication between humans and machines.
 
-##### Why are people concerned about LLMs?
+#### Why are people concerned about LLMs?
 
 LLMs are currently used to power chatbots and a wide variety of content tools that can generate text, images, video, and even code. But the very traits that make LLMs so powerful and useful also present important questions that technologists need to consider when developing and deploying them.
 
@@ -22,7 +22,7 @@ By mimicking human language and creativity, LLMs have the potential to transform
 
 At Mozilla, we believe that developers should take these risks seriously and cultivate both an understanding and awareness of how their chosen AI technologies behave and impact the world. By their very nature, open source LLMs offer a greater chance to achieve those goals.
 
-##### What exactly is an LLM?
+#### What exactly is an LLM?
 
 At its heart, a Transformer-based Large Language Model (LLM) is essentially a computer program designed to generate text that resembles human-written content. It leverages machine learning techniques, specifically a type of neural network called a Transformer. At a high-level, a Transformer encodes linguistic patterns in the form of statistical relationships between words, and then uses those patterns to generate text. Transformers encode these semantic patterns by ingesting examples of existing text. Now let’s dig a little deeper.
 
@@ -44,7 +44,7 @@ All these steps involve complex mathematical operations and transformations. But
 
 So, in essence, a Transformer-based LLM is a cleverly designed pattern recognition system that uses learned associations between words to generate human-like text. It's like having a scribe who has read everything ever written and can produce text on any topic in a style that mirrors the content it was trained on.
 
-##### What are the pros & cons of using an LLM?
+#### What are the pros & cons of using an LLM?
 
 Although LLMs have made it possible for computers to process human language  ways that have been previously difficult, if not impossible, they are not without trade-offs: 
 
@@ -58,9 +58,9 @@ Although LLMs have made it possible for computers to process human language  way
 	- **Lack of Transparency**: The inner workings of an LLM can be difficult to understand, which makes it challenging to identify how it arrived at a particular decision or prediction.
 	- **LLM hallucinations**: One of the most interesting and controversial aspects of LLMs is their ability to generate realistic language output that they have never been trained on. This phenomenon is known as LLM hallucination, and it has raised concerns about the potential misuse of these models. 
 
-##### How do I try out an LLM?
+#### How do I try out an LLM?
 
-##### How do I evaluate between multiple LLMs?
+#### How do I evaluate between multiple LLMs?
 
 - Architecture
 - Model size
@@ -77,11 +77,11 @@ Although LLMs have made it possible for computers to process human language  way
 - Characterizing alignment
 	- Bias, misinformation, harmful content
 
-##### What new behaviors do LLMs unlock? 
+#### What new behaviors do LLMs unlock? 
 
 Large Language Models (LLMs) have unlocked a plethora of new behaviors that were previously impossible for computers to achieve. For example, LLMs can now generate highly convincing human-like text, which has led to the development of more advanced chatbots and virtual assistants. Additionally, LLMs have revolutionized the field of natural language processing by enabling machines to understand and interpret complex human language in ways that were previously impossible. This has opened up new possibilities for automated language translation, content creation, code generation, and even sentiment analysis. With continued advancements in LLM technology, we can expect to see even more exciting developments in the near future.
 
-##### What are the components of Transformer-based, pre-trained LLMs?
+#### What are the components of Transformer-based, pre-trained LLMs?
 
 - **Tokenizer**: This is the first step in processing text data. The tokenizer converts raw text into chunks known as 'tokens'. These tokens can represent words, subwords, or even characters depending on the granularity of the tokenization process. For instance, a word-level tokenizer will convert the sentence "I love coding" into 'I', 'love', 'coding'.
 - **Embedding Layer**: Once the text is tokenized, these tokens are transformed into dense vectors of fixed size in a high-dimensional space through the embedding layer. These embeddings capture semantic information about the words. For example, in this space, 'king' and 'queen' would be closer to each other than 'king' and 'apple'.
@@ -90,7 +90,7 @@ Encoder: The encoder processes the input sequence into a context-dependent repre
 - **Attention Mechanism**: This is a key part of both the encoder and decoder in a Transformer. It helps the model dynamically focus on different parts of the input sequence as it processes the data. It computes a weighted sum of input values (or 'query') based on their relevance (or 'attention scores') to the current 'key' value.
 - **Pre-training and Fine-tuning**: LLMs often start with a pre-trained language model, which have been trained on vast amounts of text data. These models are then fine-tuned for specific tasks. During fine-tuning, the model learns task-specific patterns on top of the general language understanding it gained during pre-training.
 
-##### When I send a Transformer-based LLM a “prompt”, what happens internally in more technical terms?
+#### When I send a Transformer-based LLM a “prompt”, what happens internally in more technical terms?
 1. **Tokenization**: The prompt is first converted into tokens (smaller units of text) using a process called tokenization. This could be as small as words, or even subwords in some cases.
 2. **Embedding**: Each token is then mapped to a high-dimensional vector using a pre-trained embedding layer. This representation, known as a word vector, captures semantic information about the token in its dimensions.
 3. **Positional Encoding**: Since transformer models do not inherently understand the order of tokens, positional encoding is added to give sequence information to the model. This involves adding a vector to the embedding which represents the position of each token within the sequence.

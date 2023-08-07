@@ -66,7 +66,7 @@
     }
 
     ul.menu > li {
-        @apply leading-6
+        @apply leading-6 font-medium
     }
 
     ul.menu > li.upcoming {

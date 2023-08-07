@@ -1,43 +1,12 @@
-<!-- <div class="drawer-side open bg-white dark:bg-black dark:text-white dark:border-none text-black border-r-2 box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25) m-0"> -->
 <div class="drawer-side">
     <label for="my-drawer-2" class="drawer-overlay"></label>
     <!-- <button id="sidebar-close-btn" class="drawer-button">X</button> -->
     <img id='sidebar-logo' src="/img/mozilla-only.png"/>
     <ul class="menu">
-      <li class="selected"><a class="font-medium">README</a></li>
-      <li>
-        <details closed>
-          <summary>
-            <a class="font-medium">Quick & Dirty Intro to AI</a>
-          </summary>
-          <ul class="sub_menu">
-            <li><a>AI in 2023</a></li>
-            <li><a>What is an LLM?</a></li>
-            <li><a>LLM pros and cons</a></li>
-            <li><a>Try out an LLM</a></li>
-            <li><a>Evaluate LLMs</a></li>
-            <li><a>New behaviors unlocked</a></li>
-            <li><a>Components of LLMs</a></li>
-            <li><a>Transformer-based LLMs</a></li>
-          </ul>
-        </details>
-      </li>
-      <li><a class="font-medium">LLMs 101</a></li>
-      <li class="upcoming"><a disabled>
-        <div class="badge">Sep '23</div>
-        Fine-tuning</a></li>
-      <li class="upcoming"><a disabled>
-        <div class="badge">Oct '23</div>
-        LLMs from scratch</a></li>
-      <li class="upcoming"><a disabled>
-        <div class="badge">Nov '23</div>
-        Images</a></li>
-      <li class="upcoming"><a disabled>
-        <div class="badge">Dec '23</div>
-        Audio</a></li>
-      <li class="upcoming"><a disabled>
-        <div class="badge">Dec '23</div>
-        Video</a></li>
+      {% include "ai/content/readme/_sidebar.html"%}
+      {% include "ai/content/quick-and-dirty-intro-ai/_sidebar.html"%}
+      {% include "ai/content/llms-101/_sidebar.html"%}
+      {% include "ai/content/_upcoming.html" %}
     </ul>
   </div>
 </div>
