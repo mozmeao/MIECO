@@ -124,7 +124,7 @@
     }
 
     #content h4 {
-        @apply text-xl font-medium mt-6 mb-3 text-secondary
+        @apply text-xl font-medium mt-6 mb-3 text-primary dark:text-secondary
     }
 
     #content p {
