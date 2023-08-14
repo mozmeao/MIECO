@@ -7,7 +7,7 @@ const plugin = require('tailwindcss/plugin')
 
 
 module.exports = {
-  content: ["./pages/ai/**/*.{html,js}"],
+  content: ["./pages/ai/**/*.{html,js}", "./templates/base-ai.html", "./templates/ai/_sidebar.html", "./templates/ai/content/_upcoming.html"],
   theme: {
     extend: {
       fontFamily: {
@@ -15,8 +15,8 @@ module.exports = {
     },
   },
   plugins: [
-    require('@tailwindcss/typography'),
     require("daisyui"),
+    require('@tailwindcss/typography'),
     // base
     plugin(function({ addBase, theme }) {
       addBase({

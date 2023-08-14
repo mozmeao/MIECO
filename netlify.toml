@@ -52,5 +52,5 @@
   to = "/ai/home.html"
 
 [[redirects]]
-  from = "/ai"
+  from = "/ai/"
   to = "/ai/home.html"
