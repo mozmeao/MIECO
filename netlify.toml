@@ -46,3 +46,11 @@
 [[redirects]]
   from = "/builders-challenge/application/"
   to = "https://docs.google.com/forms/d/e/1FAIpQLScBsZLnrnII9VbzzjOxBh9wRDRcoNTryT3rqhNsoGprye7OKA/viewform?usp=sf_link"
+
+[[redirects]]
+  from = "/ai/index.html"
+  to = "/ai/home.html"
+
+[[redirects]]
+  from = "/ai/"
+  to = "/ai/home.html"

@@ -1,5 +1,5 @@
 # MIECO
-Webpage for the Mozilla Innovations team at https://future.mozilla.org and the Mozilla Internet Ecosystem (MIECO). It may be useful to know that the MIECO site came first and then this repo expanded to have both - the old heirarchy lingers in the docs and code in places.
+Webpage for the Mozilla Innovations team at https://future.mozilla.org, the Mozilla Internet Ecosystem (MIECO), and the Mozilla Open Source AI Hub. It may be useful to know that the MIECO site came first and then this repo expanded to have both - the old heirarchy lingers in the docs and code in places.
 
 ## Getting Started
 
@@ -37,6 +37,22 @@ npm run build
 ```
 
 The Webpack will output all HTML files to a folder called `dist`.
+
+## AI Guide-specific instructions
+The AI Guide is hosted in this repo, and uses a slightly different Markdown-flavored templating system, but the same `npm` steps above. It also uses Tailwind for CSS and doesn't use Protocol.
+
+Content for the guide is generated from Markdown files in `templates/ai/content` using scripts in `tools/`.
+To generate fresh content:
+`tools/build_ai_guide.sh`
+
+Note that pages in `/pages/ai/content` should always be generated using the script above.
+
+To run the server:
+`tools/build_ai_guide.sh`
+`npx tailwindcss -w` 
+`npm run start`
+
+Go to `/ai/home.html`
 
 ## Folder Hierarchy  
 

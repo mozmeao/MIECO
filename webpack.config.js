@@ -6,6 +6,7 @@
 
 const path = require("path");
 const HtmlBundlerPlugin = require("html-bundler-webpack-plugin");
+const { Marked } = require("marked");
 
 const isDev = process.env.NODE_ENV === "development";
 
@@ -34,14 +35,37 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpe?g|ico|svg)$/,
+        test: /\.css$/i,
+        include: path.resolve(__dirname, "css"),
+        use: [
+          {
+            loader: "css-loader",
+            options: {
+              import: false, // disable @import at-rules handling
+            }
+          },
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: {
+                  tailwindcss: {},
+                  autoprefixer: {},
+                },
+              },
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(png|svg|jpe?g|ico)$/,
         type: "asset/resource",
         generator: {
           filename: "img/[name].[hash:8][ext]",
         },
       },
       {
-        test: /\.(woff2?)$/,
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: "asset/resource",
         generator: {
           filename: "fonts/[name][ext]",
@@ -67,6 +91,9 @@ module.exports = {
   plugins: [
     new HtmlBundlerPlugin({
       entry: "pages/",
+      globals: {
+        env: process.env
+      },
       js: {
         filename: "scripts/[name].[contenthash:8].js",
       },
