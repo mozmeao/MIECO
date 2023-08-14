@@ -80,6 +80,9 @@ module.exports = {
     static: {
       directory: path.join(__dirname, "dist"),
     },
+    // devMiddleware: {
+    //   writeToDisk: true,
+    // },
     watchFiles: {
       // live reload: watch changes in source directories
       paths: ["pages/**/*.html", "templates/**/*.html", "css/*.scss", "scripts/*.js"],
