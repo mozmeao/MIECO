@@ -1,4 +1,4 @@
-## README
+## Introduction
 
 #### Why this guide? 
 Large language and image/video generation models are opening up new ways to create, plan and execute the things we do at work and home every day. 
@@ -13,3 +13,7 @@ Mozilla has been developing and shipping AI through its products and initiatives
 But like many others, we also see the risk of real-world harm. We don’t have to cast our gazes to some far-flung science fiction future to envision it: people are already experiencing real-world impacts from this technology, right here and now.
 
 Much will depend on how this technology is developed and deployed, but it will also depend on who does it. We believe that the open source community has a critical role to play in ensuring that AI develops in a way that is responsible, trustworthy, equitable, and safe. We hope that this guide contributes to mobilizing the open source community to join us in this important work.
+
+<div class="text-right">
+    <a class="button-next-page" href="/ai/content/ai-basics">AI Basics &rarr;</a>
+</div>

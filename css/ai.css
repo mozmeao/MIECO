@@ -149,7 +149,7 @@
     }
 
     #content {
-        @apply prose pl-5 pr-5 sm:pl-0 sm:pr-0 sm:max-w-3xl text-black dark:text-white bg-base-100 mx-auto my-auto dark:bg-base-100 }
+        @apply prose pl-5 pr-5 md:pl-0 md:pr-0 sm:max-w-3xl text-black dark:text-white bg-base-100 mx-auto my-auto dark:bg-base-100 }
 
     #content h2 {
         @apply text-3xl font-medium mt-9 mb-5 text-inherit

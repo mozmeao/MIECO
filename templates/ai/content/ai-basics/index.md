@@ -1,4 +1,4 @@
-## The quick & dirty intro to AI 
+## AI Basics
 
 #### What is AI in 2023?
 
@@ -80,3 +80,7 @@ Encoder: The encoder processes the input sequence into a context-dependent repre
 6. **Output Generation**: Finally, the model generates the output text. This is done one token at a time, with the model deciding on the most likely next token based on the current state. The process continues until the model generates a termination token or reaches a preset maximum length.
 
 Each step in this process involves complex mathematical operations and transformations. But at a high-level, the goal is to convert text into a form that the model can understand, let the model process and generate a response, and then convert that response back into human-readable text.
+
+<div class="text-right">
+    <a class="button-next-page" href="/ai/content/ai-basics">LLMs 101 &rarr;</a>
+</div>
