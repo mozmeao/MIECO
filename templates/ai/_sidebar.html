@@ -10,3 +10,14 @@
       {% include "ai/content/_upcoming.html" %}
     </ul>
 </div>
+
+<script type='text/javascript'>
+  var sidebarDrawer = document.getElementById('my-drawer-2');
+
+  document.querySelectorAll("ul.menu li a").forEach(function(item) {
+    item.addEventListener('click', function() {
+      sidebarDrawer.checked = false;
+      return true;
+    });
+  });
+</script>
