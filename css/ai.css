@@ -32,8 +32,25 @@
         @apply fixed drawer-button lg:hidden z-0 bg-primary text-primary-content top-2 left-2 btn-square w-fit h-fit p-1 rounded-md !important
     }
 
-    #header_img {
-        @apply max-h-full max-w-full sm:max-h-80 sm:mx-auto
+    #header-bg {
+        width: 100%;
+        /* aspect-ratio: 3 / 1; */
+        height: 305px;
+        display: flex;
+        background: url('/img/ai/ai-header-bg.jpg') no-repeat center right;
+        background-size: cover;
+        align-items: center;
+    }
+
+    #header-content {
+        /* @apply max-h-full max-w-full sm:max-h-80 sm:mx-auto */
+        @apply sm:max-w-3xl mx-auto my-auto w-full pl-5 pr-5 md:pl-0 md:pr-0
+    }
+
+    #header-title {
+        font-size: 4rem;
+        color: white;
+        font-weight: 500;
     }
 
     main {
@@ -51,7 +68,8 @@
     }
 
     .drawer-toggle:checked ~ .drawer-side > .drawer-overlay {
-        @apply bg-white bg-opacity-100 dark:bg-black dark:text-white text-black !important
+        /* @apply bg-white bg-opacity-100 dark:bg-black dark:text-white text-black !important */
+        @apply dark:text-white text-black !important
         /* @apply h-full  */
     }
 
@@ -60,12 +78,12 @@
     }
 
     img#sidebar-logo {
-        @apply w-32 mt-5 sm:mt-14 pl-5 sm:pl-6 !important
+        /* @apply w-32 mt-5 sm:mt-14 pl-5 sm:pl-6 !important */
+        @apply w-32 mt-5 sm:mt-14
     }
 
     ul.menu {
-        @apply mt-12 sm:mt-0 w-full
-        /* @apply w-full sm:w-72  */
+        @apply bg-white dark:bg-black mt-12 sm:mt-0 w-full sm:w-72  min-h-full
     }
 
     ul.menu > li {
@@ -77,17 +95,58 @@
         @apply w-full
     }
 
-    ul.menu > li.upcoming {
-        @apply opacity-50
+    ul.menu :where(li ul){
+        @apply ml-0 pl-0
+    }
+
+    ul.menu > li.upcoming, ul.menu > li.upcoming a {
+        /* @apply opacity-50 */
+        @apply text-gray-400 bg-transparent font-normal
     }
 
     ul.menu > li.upcoming:hover,
     ul.menu > li.upcoming:hover a {
-        @apply opacity-50 text-gray-400 bg-transparent
+        cursor: default;
+        @apply text-gray-400 bg-transparent
     }
 
-    ul.menu > li.upcoming .badge {
-        @apply badge-secondary text-secondary-content
+    ul.menu > li.upcoming .badge, ul.menu > li.upcoming a .badge {
+        @apply p-10 text-secondary dark:text-accent border-2 border-secondary dark:border-accent p-3 rounded-md dark:bg-black
+        
+    }
+    /* MH - not sure why tailwind adds some weird HSL value that overrides "text-accent" */
+    @media (prefers-color-scheme: dark){
+        ul.menu > li.upcoming .badge, ul.menu > li.upcoming a .badge {
+        color: #73FDAF !important; 
+        }
+    }
+
+    ul.menu > li:hover {
+        /* @apply bg-primary dark:bg-secondary rounded-md */
+        
+    }
+
+    ul.menu > li a {
+        white-space: normal !important;
+        @apply text-black dark:text-white font-medium
+    }
+
+
+    ul.menu > li:hover summary  {
+        /* @apply text-white dark:text-secondary */
+        @apply dark:bg-neutral
+    }
+
+    ul.menu > li:hover summary a {
+        @apply dark:text-secondary
+    }
+
+    ul.menu > li:hover > details > summary::after {
+        @apply dark:text-secondary
+    }
+
+    ul.sub_menu {
+        @apply border-b-2 dark:border-neutral pb-2
     }
 
     ul.sub_menu > li {
@@ -95,36 +154,25 @@
         /* @apply w-full */
     }
 
-    ul.menu > li:hover {
-        @apply bg-primary dark:bg-secondary rounded-md
-    }
-
     ul.sub_menu > li:hover {
-        @apply bg-secondary dark:bg-primary rounded-md
+        @apply bg-secondary dark:bg-neutral rounded-md
     }
+    
 
-    ul.menu > li a {
-        @apply text-black dark:text-white
-    }
-
-    ul.menu > li:hover a {
-        @apply text-white dark:text-black
-    }
-
-    ul.sub_menu > li a {
+    ul.menu > li ul.sub_menu > li a {
         /* @apply w-1/2 */
-        white-space: normal;
         line-height: 1.5em;
-        @apply w-full
+        white-space: normal !important;
+        @apply w-full pl-6 font-normal
         
     }
 
-    ul.sub_menu > li a {
-        text-wrap: wrap !important;
+    ul.menu > li ul.sub_menu li:hover {
+        @apply bg-secondary dark:bg-neutral rounded-md
     }
 
-    ul.sub_menu > li:hover a {
-        @apply text-black dark:text-white
+    ul.menu > li ul.sub_menu li:hover a {
+        @apply text-black dark:text-secondary
     }
 
     /* Articles */
