@@ -15,7 +15,7 @@ function get_markdown(filename) {
 }
 
 function generate_id(title) {
-    return title.toLowerCase().replace(/[^\w ]+/g,'').replace(/ +/g,'-')
+    return title.toLowerCase().replace(/[^\w- ]+/g,'').replace(/ +/g,'-')
 }
 
 let tokens = marked.lexer(get_markdown(args[0]));
