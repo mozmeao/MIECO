@@ -55,7 +55,13 @@
                     </svg>
                 </label>
                 {% block banner %}
-                <a href="/ai/home.html"><img src="/img/ai/ai-guide.svg" class="" alt="The Mozilla AI Guide" id="header_img" /></a>
+                <div id="header-bg">
+                    <div id="header-content">
+                        <a href="/ai/home.html">
+                            <h1 id="header-title">AI Guide</h1>
+                        </a>
+                    </div>
+                </div>
                 {% endblock %}
             </div>
             <main id="{% block main_id %}{% endblock %}" class="{% block main_class %}{% endblock %}">

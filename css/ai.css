@@ -32,8 +32,25 @@
         @apply fixed drawer-button lg:hidden z-0 bg-primary text-primary-content top-2 left-2 btn-square w-fit h-fit p-1 rounded-md !important
     }
 
-    #header_img {
-        @apply max-h-full max-w-full sm:max-h-80 sm:mx-auto
+    #header-bg {
+        width: 100%;
+        /* aspect-ratio: 3 / 1; */
+        height: 305px;
+        display: flex;
+        background: url('/img/ai/ai-header-bg.jpg') no-repeat center right;
+        background-size: cover;
+        align-items: center;
+    }
+
+    #header-content {
+        /* @apply max-h-full max-w-full sm:max-h-80 sm:mx-auto */
+        @apply sm:max-w-3xl mx-auto my-auto w-full pl-5 pr-5 md:pl-0 md:pr-0
+    }
+
+    #header-title {
+        font-size: 4rem;
+        color: white;
+        font-weight: 500;
     }
 
     main {
@@ -111,7 +128,7 @@
 
     ul.menu > li a {
         white-space: normal !important;
-        @apply text-black dark:text-white font-semibold
+        @apply text-black dark:text-white font-medium
     }
 
 
