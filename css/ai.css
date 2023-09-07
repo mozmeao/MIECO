@@ -1,5 +1,6 @@
 @tailwind base;
 @tailwind components;
+@tailwind utilities;
 
 @font-face {
     font-family: "Space Grotesk";
@@ -54,7 +55,7 @@
     }
 
     main {
-        @apply sm:min-h-screen
+        @apply sm:min-h-screen md:min-h-0
     }
 
     /* Sidebar */
@@ -184,32 +185,7 @@
         @apply text-3xl font-medium mt-9 mb-0 
     }
 
-    #content a.button-next-page {
-        @apply btn btn-primary text-primary-content font-medium shadow-md shadow-accent pt-0 pb-0 pr-8 pl-8 no-underline 
-    }
-
-    #content h4 {
-        @apply text-xl font-medium mt-6 mb-3 text-primary dark:text-secondary
-    }
-
-    #content p {
-        @apply leading-6 font-normal text-inherit
-    }
-
-    #content {
-        @apply prose pl-5 pr-5 md:pl-0 md:pr-0 sm:max-w-3xl text-black dark:text-white bg-base-100 mx-auto my-auto dark:bg-base-100 }
-
-    #content h2 {
-        @apply text-3xl font-medium mt-9 mb-5 text-inherit
-    }
-
-    /* blue bar above the page headers*/
-    #content h2::before {
-        content: '';
-        display: block;
-        height: 0.3125rem;
-        @apply border-t-2 border-primary my-auto w-12 m-0
-    }
+    
 
     footer {
         @apply mt-10 p-4 pt-2 sm:pt-10 sm:pb-10 mx-auto my-auto bg-neutral text-neutral-content text-xs
@@ -228,4 +204,60 @@
     }
 }
 
-@tailwind utilities;
+#content a.button-next-page {
+    @apply btn btn-primary text-primary-content font-medium shadow-md shadow-accent pt-0 pb-0 pr-8 pl-8 no-underline 
+}
+
+#content h4 {
+    @apply text-xl font-medium mt-6 mb-3 text-primary dark:text-secondary
+}
+
+#content p {
+    @apply leading-6 font-normal text-inherit
+}
+
+.inner {
+    @apply prose p-5 md:pl-0 md:pr-0 sm:max-w-3xl text-black dark:text-white bg-base-100 my-auto mx-auto dark:bg-base-100
+}
+
+#content h2 {
+    @apply text-3xl font-medium mt-9 mb-5 text-inherit
+}
+
+/* blue bar above the page headers*/
+#content h2::before {
+    content: '';
+    height: 0.3125rem;
+    @apply border-t-4 border-primary my-auto w-16 mb-2 block;
+    border-color: #4579FF; /* MH: not sure why tailwind adds some weird HSL value that overrides our primary color */
+}
+
+#newsletter-section {
+    @apply py-6;
+}
+
+
+.email-checkbox {
+    @apply w-6 h-6;
+}
+
+.email-submit {
+    /* MH: not sure why tailwind adds some weird HSL value that overrides our primary color */
+    @apply text-neutral;
+}
+
+#newsletter-thanks {
+    @apply hidden
+}
+
+#newsletter-details {
+    @apply hidden
+}
+
+.collaboration-description {
+    @apply hidden
+}
+
+.hidden {
+    display: none;
+}

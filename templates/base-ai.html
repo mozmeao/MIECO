@@ -30,15 +30,14 @@
     <link rel="stylesheet" href="/css/ai.css"/>
     {% endblock %}
     {% block page_js %}
-    <script type="text/javascript" src="/scripts/dark_mode.js"></script>
-    <script type="module" src="/scripts/ai.js"></script>
     {% endblock %}
     <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/img/favicons/apple-touch-icon.png"/>
     <link rel="icon" type="image/png" sizes="196x196" href="/img/favicons/favicon-196x196.png"/>
     <link rel="shortcut icon" href="/img/favicons/favicon.ico"/>
     <script type="module" src="/scripts/analytics.js"></script>
+    <script type="text/javascript" src="/scripts/dark_mode.js"></script>
     {% block header_js %}
-        <script type="text/javascript" src="/scripts/dark_mode.js"></script>
+        <script type="text/javascript" src="/scripts/ai.js"></script>
     {% endblock %}
 </head>
 <body>
@@ -65,8 +64,14 @@
                 {% endblock %}
             </div>
             <main id="{% block main_id %}{% endblock %}" class="{% block main_class %}{% endblock %}">
-                {% block content %}{% endblock %}
+                <div class="inner">
+                    {% block content %}{% endblock %}
+                </div>
+                {% block email %}
+                    {% include "ai/_email_form.html" %}
+                {% endblock %}
             </main>
+            
             {% block footer %}
                 {% include "ai/_footer.html" %}
             {% endblock %}
@@ -76,7 +81,8 @@
             {% include "ai/_sidebar.html" %}
         {% endblock %}
     </div>
-    
-    {% block js %}{% endblock %}
+    {% block js %}
+    {% endblock %}
+    <script type="module" src="/scripts/email.js"></script>
 </body>
 </html>
